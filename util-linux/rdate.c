@@ -80,7 +80,7 @@ int rdate_main(int argc UNUSED_PARAM, char **argv)
 		if (current_time == remote_time)
 			bb_error_msg("current time matches remote time");
 		else
-			#if __GLIBC_MINOR__ == 31
+			#if __GLIBC_MINOR__ >= 31
 			{
 				struct timespec res;
 				res.tv_sec = remote_time;

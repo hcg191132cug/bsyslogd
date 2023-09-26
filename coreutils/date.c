@@ -293,7 +293,7 @@ int date_main(int argc UNUSED_PARAM, char **argv)
 		maybe_set_utc(opt);
 
 		/* if setting time, set it */
-		#if __GLIBC_MINOR__ == 31
+		#if __GLIBC_MINOR__ >= 31
 		if ((opt & OPT_SET) && clock_settime(CLOCK_REALTIME,&ts) < 0) {
 			bb_perror_msg("can't set date");
 		}

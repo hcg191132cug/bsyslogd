@@ -1,0 +1,754 @@
+scripts/kconfig/conf -o Config.in
+#
+# using defaults found in .config
+#
+*
+* Busybox Configuration
+*
+*
+* Busybox Settings
+*
+Enable options for full-blown desktop systems (DESKTOP) [Y/n/?] y
+Provide compatible behavior for rare corner cases (bigger code) (EXTRA_COMPAT) [N/y/?] n
+Enable obsolete features removed before SUSv3 (INCLUDE_SUSv2) [Y/n/?] y
+Avoid using GCC-specific code constructs (USE_PORTABLE_CODE) [N/y/?] n
+Show applet usage messages (SHOW_USAGE) [Y/n/?] y
+  Show verbose applet usage messages (FEATURE_VERBOSE_USAGE) [Y/n/?] y
+  Store applet usage messages in compressed form (FEATURE_COMPRESS_USAGE) [Y/n/?] y
+Include busybox applet (BUSYBOX) [Y/n/?] y
+  Support --install [-s] to install applet links at runtime (FEATURE_INSTALLER) [Y/n/?] y
+Don't use /usr (INSTALL_NO_USR) [N/y/?] n
+Support PAM (Pluggable Authentication Modules) (PAM) [N/y/?] n
+Support --long-options (LONG_OPTS) [Y/n/?] y
+Use the devpts filesystem for Unix98 PTYs (FEATURE_DEVPTS) [Y/n/?] y
+Clean up all memory before exiting (usually not needed) (FEATURE_CLEAN_UP) [N/y/?] n
+Support utmp file (FEATURE_UTMP) [Y/n/?] y
+  Support wtmp file (FEATURE_WTMP) [Y/n/?] y
+Support writing pidfiles (FEATURE_PIDFILE) [Y/n/?] y
+  Path to directory for pidfile (PID_FILE_PATH) [/var/run] /var/run
+Support SUID/SGID handling (FEATURE_SUID) [Y/n/?] y
+  Runtime SUID/SGID configuration via /etc/busybox.conf (FEATURE_SUID_CONFIG) [Y/n/?] y
+    Suppress warning message if /etc/busybox.conf is not readable (FEATURE_SUID_CONFIG_QUIET) [Y/n/?] y
+Support NSA Security Enhanced Linux (SELINUX) [N/y/?] n
+exec prefers applets (FEATURE_PREFER_APPLETS) [N/y/?] n
+Path to BusyBox executable (BUSYBOX_EXEC_PATH) [/proc/self/exe] /proc/self/exe
+*
+* Build Options
+*
+Build BusyBox as a static binary (no shared libs) (STATIC) [N/y/?] n
+  Build BusyBox as a position independent executable (PIE) [N/y/?] n
+Force NOMMU build (NOMMU) [N/y/?] n
+Build shared libbusybox (BUILD_LIBBUSYBOX) [N/y/?] n
+Build with Large File Support (for accessing files > 2 GB) (LFS) [Y/n/?] y
+Cross Compiler prefix (CROSS_COMPILER_PREFIX) [] 
+Path to sysroot (SYSROOT) [] 
+Additional CFLAGS (EXTRA_CFLAGS) [] 
+Additional LDFLAGS (EXTRA_LDFLAGS) [] 
+Additional LDLIBS (EXTRA_LDLIBS) [hiredis] hiredis
+*
+* Installation Options ("make install" behavior)
+*
+What kind of applet links to install
+> 1. as soft-links (INSTALL_APPLET_SYMLINKS)
+  2. as hard-links (INSTALL_APPLET_HARDLINKS)
+  3. as script wrappers (INSTALL_APPLET_SCRIPT_WRAPPERS)
+  4. not installed (INSTALL_APPLET_DONT)
+choice[1-4?]: 1
+BusyBox installation prefix (PREFIX) [./_install] ./_install
+*
+* Debugging Options
+*
+Build BusyBox with extra Debugging symbols (DEBUG) [Y/n/?] y
+  Disable compiler optimizations (DEBUG_PESSIMIZE) [Y/n/?] y
+Enable runtime sanitizers (ASAN/LSAN/USAN/etc...) (DEBUG_SANITIZE) [N/y/?] n
+Build unit tests (UNIT_TEST) [N/y/?] n
+Abort compilation on any warning (WERROR) [N/y/?] n
+Additional debugging library
+> 1. None (NO_DEBUG_LIB)
+  2. Dmalloc (DMALLOC)
+  3. Electric-fence (EFENCE)
+choice[1-3?]: 1
+*
+* Busybox Library Tuning
+*
+Use the end of BSS page (FEATURE_USE_BSS_TAIL) [N/y/?] n
+Support RTMIN[+n] and RTMAX[-n] signal names (FEATURE_RTMINMAX) [Y/n/?] y
+Buffer allocation policy
+> 1. Allocate with Malloc (FEATURE_BUFFERS_USE_MALLOC)
+  2. Allocate on the Stack (FEATURE_BUFFERS_GO_ON_STACK)
+  3. Allocate in the .bss section (FEATURE_BUFFERS_GO_IN_BSS)
+choice[1-3?]: 1
+Minimum password length (PASSWORD_MINLEN) [6] 6
+MD5: Trade bytes for speed (0:fast, 3:slow) (MD5_SMALL) [1] 1
+SHA3: Trade bytes for speed (0:fast, 1:slow) (SHA3_SMALL) [1] 1
+Faster /proc scanning code (+100 bytes) (FEATURE_FAST_TOP) [N/y/?] n
+Support /etc/networks (FEATURE_ETC_NETWORKS) [N/y/?] n
+Command line editing (FEATURE_EDITING) [Y/n/?] y
+  Maximum length of input (FEATURE_EDITING_MAX_LEN) [1024] 1024
+  vi-style line editing commands (FEATURE_EDITING_VI) [N/y/?] n
+  History size (FEATURE_EDITING_HISTORY) [255] 255
+  History saving (FEATURE_EDITING_SAVEHISTORY) [Y/n/?] y
+    Save history on shell exit, not after every command (FEATURE_EDITING_SAVE_ON_EXIT) [N/y/?] n
+  Reverse history search (FEATURE_REVERSE_SEARCH) [Y/n/?] y
+  Tab completion (FEATURE_TAB_COMPLETION) [Y/n] y
+    Username completion (FEATURE_USERNAME_COMPLETION) [Y/n] y
+  Fancy shell prompts (FEATURE_EDITING_FANCY_PROMPT) [Y/n/?] y
+  Query cursor position from terminal (FEATURE_EDITING_ASK_TERMINAL) [N/y/?] n
+Enable locale support (system needs locale for this to work) (LOCALE_SUPPORT) [N/y/?] n
+Support Unicode (UNICODE_SUPPORT) [Y/n/?] y
+  Check $LC_ALL, $LC_CTYPE and $LANG environment variables (FEATURE_CHECK_UNICODE_IN_ENV) [N/y/?] n
+  Character code to substitute unprintable characters with (SUBST_WCHAR) [63] 63
+  Range of supported Unicode characters (LAST_SUPPORTED_WCHAR) [767] 767
+  Allow zero-width Unicode characters on output (UNICODE_COMBINING_WCHARS) [N/y/?] n
+  Allow wide Unicode characters on output (UNICODE_WIDE_WCHARS) [N/y/?] n
+  Bidirectional character-aware line input (UNICODE_BIDI_SUPPORT) [N/y/?] n
+  Make it possible to enter sequences of chars which are not Unicode (UNICODE_PRESERVE_BROKEN) [N/y/?] n
+Non-POSIX, but safer, copying to special nodes (FEATURE_NON_POSIX_CP) [Y/n/?] y
+Give more precise messages when copy fails (cp, mv etc) (FEATURE_VERBOSE_CP_MESSAGE) [N/y/?] n
+Use sendfile system call (FEATURE_USE_SENDFILE) [Y/n/?] y
+Copy buffer size, in kilobytes (FEATURE_COPYBUF_KB) [4] 4
+Skip rootfs in mount table (FEATURE_SKIP_ROOTFS) [Y/n/?] y
+Use clock_gettime(CLOCK_MONOTONIC) syscall (MONOTONIC_SYSCALL) [Y/n/?] y
+Use ioctl names rather than hex values in error messages (IOCTL_HEX2STR_ERROR) [Y/n/?] y
+Support infiniband HW (FEATURE_HWIB) [Y/n/?] y
+*
+* Applets
+*
+*
+* Archival Utilities
+*
+Make tar, rpm, modprobe etc understand .xz data (FEATURE_SEAMLESS_XZ) [N/y] n
+Make tar, rpm, modprobe etc understand .lzma data (FEATURE_SEAMLESS_LZMA) [N/y] n
+Make tar, rpm, modprobe etc understand .bz2 data (FEATURE_SEAMLESS_BZ2) [N/y] n
+Make tar, rpm, modprobe etc understand .gz data (FEATURE_SEAMLESS_GZ) [N/y] n
+Make tar, rpm, modprobe etc understand .Z data (FEATURE_SEAMLESS_Z) [N/y] n
+ar (AR) [N/y/?] n
+uncompress (UNCOMPRESS) [N/y/?] n
+gunzip (GUNZIP) [N/y/?] n
+zcat (ZCAT) [N/y/?] n
+bunzip2 (BUNZIP2) [N/y/?] n
+bzcat (BZCAT) [N/y/?] n
+unlzma (UNLZMA) [N/y/?] n
+lzcat (LZCAT) [N/y/?] n
+lzma -d (LZMA) [N/y/?] n
+unxz (UNXZ) [N/y/?] n
+xzcat (XZCAT) [N/y/?] n
+xz -d (XZ) [N/y/?] n
+bzip2 (BZIP2) [N/y/?] n
+cpio (CPIO) [N/y/?] n
+dpkg (DPKG) [N/y/?] n
+dpkg_deb (DPKG_DEB) [N/y/?] n
+gzip (GZIP) [N/y/?] n
+lzop (LZOP) [N/y/?] n
+unlzop (UNLZOP) [N/y/?] n
+lzopcat (LZOPCAT) [N/y/?] n
+rpm (RPM) [N/y/?] n
+rpm2cpio (RPM2CPIO) [N/y/?] n
+tar (TAR) [N/y/?] n
+unzip (UNZIP) [N/y/?] n
+*
+* Coreutils
+*
+basename (BASENAME) [N/y/?] n
+cal (CAL) [N/y/?] n
+cat (CAT) [N/y/?] n
+catv (CATV) [N/y/?] n
+chgrp (CHGRP) [N/y/?] n
+chmod (CHMOD) [N/y/?] n
+chown (CHOWN) [N/y/?] n
+chroot (CHROOT) [N/y/?] n
+cksum (CKSUM) [N/y/?] n
+comm (COMM) [N/y/?] n
+cp (CP) [N/y/?] n
+cut (CUT) [N/y/?] n
+date (DATE) [N/y/?] n
+dd (DD) [N/y/?] n
+df (DF) [N/y/?] n
+dirname (DIRNAME) [N/y/?] n
+dos2unix (DOS2UNIX) [N/y/?] n
+unix2dos (UNIX2DOS) [N/y/?] n
+du (default blocksize of 512 bytes) (DU) [N/y/?] n
+echo (basic SuSv3 version taking no options) (ECHO) [N/y/?] n
+env (ENV) [N/y/?] n
+expand (EXPAND) [N/y/?] n
+unexpand (UNEXPAND) [N/y/?] n
+expr (EXPR) [N/y/?] n
+false (FALSE) [N/y/?] n
+fold (FOLD) [N/y/?] n
+fsync (FSYNC) [N/y/?] n
+head (HEAD) [N/y/?] n
+hostid (HOSTID) [N/y/?] n
+id (ID) [N/y/?] n
+groups (GROUPS) [N/y/?] n
+install (INSTALL) [N/y/?] n
+ln (LN) [N/y/?] n
+logname (LOGNAME) [N/y/?] n
+ls (LS) [N/y/?] n
+md5sum (MD5SUM) [N/y/?] n
+sha1sum (SHA1SUM) [N/y/?] n
+sha256sum (SHA256SUM) [N/y/?] n
+sha512sum (SHA512SUM) [N/y/?] n
+sha3sum (SHA3SUM) [N/y/?] n
+mkdir (MKDIR) [N/y/?] n
+mkfifo (MKFIFO) [N/y/?] n
+mknod (MKNOD) [N/y/?] n
+mv (MV) [N/y/?] n
+nice (NICE) [N/y/?] n
+nohup (NOHUP) [N/y/?] n
+od (OD) [N/y/?] n
+printenv (PRINTENV) [N/y/?] n
+printf (PRINTF) [N/y/?] n
+pwd (PWD) [N/y/?] n
+readlink (READLINK) [N/y/?] n
+realpath (REALPATH) [N/y/?] n
+rm (RM) [N/y/?] n
+rmdir (RMDIR) [N/y/?] n
+seq (SEQ) [N/y/?] n
+shuf (SHUF) [N/y/?] n
+sleep (SLEEP) [N/y/?] n
+sort (SORT) [N/y/?] n
+split (SPLIT) [N/y/?] n
+stat (STAT) [N/y/?] n
+stty (STTY) [N/y/?] n
+sum (SUM) [N/y/?] n
+sync (SYNC) [N/y/?] n
+tac (TAC) [N/y/?] n
+tail (TAIL) [N/y/?] n
+tee (TEE) [N/y/?] n
+test (TEST) [N/y/?] n
+test as [ (TEST1) [N/y/?] n
+test as [[ (TEST2) [N/y/?] n
+touch (TOUCH) [N/y/?] n
+tr (TR) [N/y/?] n
+true (TRUE) [N/y/?] n
+truncate (TRUNCATE) [N/y/?] n
+tty (TTY) [N/y/?] n
+uname (UNAME) [N/y/?] n
+uniq (UNIQ) [N/y/?] n
+unlink (UNLINK) [N/y/?] n
+usleep (USLEEP) [N/y/?] n
+uudecode (UUDECODE) [N/y/?] n
+base64 (BASE64) [N/y/?] n
+uuencode (UUENCODE) [N/y/?] n
+wc (WC) [N/y/?] n
+who (WHO) [N/y/?] n
+users (USERS) [N/y/?] n
+whoami (WHOAMI) [N/y/?] n
+yes (YES) [N/y/?] n
+*
+* Common options
+*
+Support verbose options (usually -v) for various applets (FEATURE_VERBOSE) [Y/n/?] y
+*
+* Console Utilities
+*
+chvt (CHVT) [N/y/?] n
+clear (CLEAR) [N/y/?] n
+deallocvt (DEALLOCVT) [N/y/?] n
+dumpkmap (DUMPKMAP) [N/y/?] n
+fgconsole (FGCONSOLE) [N/y/?] n
+kbd_mode (KBD_MODE) [N/y/?] n
+loadfont (LOADFONT) [N/y/?] n
+setfont (SETFONT) [N/y/?] n
+loadkmap (LOADKMAP) [N/y/?] n
+openvt (OPENVT) [N/y/?] n
+reset (RESET) [N/y/?] n
+resize (RESIZE) [N/y/?] n
+setconsole (SETCONSOLE) [N/y/?] n
+setkeycodes (SETKEYCODES) [N/y/?] n
+setlogcons (SETLOGCONS) [N/y/?] n
+showkey (SHOWKEY) [N/y/?] n
+*
+* Debian Utilities
+*
+mktemp (MKTEMP) [N/y/?] n
+pipe_progress (PIPE_PROGRESS) [N/y/?] n
+run-parts (RUN_PARTS) [N/y/?] n
+start-stop-daemon (START_STOP_DAEMON) [N/y/?] n
+which (WHICH) [N/y/?] n
+*
+* Editors
+*
+awk (AWK) [N/y/?] n
+cmp (CMP) [N/y/?] n
+diff (DIFF) [N/y/?] n
+ed (ED) [N/y/?] n
+patch (PATCH) [N/y/?] n
+sed (SED) [N/y/?] n
+vi (VI) [N/y/?] n
+*
+* Finding Utilities
+*
+find (FIND) [N/y/?] n
+grep (GREP) [N/y/?] n
+egrep (EGREP) [N/y/?] n
+fgrep (FGREP) [N/y/?] n
+xargs (XARGS) [N/y/?] n
+*
+* Init Utilities
+*
+bootchartd (BOOTCHARTD) [N/y/?] n
+halt (HALT) [N/y/?] n
+poweroff (POWEROFF) [N/y/?] n
+reboot (REBOOT) [N/y/?] n
+init (INIT) [N/y/?] n
+linuxrc: support running init from initrd (not initramfs) (LINUXRC) [N/y/?] n
+mesg (MESG) [N/y/?] n
+*
+* Login/Password Management Utilities
+*
+Support shadow passwords (FEATURE_SHADOWPASSWDS) [N/y/?] n
+Use internal password and group functions rather than system functions (USE_BB_PWD_GRP) [N/y/?] n
+Use internal crypt functions (USE_BB_CRYPT) [N/y/?] n
+add-shell (ADD_SHELL) [N/y/?] n
+remove-shell (REMOVE_SHELL) [N/y/?] n
+addgroup (ADDGROUP) [N/y/?] n
+adduser (ADDUSER) [N/y/?] n
+chpasswd (CHPASSWD) [N/y/?] n
+cryptpw (CRYPTPW) [N/y/?] n
+mkpasswd (MKPASSWD) [N/y/?] n
+deluser (DELUSER) [N/y/?] n
+delgroup (DELGROUP) [N/y/?] n
+getty (GETTY) [N/y/?] n
+login (LOGIN) [N/y/?] n
+passwd (PASSWD) [N/y/?] n
+su (SU) [N/y/?] n
+sulogin (SULOGIN) [N/y/?] n
+vlock (VLOCK) [N/y/?] n
+*
+* Linux Ext2 FS Progs
+*
+chattr (CHATTR) [N/y/?] n
+fsck (FSCK) [N/y/?] n
+lsattr (LSATTR) [N/y/?] n
+tune2fs (TUNE2FS) [N/y/?] n
+*
+* Linux Module Utilities
+*
+Simplified modutils (MODPROBE_SMALL) [N/y/?] n
+depmod (DEPMOD) [N/y/?] n
+insmod (INSMOD) [N/y/?] n
+lsmod (LSMOD) [N/y/?] n
+modinfo (MODINFO) [N/y/?] n
+modprobe (MODPROBE) [N/y/?] n
+rmmod (RMMOD) [N/y/?] n
+*
+* Options common to multiple modutils
+*
+*
+* Linux System Utilities
+*
+acpid (ACPID) [N/y/?] n
+blkdiscard (BLKDISCARD) [N/y/?] n
+blkid (BLKID) [N/y/?] n
+blockdev (BLOCKDEV) [N/y/?] n
+dmesg (DMESG) [N/y/?] n
+fatattr (FATATTR) [N/y/?] n
+fbset (FBSET) [N/y/?] n
+fdformat (FDFORMAT) [N/y/?] n
+fdisk (FDISK) [N/y/?] n
+findfs (FINDFS) [N/y/?] n
+flock (FLOCK) [N/y/?] n
+fdflush (FDFLUSH) [N/y/?] n
+freeramdisk (FREERAMDISK) [N/y/?] n
+fsck_minix (FSCK_MINIX) [N/y/?] n
+fstrim (FSTRIM) [N/y/?] n
+getopt (GETOPT) [N/y/?] n
+hexdump (HEXDUMP) [N/y/?] n
+hd (HD) [N/y/?] n
+hwclock (HWCLOCK) [N/y/?] n
+ipcrm (IPCRM) [N/y/?] n
+ipcs (IPCS) [N/y/?] n
+losetup (LOSETUP) [N/y/?] n
+lspci (LSPCI) [N/y/?] n
+lsusb (LSUSB) [N/y/?] n
+mdev (MDEV) [N/y/?] n
+mke2fs (MKE2FS) [N/y/?] n
+mkfs.ext2 (MKFS_EXT2) [N/y/?] n
+mkfs_minix (MKFS_MINIX) [N/y/?] n
+mkfs_reiser (MKFS_REISER) [N/y/?] n
+mkdosfs (MKDOSFS) [N/y/?] n
+mkfs.vfat (MKFS_VFAT) [N/y/?] n
+mkswap (MKSWAP) [N/y/?] n
+more (MORE) [N/y/?] n
+mount (MOUNT) [N/y/?] n
+nsenter (NSENTER) [N/y/?] n
+pivot_root (PIVOT_ROOT) [N/y/?] n
+rdate (RDATE) [N/y/?] n
+rdev (RDEV) [N/y/?] n
+readprofile (READPROFILE) [N/y/?] n
+rev (REV) [N/y/?] n
+rtcwake (RTCWAKE) [N/y/?] n
+script (SCRIPT) [N/y/?] n
+scriptreplay (SCRIPTREPLAY) [N/y/?] n
+setarch (SETARCH) [N/y/?] n
+linux32 (LINUX32) [N/y/?] n
+linux64 (LINUX64) [N/y/?] n
+swapon (SWAPON) [N/y/?] n
+swapoff (SWAPOFF) [N/y/?] n
+switch_root (SWITCH_ROOT) [N/y/?] n
+uevent (UEVENT) [N/y/?] n
+umount (UMOUNT) [N/y/?] n
+unshare (UNSHARE) [N/y/?] n
+*
+* Miscellaneous Utilities
+*
+adjtimex (ADJTIMEX) [N/y/?] n
+bbconfig (BBCONFIG) [N/y/?] n
+beep (BEEP) [N/y/?] n
+chat (CHAT) [N/y/?] n
+chrt (CHRT) [N/y/?] n
+conspy (CONSPY) [N/y/?] n
+crond (CROND) [N/y/?] n
+crontab (CRONTAB) [N/y/?] n
+dc (DC) [N/y/?] n
+devfsd (obsolete) (DEVFSD) [N/y/?] n
+Use devfs names for all devices (obsolete) (FEATURE_DEVFS) [N/y/?] n
+devmem (DEVMEM) [N/y/?] n
+eject (EJECT) [N/y/?] n
+fbsplash (FBSPLASH) [N/y/?] n
+flash_eraseall (FLASH_ERASEALL) [N/y/?] n
+flash_lock (FLASH_LOCK) [N/y/?] n
+flash_unlock (FLASH_UNLOCK) [N/y/?] n
+flashcp (FLASHCP) [N/y/?] n
+hdparm (HDPARM) [N/y/?] n
+i2cget (I2CGET) [N/y/?] n
+i2cset (I2CSET) [N/y/?] n
+i2cdump (I2CDUMP) [N/y/?] n
+i2cdetect (I2CDETECT) [N/y/?] n
+inotifyd (INOTIFYD) [N/y/?] n
+ionice (IONICE) [N/y/?] n
+last (LAST) [N/y/?] n
+less (LESS) [N/y/?] n
+makedevs (MAKEDEVS) [N/y/?] n
+man (MAN) [N/y/?] n
+microcom (MICROCOM) [N/y/?] n
+mountpoint (MOUNTPOINT) [N/y/?] n
+mt (MT) [N/y/?] n
+nandwrite (NANDWRITE) [N/y/?] n
+nanddump (NANDDUMP) [N/y/?] n
+raidautorun (RAIDAUTORUN) [N/y/?] n
+readahead (READAHEAD) [N/y/?] n
+rfkill (RFKILL) [N/y/?] n
+runlevel (RUNLEVEL) [N/y/?] n
+rx (RX) [N/y/?] n
+setserial (SETSERIAL) [N/y/?] n
+setsid (SETSID) [N/y/?] n
+strings (STRINGS) [N/y/?] n
+taskset (TASKSET) [N/y/?] n
+time (TIME) [N/y/?] n
+timeout (TIMEOUT) [N/y/?] n
+ttysize (TTYSIZE) [N/y/?] n
+ubiattach (UBIATTACH) [N/y/?] n
+ubidetach (UBIDETACH) [N/y/?] n
+ubimkvol (UBIMKVOL) [N/y/?] n
+ubirmvol (UBIRMVOL) [N/y/?] n
+ubirsvol (UBIRSVOL) [N/y/?] n
+ubiupdatevol (UBIUPDATEVOL) [N/y/?] n
+ubirename (UBIRENAME) [N/y/?] n
+volname (VOLNAME) [N/y/?] n
+wall (WALL) [N/y/?] n
+watchdog (WATCHDOG) [N/y/?] n
+*
+* Networking Utilities
+*
+Enable IPv6 support (FEATURE_IPV6) [N/y/?] n
+Enable Unix domain socket support (usually not needed) (FEATURE_UNIX_LOCAL) [N/y/?] n
+Verbose resolution errors (VERBOSE_RESOLUTION_ERRORS) [N/y/?] n
+arp (ARP) [N/y/?] n
+arping (ARPING) [N/y/?] n
+brctl (BRCTL) [N/y/?] n
+dnsd (DNSD) [N/y/?] n
+ether-wake (ETHER_WAKE) [N/y/?] n
+ftpd (FTPD) [N/y/?] n
+ftpget (FTPGET) [N/y/?] n
+ftpput (FTPPUT) [N/y/?] n
+hostname (HOSTNAME) [N/y/?] n
+dnsdomainname (DNSDOMAINNAME) [N/y/?] n
+httpd (HTTPD) [N/y/?] n
+ifconfig (IFCONFIG) [N/y/?] n
+ifenslave (IFENSLAVE) [N/y/?] n
+ifplugd (IFPLUGD) [N/y/?] n
+ifup (IFUP) [N/y/?] n
+ifdown (IFDOWN) [N/y/?] n
+inetd (INETD) [N/y/?] n
+ip (IP) [N/y/?] n
+ipaddr (IPADDR) [N/y/?] n
+iplink (IPLINK) [N/y/?] n
+iproute (IPROUTE) [N/y/?] n
+iptunnel (IPTUNNEL) [N/y/?] n
+iprule (IPRULE) [N/y/?] n
+ipneigh (IPNEIGH) [N/y/?] n
+ipcalc (IPCALC) [N/y/?] n
+fakeidentd (FAKEIDENTD) [N/y/?] n
+nameif (NAMEIF) [N/y/?] n
+nbd-client (NBDCLIENT) [N/y/?] n
+nc (NC) [N/y/?] n
+netstat (NETSTAT) [N/y/?] n
+nslookup (NSLOOKUP) [N/y/?] n
+ntpd (NTPD) [N/y/?] n
+ping (PING) [N/y/?] n
+pscan (PSCAN) [N/y/?] n
+route (ROUTE) [N/y/?] n
+slattach (SLATTACH) [N/y/?] n
+tcpsvd (TCPSVD) [N/y/?] n
+udpsvd (UDPSVD) [N/y/?] n
+telnet (TELNET) [N/y/?] n
+telnetd (TELNETD) [N/y/?] n
+tftp (TFTP) [N/y/?] n
+tftpd (TFTPD) [N/y/?] n
+tls (debugging) (TLS) [N/y] n
+traceroute (TRACEROUTE) [N/y/?] n
+tunctl (TUNCTL) [N/y/?] n
+vconfig (VCONFIG) [N/y/?] n
+wget (WGET) [N/y/?] n
+whois (WHOIS) [N/y/?] n
+zcip (ZCIP) [N/y/?] n
+udhcpd (DHCP server) (UDHCPD) [N/y/?] n
+dumpleases (DUMPLEASES) [N/y/?] n
+dhcprelay (DHCPRELAY) [N/y/?] n
+udhcpc (DHCP client) (UDHCPC) [N/y/?] n
+*
+* Print Utilities
+*
+lpd (LPD) [N/y/?] n
+lpr (LPR) [N/y/?] n
+lpq (LPQ) [N/y/?] n
+*
+* Mail Utilities
+*
+makemime (MAKEMIME) [N/y/?] n
+popmaildir (POPMAILDIR) [N/y/?] n
+reformime (REFORMIME) [N/y/?] n
+sendmail (SENDMAIL) [N/y/?] n
+*
+* Process Utilities
+*
+free (FREE) [N/y/?] n
+fuser (FUSER) [N/y/?] n
+iostat (IOSTAT) [N/y/?] n
+kill (KILL) [N/y/?] n
+killall (KILLALL) [N/y/?] n
+killall5 (KILLALL5) [N/y/?] n
+lsof (LSOF) [N/y/?] n
+mpstat (MPSTAT) [N/y/?] n
+nmeter (NMETER) [N/y/?] n
+pgrep (PGREP) [N/y/?] n
+pkill (PKILL) [N/y/?] n
+pidof (PIDOF) [N/y/?] n
+pmap (PMAP) [N/y/?] n
+powertop (POWERTOP) [N/y/?] n
+ps (PS) [N/y/?] n
+pstree (PSTREE) [N/y/?] n
+pwdx (PWDX) [N/y/?] n
+renice (RENICE) [N/y/?] n
+smemcap (SMEMCAP) [N/y/?] n
+sysctl (BB_SYSCTL) [N/y/?] n
+top (TOP) [N/y/?] n
+uptime (UPTIME) [N/y/?] n
+watch (WATCH) [N/y/?] n
+*
+* Runit Utilities
+*
+chpst (CHPST) [N/y/?] n
+setuidgid (SETUIDGID) [N/y/?] n
+envuidgid (ENVUIDGID) [N/y/?] n
+envdir (ENVDIR) [N/y/?] n
+softlimit (SOFTLIMIT) [N/y/?] n
+runsv (RUNSV) [N/y/?] n
+runsvdir (RUNSVDIR) [N/y/?] n
+sv (SV) [N/y/?] n
+svc (SVC) [N/y/?] n
+svlogd (SVLOGD) [N/y/?] n
+*
+* Shells
+*
+Choose which shell is aliased to 'sh' name
+  1. ash (SH_IS_ASH)
+  2. hush (SH_IS_HUSH)
+> 3. none (SH_IS_NONE)
+choice[1-3?]: 3
+Choose which shell is aliased to 'bash' name
+  1. ash (BASH_IS_ASH)
+  2. hush (BASH_IS_HUSH)
+> 3. none (BASH_IS_NONE)
+choice[1-3?]: 3
+ash (ASH) [N/y/?] n
+cttyhack (CTTYHACK) [N/y/?] n
+hush (HUSH) [N/y/?] n
+msh (deprecated: aliased to hush) (MSH) [N/y/?] n
+*
+* Options common to all shells
+*
+*
+* System Logging Utilities
+*
+klogd (KLOGD) [N/y/?] n
+logger (LOGGER) [N/y/?] n
+logread (LOGREAD) [Y/n/?] y
+  Double buffering (FEATURE_LOGREAD_REDUCED_LOCKING) [Y/n/?] y
+syslogd (SYSLOGD) [N/y/?] n
+  SPLIT   include/autoconf.h -> include/config/*
+  GEN     include/bbconfigopts.h
+  HOSTCC  applets/usage
+  HOSTCC  applets/applet_tables
+  GEN     include/common_bufsiz.h
+applets/usage.c: In function ‘main’:
+applets/usage.c:52:3: warning: ignoring return value of ‘write’, declared with attribute warn_unused_result [-Wunused-result]
+   52 |   write(STDOUT_FILENO, usage_array[i].usage, strlen(usage_array[i].usage) + 1);
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  GEN     include/usage_compressed.h
+  GEN     include/applet_tables.h include/NUM_APPLETS.h
+  GEN     include/applet_tables.h include/NUM_APPLETS.h
+  CC      applets/applets.o
+  HOSTCC  applets/usage_pod
+applets/usage_pod.c: In function ‘main’:
+applets/usage_pod.c:74:3: warning: format not a string literal and no format arguments [-Wformat-security]
+   74 |   printf(usage_array[i].aname);
+      |   ^~~~~~
+  LD      applets/built-in.o
+  DOC     busybox.pod
+  DOC     BusyBox.txt
+  DOC     busybox.1
+  DOC     BusyBox.html
+  CC      archival/libarchive/data_align.o
+  CC      archival/libarchive/common.o
+  CC      archival/libarchive/data_extract_to_stdout.o
+  CC      archival/libarchive/data_extract_all.o
+  CC      archival/libarchive/data_skip.o
+  CC      archival/libarchive/decompress_bunzip2.o
+  CC      archival/libarchive/filter_accept_all.o
+  CC      archival/libarchive/filter_accept_list.o
+  CC      archival/libarchive/filter_accept_reject_list.o
+  CC      archival/libarchive/find_list_entry.o
+  CC      archival/libarchive/header_list.o
+  CC      archival/libarchive/header_skip.o
+  CC      archival/libarchive/header_verbose_list.o
+  CC      archival/libarchive/init_handle.o
+  CC      libpwdgrp/uidgid_get.o
+  CC      archival/libarchive/open_transformer.o
+  CC      archival/libarchive/seek_by_jump.o
+  CC      libbb/appletlib.o
+  CC      archival/libarchive/seek_by_read.o
+  CC      libbb/ask_confirmation.o
+  CC      libbb/auto_string.o
+  CC      libbb/bb_askpass.o
+  AR      libpwdgrp/lib.a
+  CC      libbb/bb_bswap_64.o
+  CC      libbb/bb_do_delay.o
+  CC      libbb/bb_pwd.o
+  CC      libbb/bb_qsort.o
+  CC      libbb/bb_strtonum.o
+  CC      libbb/change_identity.o
+  AR      archival/libarchive/lib.a
+  CC      libbb/chomp.o
+  CC      libbb/common_bufsiz.o
+  CC      libbb/compare_string_array.o
+  CC      libbb/concat_path_file.o
+  CC      libbb/concat_subpath_file.o
+  CC      libbb/copy_file.o
+  CC      libbb/copyfd.o
+  CC      libbb/crc32.o
+  CC      libbb/default_error_retval.o
+  CC      sysklogd/logread.o
+  CC      libbb/device_open.o
+  CC      libbb/dump.o
+  CC      libbb/endofname.o
+  CC      libbb/executable.o
+  CC      libbb/fclose_nonstdin.o
+  CC      libbb/fflush_stdout_and_exit.o
+  AR      sysklogd/lib.a
+  CC      libbb/fgets_str.o
+  CC      libbb/find_pid_by_name.o
+  CC      libbb/find_root_device.o
+  CC      libbb/full_write.o
+  CC      libbb/get_console.o
+  CC      libbb/get_last_path_component.o
+  CC      libbb/get_line_from_file.o
+  CC      libbb/get_shell_name.o
+  CC      libbb/get_volsize.o
+  CC      libbb/getopt32.o
+  CC      libbb/getpty.o
+  CC      libbb/hash_md5_sha.o
+  CC      libbb/herror_msg.o
+  CC      libbb/human_readable.o
+  CC      libbb/inet_common.o
+  CC      libbb/inode_hash.o
+  CC      libbb/isdirectory.o
+  CC      libbb/kernel_version.o
+  CC      libbb/last_char_is.o
+  CC      libbb/lineedit.o
+  CC      libbb/llist.o
+  CC      libbb/login.o
+  CC      libbb/make_directory.o
+  CC      libbb/match_fstype.o
+  CC      libbb/messages.o
+  CC      libbb/missing_syscalls.o
+  CC      libbb/mode_string.o
+libbb/lineedit.c: In function ‘read_line_input’:
+libbb/lineedit.c:2362:43: warning: passing argument 3 to restrict-qualified parameter aliases with argument 2 [-Wrestrict]
+ 2362 |  sigaction(SIGWINCH, &S.SIGWINCH_handler, &S.SIGWINCH_handler);
+      |                      ~~~~~~~~~~~~~~~~~~~  ^~~~~~~~~~~~~~~~~~~
+  CC      libbb/nuke_str.o
+  CC      libbb/parse_config.o
+  CC      libbb/parse_mode.o
+  CC      libbb/percent_decode.o
+  CC      libbb/perror_msg.o
+  CC      libbb/pidfile.o
+  CC      libbb/platform.o
+  CC      libbb/print_flags.o
+  CC      libbb/printable.o
+  CC      libbb/printable_string.o
+  CC      libbb/process_escape_sequence.o
+  CC      libbb/procps.o
+  CC      libbb/progress.o
+  CC      libbb/read.o
+  CC      libbb/read_key.o
+  CC      libbb/read_printf.o
+  CC      libbb/recursive_action.o
+  CC      libbb/remove_file.o
+  CC      libbb/replace.o
+  CC      libbb/run_shell.o
+  CC      libbb/safe_gethostname.o
+  CC      libbb/safe_poll.o
+  CC      libbb/safe_strncpy.o
+  CC      libbb/safe_write.o
+  CC      libbb/setup_environment.o
+  CC      libbb/signals.o
+  CC      libbb/simplify_path.o
+  CC      libbb/single_argv.o
+  CC      libbb/skip_whitespace.o
+  CC      libbb/speed_table.o
+  CC      libbb/str_tolower.o
+  CC      libbb/strrstr.o
+  CC      libbb/sysconf.o
+  CC      libbb/time.o
+  CC      libbb/trim.o
+  CC      libbb/u_signal_names.o
+  CC      libbb/ubi.o
+  CC      libbb/unicode.o
+  CC      libbb/utmp.o
+  CC      libbb/uuencode.o
+  CC      libbb/vdprintf.o
+  CC      libbb/verror_msg.o
+  CC      libbb/vfork_daemon_rexec.o
+  CC      libbb/warn_ignoring_args.o
+  CC      libbb/wfopen.o
+  CC      libbb/wfopen_input.o
+  CC      libbb/write.o
+  CC      libbb/xatonum.o
+  CC      libbb/xconnect.o
+  CC      libbb/xfunc_die.o
+  CC      libbb/xfuncs.o
+  CC      libbb/xfuncs_printf.o
+  CC      libbb/xgetcwd.o
+  CC      libbb/xgethostbyname.o
+  CC      libbb/xreadlink.o
+  CC      libbb/xrealloc_vector.o
+  AR      libbb/lib.a
+  LINK    busybox_unstripped
+Trying libraries: crypt hiredis m
+ Library crypt is not needed, excluding it
+ Library hiredis is not needed, excluding it
+ Library m is not needed, excluding it
+Final link with: <none>

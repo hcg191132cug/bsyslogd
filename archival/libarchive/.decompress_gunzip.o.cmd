@@ -1,4 +1,4 @@
-cmd_archival/libarchive/decompress_gunzip.o := gcc -Wp,-MD,archival/libarchive/.decompress_gunzip.o.d   -std=gnu99 -Iinclude -Ilibbb  -include include/autoconf.h -D_GNU_SOURCE -DNDEBUG -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -D"BB_VER=KBUILD_STR(1.27.0.git)" -DBB_BT=AUTOCONF_TIMESTAMP  -Wall -Wshadow -Wwrite-strings -Wundef -Wstrict-prototypes -Wunused -Wunused-parameter -Wunused-function -Wunused-value -Wmissing-prototypes -Wmissing-declarations -Wno-format-security -Wdeclaration-after-statement -Wold-style-definition -fno-builtin-strlen -finline-limit=0 -fomit-frame-pointer -ffunction-sections -fdata-sections -fno-guess-branch-probability -funsigned-char -static-libgcc -falign-functions=1 -falign-jumps=1 -falign-labels=1 -falign-loops=1 -fno-unwind-tables -fno-asynchronous-unwind-tables -fno-builtin-printf -g -O0     -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(decompress_gunzip)"  -D"KBUILD_MODNAME=KBUILD_STR(decompress_gunzip)" -c -o archival/libarchive/decompress_gunzip.o archival/libarchive/decompress_gunzip.c
+cmd_archival/libarchive/decompress_gunzip.o := gcc -Wp,-MD,archival/libarchive/.decompress_gunzip.o.d   -std=gnu99 -Iinclude -Ilibbb  -include include/autoconf.h -D_GNU_SOURCE -DNDEBUG  -D"BB_VER=KBUILD_STR(1.27.0.git)" -DBB_BT=AUTOCONF_TIMESTAMP  -Wall -Wshadow -Wwrite-strings -Wundef -Wstrict-prototypes -Wunused -Wunused-parameter -Wunused-function -Wunused-value -Wmissing-prototypes -Wmissing-declarations -Wno-format-security -Wdeclaration-after-statement -Wold-style-definition -fno-builtin-strlen -finline-limit=0 -fomit-frame-pointer -ffunction-sections -fdata-sections -fno-guess-branch-probability -funsigned-char -static-libgcc -falign-functions=1 -falign-jumps=1 -falign-labels=1 -falign-loops=1 -fno-unwind-tables -fno-asynchronous-unwind-tables -fno-builtin-printf -Os     -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(decompress_gunzip)"  -D"KBUILD_MODNAME=KBUILD_STR(decompress_gunzip)" -c -o archival/libarchive/decompress_gunzip.o archival/libarchive/decompress_gunzip.c
 
 deps_archival/libarchive/decompress_gunzip.o := \
   archival/libarchive/decompress_gunzip.c \
@@ -14,6 +14,7 @@ deps_archival/libarchive/decompress_gunzip.o := \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/bits/setjmp.h \
   /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/setjmp2.h \
   include/libbb.h \
     $(wildcard include/config/feature/shadowpasswds.h) \
     $(wildcard include/config/use/bb/shadow.h) \
@@ -113,6 +114,7 @@ deps_archival/libarchive/decompress_gunzip.o := \
   /usr/include/x86_64-linux-gnu/bits/confname.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+  /usr/include/x86_64-linux-gnu/bits/unistd.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/ctype.h \
   /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
@@ -134,6 +136,7 @@ deps_archival/libarchive/decompress_gunzip.o := \
   /usr/include/linux/falloc.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
   /usr/include/x86_64-linux-gnu/bits/stat.h \
+  /usr/include/x86_64-linux-gnu/bits/fcntl2.h \
   /usr/include/inttypes.h \
   /usr/include/netdb.h \
   /usr/include/netinet/in.h \
@@ -148,6 +151,7 @@ deps_archival/libarchive/decompress_gunzip.o := \
   /usr/include/x86_64-linux-gnu/bits/select.h \
   /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
+  /usr/include/x86_64-linux-gnu/bits/select2.h \
   /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
   /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
   /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
@@ -168,6 +172,7 @@ deps_archival/libarchive/decompress_gunzip.o := \
   /usr/include/x86_64-linux-gnu/asm/sockios.h \
   /usr/include/asm-generic/sockios.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
+  /usr/include/x86_64-linux-gnu/bits/socket2.h \
   /usr/include/x86_64-linux-gnu/bits/in.h \
   /usr/include/rpc/netdb.h \
   /usr/include/x86_64-linux-gnu/bits/types/sigevent_t.h \
@@ -204,6 +209,7 @@ deps_archival/libarchive/decompress_gunzip.o := \
   /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
   /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
+  /usr/include/x86_64-linux-gnu/bits/stdio2.h \
   /usr/include/stdlib.h \
   /usr/include/x86_64-linux-gnu/bits/waitflags.h \
   /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
@@ -211,12 +217,16 @@ deps_archival/libarchive/decompress_gunzip.o := \
   /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
   /usr/include/alloca.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+  /usr/include/x86_64-linux-gnu/bits/stdlib.h \
   /usr/include/string.h \
   /usr/include/strings.h \
+  /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
+  /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
   /usr/include/libgen.h \
   /usr/include/poll.h \
   /usr/include/x86_64-linux-gnu/sys/poll.h \
   /usr/include/x86_64-linux-gnu/bits/poll.h \
+  /usr/include/x86_64-linux-gnu/bits/poll2.h \
   /usr/include/x86_64-linux-gnu/sys/ioctl.h \
   /usr/include/x86_64-linux-gnu/bits/ioctls.h \
   /usr/include/x86_64-linux-gnu/asm/ioctls.h \
@@ -271,14 +281,7 @@ deps_archival/libarchive/decompress_gunzip.o := \
   /usr/include/mntent.h \
   /usr/include/x86_64-linux-gnu/sys/statfs.h \
   /usr/include/x86_64-linux-gnu/bits/statfs.h \
-  /usr/include/utmp.h \
-  /usr/include/x86_64-linux-gnu/bits/utmp.h \
-  /usr/include/utmpx.h \
-  /usr/include/x86_64-linux-gnu/bits/utmpx.h \
   /usr/include/arpa/inet.h \
-  include/pwd_.h \
-  include/grp_.h \
-  include/shadow_.h \
   include/xatonum.h \
   include/bb_archive.h \
     $(wildcard include/config/feature/tar/uname/gname.h) \

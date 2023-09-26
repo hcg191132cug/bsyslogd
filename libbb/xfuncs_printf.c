@@ -437,7 +437,6 @@ DIR* FAST_FUNC xopendir(const char *path)
 int FAST_FUNC xsocket(int domain, int type, int protocol)
 {
 	int r = socket(domain, type, protocol);
-
 	if (r < 0) {
 		/* Hijack vaguely related config option */
 #if ENABLE_VERBOSE_RESOLUTION_ERRORS

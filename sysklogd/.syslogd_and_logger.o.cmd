@@ -297,6 +297,8 @@ deps_sysklogd/syslogd_and_logger.o := \
   /usr/include/x86_64-linux-gnu/sys/un.h \
   /usr/include/x86_64-linux-gnu/sys/uio.h \
   /usr/include/x86_64-linux-gnu/bits/uio-ext.h \
+  /usr/include/net/if.h \
+    $(wildcard include/config/namesize.h) \
   /usr/include/x86_64-linux-gnu/sys/ipc.h \
   /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
   /usr/include/x86_64-linux-gnu/bits/ipc.h \

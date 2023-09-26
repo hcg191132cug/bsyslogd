@@ -134,7 +134,7 @@
 //usage:	)
 //usage:     "\n	-n		Run in foreground"
 //usage:	IF_FEATURE_REMOTE_LOG(
-//usage:     "\n	-R HOST[:PORT]	Log to HOST:PORT (default PORT:514)"
+//usage:     "\n	-R HOST[:PORT:NIF]	Log to HOST:PORT through NIF (default PORT:514)"
 //usage:     "\n	-L		Log locally and via network (default is network only if -R)"
 //usage:	)
 //usage:	IF_FEATURE_IPC_SYSLOG(
@@ -183,6 +183,7 @@
 
 #if ENABLE_FEATURE_REMOTE_LOG
 #include <netinet/in.h>
+#include <net/if.h>
 #endif
 
 #if ENABLE_FEATURE_IPC_SYSLOG
@@ -222,7 +223,9 @@ typedef struct {
 	int remoteFD;
 	unsigned last_dns_resolve;
 	len_and_sockaddr *remoteAddr;
-	const char *remoteHostname;
+	const char remoteHostname[30];
+	int remoteHostport;
+	const char local_intfc[13];
 } remoteHost_t;
 #endif
 
@@ -1164,11 +1167,14 @@ static int try_to_resolve_remote(remoteHost_t *rh)
 		if ((now - rh->last_dns_resolve) < DNS_WAIT_SEC)
 			return -1;
 		rh->last_dns_resolve = now;
-		rh->remoteAddr = host2sockaddr(rh->remoteHostname, 514);
+		
+		rh->remoteAddr = host2sockaddr(rh->remoteHostname, rh->remoteHostport);
+		bb_perror_msg("try_to_resolve_remote %s", rh->remoteHostname);
 		if (!rh->remoteAddr)
 			return -1;
 	}
 	return xsocket(rh->remoteAddr->u.sa.sa_family, SOCK_DGRAM, 0);
+	
 }
 #endif
 
@@ -1263,6 +1269,9 @@ static void do_syslogd(void)
 				rh->remoteFD = try_to_resolve_remote(rh);
 				if (rh->remoteFD == -1)
 					continue;
+				struct ifreq nif;
+				strncpy(nif.ifr_name, rh->local_intfc, IFNAMSIZ);
+				setsockopt(rh->remoteFD, SOL_SOCKET, SO_BINDTODEVICE,(char*)&nif, sizeof(nif));
 			}
 
 			/* Send message to remote logger.
@@ -1313,14 +1322,66 @@ int syslogd_main(int argc UNUSED_PARAM, char **argv)
 #endif
 
 	INIT_G();
-	
+	sizeof(remoteHost_t);
 	/* No non-option params */
 	opt_complementary = "=0";
 	opts = getopt32(argv, OPTION_STR, OPTION_PARAM);
 #if ENABLE_FEATURE_REMOTE_LOG
 	while (remoteAddrList) {
 		remoteHost_t *rh = xzalloc(sizeof(*rh));
-		rh->remoteHostname = llist_pop(&remoteAddrList);
+		
+	char* remote_cfg_tok[3];
+	char* remote_cursor;
+	remote_cursor = remote_cfg_tok[0] = llist_pop(&remoteAddrList);
+	size_t remote_ip_len = 0;
+	remote_ip_len = strcspn(remote_cursor, ":");
+	if(remote_ip_len > 30)
+	{
+		bb_perror_msg("Remote host/ip len must less than 30,got %ld", remote_ip_len);
+		return -1;
+	}
+	else if(*(remote_cursor+remote_ip_len) == ':')
+	{
+		remote_cursor += remote_ip_len;
+		*remote_cursor++='\0';
+		snprintf(rh->remoteHostname,30,"%s",remote_cfg_tok[0]);
+	}
+	else
+	{
+		return -1;
+	}
+	remote_cfg_tok[1] = remote_cursor;
+	size_t remote_port_len = 0;
+	remote_port_len = strcspn(remote_cursor, ":");
+	if(*(remote_cursor+remote_port_len) == ':')
+	{
+		remote_cursor += remote_port_len;
+		*remote_cursor++='\0';
+		rh->remoteHostport = xatou_range(remote_cfg_tok[1], 1, 65535);
+	}
+	else
+	{
+		return -1;
+	}
+	remote_cfg_tok[2] = remote_cursor;
+	size_t remote_nif_len = 0;
+	remote_nif_len = strcspn(remote_cursor, " \t\n\r\0");
+	if(remote_nif_len > 13)
+	{
+		bb_perror_msg("Output interface name len must less than 13,got %ld", remote_nif_len);
+		return -1;	
+	}
+	else if(remote_nif_len)
+	{
+		remote_cursor += remote_nif_len;
+		*remote_cursor++='\0';
+		strcpy(rh->local_intfc, remote_cfg_tok[2]);
+	
+	}
+	else
+	{
+		return -1;
+	}
 		rh->remoteFD = -1;
 		rh->last_dns_resolve = monotonic_sec() - DNS_WAIT_SEC - 1;
 		llist_add_to(&G.remoteHosts, rh);

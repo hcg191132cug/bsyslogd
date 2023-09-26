@@ -1,0 +1,4 @@
+/sbin/klogd
+/usr/bin/logger
+/sbin/logread
+/sbin/syslogd

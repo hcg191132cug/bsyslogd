@@ -1,0 +1,2362 @@
+Archive member included to satisfy reference by file (symbol)
+
+libbb/lib.a(appletlib.o)      /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o (main)
+libbb/lib.a(compare_string_array.o)
+                              libbb/lib.a(appletlib.o) (is_prefixed_with)
+libbb/lib.a(concat_path_file.o)
+                              libbb/lib.a(appletlib.o) (concat_path_file)
+libbb/lib.a(default_error_retval.o)
+                              libbb/lib.a(appletlib.o) (xfunc_error_retval)
+libbb/lib.a(get_last_path_component.o)
+                              libbb/lib.a(appletlib.o) (bb_basename)
+libbb/lib.a(last_char_is.o)   libbb/lib.a(concat_path_file.o) (last_char_is)
+libbb/lib.a(llist.o)          libbb/lib.a(appletlib.o) (llist_free)
+libbb/lib.a(messages.o)       libbb/lib.a(appletlib.o) (bb_banner)
+libbb/lib.a(perror_msg.o)     libbb/lib.a(appletlib.o) (bb_perror_msg_and_die)
+libbb/lib.a(ptr_to_globals.o)
+                              libbb/lib.a(appletlib.o) (bb_errno)
+libbb/lib.a(skip_whitespace.o)
+                              libbb/lib.a(appletlib.o) (skip_whitespace)
+libbb/lib.a(verror_msg.o)     libbb/lib.a(perror_msg.o) (bb_verror_msg)
+libbb/lib.a(wfopen.o)         libbb/lib.a(appletlib.o) (fopen_for_read)
+libbb/lib.a(xfunc_die.o)      libbb/lib.a(appletlib.o) (xfunc_die)
+libbb/lib.a(xfuncs.o)         libbb/lib.a(appletlib.o) (full_write2_str)
+libbb/lib.a(xfuncs_printf.o)  libbb/lib.a(llist.o) (xmalloc)
+libbb/lib.a(xreadlink.o)      libbb/lib.a(appletlib.o) (xmalloc_readlink)
+libbb/lib.a(copyfd.o)         libbb/lib.a(xfuncs_printf.o) (bb_copyfd_eof)
+libbb/lib.a(full_write.o)     libbb/lib.a(verror_msg.o) (full_write)
+libbb/lib.a(read.o)           libbb/lib.a(copyfd.o) (safe_read)
+libbb/lib.a(safe_write.o)     libbb/lib.a(full_write.o) (safe_write)
+libbb/lib.a(signals.o)        libbb/lib.a(xfuncs_printf.o) (kill_myself_with_sig)
+libbb/lib.a(time.o)           libbb/lib.a(xfuncs_printf.o) (monotonic_us)
+libbb/lib.a(bb_strtonum.o)    libbb/lib.a(time.o) (bb_strtoll)
+libpwdgrp/lib.a(uidgid_get.o)
+                              libbb/lib.a(appletlib.o) (get_uidgid)
+sysklogd/lib.a(klogd.o)       libbb/lib.a(appletlib.o) (klogd_main)
+sysklogd/lib.a(logread.o)     libbb/lib.a(appletlib.o) (logread_main)
+sysklogd/lib.a(syslogd_and_logger.o)
+                              libbb/lib.a(appletlib.o) (syslogd_main)
+libbb/lib.a(bb_pwd.o)         sysklogd/lib.a(syslogd_and_logger.o) (uid2uname_utoa)
+libbb/lib.a(common_bufsiz.o)  sysklogd/lib.a(klogd.o) (bb_common_bufsiz1)
+libbb/lib.a(device_open.o)    sysklogd/lib.a(syslogd_and_logger.o) (device_open)
+libbb/lib.a(fflush_stdout_and_exit.o)
+                              sysklogd/lib.a(logread.o) (fflush_stdout_and_exit)
+libbb/lib.a(getopt32.o)       sysklogd/lib.a(syslogd_and_logger.o) (opt_complementary)
+libbb/lib.a(kernel_version.o)
+                              sysklogd/lib.a(syslogd_and_logger.o) (get_linux_version_code)
+libbb/lib.a(parse_config.o)   sysklogd/lib.a(syslogd_and_logger.o) (config_open2)
+libbb/lib.a(pidfile.o)        sysklogd/lib.a(klogd.o) (wrote_pidfile)
+libbb/lib.a(safe_gethostname.o)
+                              sysklogd/lib.a(syslogd_and_logger.o) (safe_gethostname)
+libbb/lib.a(safe_strncpy.o)   libpwdgrp/lib.a(uidgid_get.o) (safe_strncpy)
+libbb/lib.a(vfork_daemon_rexec.o)
+                              sysklogd/lib.a(klogd.o) (bb_daemonize_or_rexec)
+libbb/lib.a(wfopen_input.o)   libbb/lib.a(parse_config.o) (fopen_or_warn_stdin)
+libbb/lib.a(xatonum.o)        sysklogd/lib.a(syslogd_and_logger.o) (xatoull_range)
+libbb/lib.a(xconnect.o)       sysklogd/lib.a(syslogd_and_logger.o) (host2sockaddr)
+/usr/lib/x86_64-linux-gnu/libc_nonshared.a(elf-init.oS)
+                              /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o (__libc_csu_init)
+/usr/lib/x86_64-linux-gnu/libc_nonshared.a(stat64.oS)
+                              libbb/lib.a(appletlib.o) (stat64)
+/usr/lib/x86_64-linux-gnu/libc_nonshared.a(fstat64.oS)
+                              libbb/lib.a(xfuncs_printf.o) (fstat64)
+
+Merging program properties
+
+
+As-needed library included to satisfy reference by file (symbol)
+
+libhiredis.so.1.1.0           sysklogd/lib.a(syslogd_and_logger.o) (redisFree)
+libc.so.6                     sysklogd/lib.a(klogd.o) (klogctl@@GLIBC_2.2.5)
+
+Allocating common symbols
+Common symbol       size              file
+
+opt_complementary   0x8               libbb/lib.a(getopt32.o)
+applet_name         0x8               libbb/lib.a(appletlib.o)
+bb_common_bufsiz1   0x400             libbb/lib.a(common_bufsiz.o)
+applet_long_options
+                    0x8               libbb/lib.a(getopt32.o)
+die_func            0x8               libbb/lib.a(xfunc_die.o)
+bb_errno            0x8               libbb/lib.a(ptr_to_globals.o)
+ptr_to_globals      0x8               libbb/lib.a(ptr_to_globals.o)
+option_mask32       0x4               libbb/lib.a(getopt32.o)
+bb_got_signal       0x1               libbb/lib.a(signals.o)
+wrote_pidfile       0x1               libbb/lib.a(pidfile.o)
+
+Discarded input sections
+
+ .rodata.cst4   0x0000000000000000        0x4 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .data          0x0000000000000000        0x4 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o
+ .note.gnu.property
+                0x0000000000000000       0x20 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o
+ .note.gnu.property
+                0x0000000000000000       0x20 /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o
+ .note.gnu.property
+                0x0000000000000000       0x20 applets/built-in.o
+ .text          0x0000000000000000        0x0 applets/built-in.o
+ .data          0x0000000000000000        0x0 applets/built-in.o
+ .bss           0x0000000000000000        0x0 applets/built-in.o
+ .comment       0x0000000000000000       0x2c applets/built-in.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 applets/built-in.o
+ .debug_aranges
+                0x0000000000000000       0x20 applets/built-in.o
+ .debug_info    0x0000000000000000      0xaab applets/built-in.o
+ .debug_abbrev  0x0000000000000000      0x14d applets/built-in.o
+ .debug_line    0x0000000000000000      0x1a1 applets/built-in.o
+ .debug_str     0x0000000000000000      0x9ac applets/built-in.o
+ .text          0x0000000000000000        0x0 libbb/lib.a(appletlib.o)
+ .data          0x0000000000000000        0x0 libbb/lib.a(appletlib.o)
+ .bss           0x0000000000000000        0x0 libbb/lib.a(appletlib.o)
+ .rodata.applet_suid
+                0x0000000000000000        0x1 libbb/lib.a(appletlib.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libbb/lib.a(appletlib.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libbb/lib.a(appletlib.o)
+ .text          0x0000000000000000        0x0 libbb/lib.a(compare_string_array.o)
+ .data          0x0000000000000000        0x0 libbb/lib.a(compare_string_array.o)
+ .bss           0x0000000000000000        0x0 libbb/lib.a(compare_string_array.o)
+ .text.is_suffixed_with
+                0x0000000000000000       0x74 libbb/lib.a(compare_string_array.o)
+ .text.index_in_str_array
+                0x0000000000000000       0x7a libbb/lib.a(compare_string_array.o)
+ .text.index_in_strings
+                0x0000000000000000       0x6a libbb/lib.a(compare_string_array.o)
+ .text.index_in_substrings
+                0x0000000000000000       0xbf libbb/lib.a(compare_string_array.o)
+ .text.nth_string
+                0x0000000000000000       0x3f libbb/lib.a(compare_string_array.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libbb/lib.a(compare_string_array.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libbb/lib.a(compare_string_array.o)
+ .text          0x0000000000000000        0x0 libbb/lib.a(concat_path_file.o)
+ .data          0x0000000000000000        0x0 libbb/lib.a(concat_path_file.o)
+ .bss           0x0000000000000000        0x0 libbb/lib.a(concat_path_file.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libbb/lib.a(concat_path_file.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libbb/lib.a(concat_path_file.o)
+ .text          0x0000000000000000        0x0 libbb/lib.a(default_error_retval.o)
+ .data          0x0000000000000000        0x0 libbb/lib.a(default_error_retval.o)
+ .bss           0x0000000000000000        0x0 libbb/lib.a(default_error_retval.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libbb/lib.a(default_error_retval.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libbb/lib.a(default_error_retval.o)
+ .text          0x0000000000000000        0x0 libbb/lib.a(get_last_path_component.o)
+ .data          0x0000000000000000        0x0 libbb/lib.a(get_last_path_component.o)
+ .bss           0x0000000000000000        0x0 libbb/lib.a(get_last_path_component.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libbb/lib.a(get_last_path_component.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libbb/lib.a(get_last_path_component.o)
+ .text          0x0000000000000000        0x0 libbb/lib.a(last_char_is.o)
+ .data          0x0000000000000000        0x0 libbb/lib.a(last_char_is.o)
+ .bss           0x0000000000000000        0x0 libbb/lib.a(last_char_is.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libbb/lib.a(last_char_is.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libbb/lib.a(last_char_is.o)
+ .text          0x0000000000000000        0x0 libbb/lib.a(llist.o)
+ .data          0x0000000000000000        0x0 libbb/lib.a(llist.o)
+ .bss           0x0000000000000000        0x0 libbb/lib.a(llist.o)
+ .text.llist_unlink
+                0x0000000000000000       0x58 libbb/lib.a(llist.o)
+ .text.llist_rev
+                0x0000000000000000       0x50 libbb/lib.a(llist.o)
+ .text.llist_find_str
+                0x0000000000000000       0x51 libbb/lib.a(llist.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libbb/lib.a(llist.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libbb/lib.a(llist.o)
+ .text          0x0000000000000000        0x0 libbb/lib.a(messages.o)
+ .data          0x0000000000000000        0x0 libbb/lib.a(messages.o)
+ .bss           0x0000000000000000        0x0 libbb/lib.a(messages.o)
+ .rodata.bb_msg_invalid_date
+                0x0000000000000000       0x12 libbb/lib.a(messages.o)
+ .rodata.bb_msg_unknown
+                0x0000000000000000        0xa libbb/lib.a(messages.o)
+ .rodata.bb_msg_can_not_create_raw_socket
+                0x0000000000000000       0x18 libbb/lib.a(messages.o)
+ .rodata.bb_msg_perm_denied_are_you_root
+                0x0000000000000000       0x22 libbb/lib.a(messages.o)
+ .rodata.bb_msg_you_must_be_root
+                0x0000000000000000       0x11 libbb/lib.a(messages.o)
+ .rodata.bb_msg_requires_arg
+                0x0000000000000000       0x18 libbb/lib.a(messages.o)
+ .rodata.bb_msg_invalid_arg_to
+                0x0000000000000000       0x1e libbb/lib.a(messages.o)
+ .rodata.bb_msg_standard_input
+                0x0000000000000000        0xf libbb/lib.a(messages.o)
+ .rodata.bb_hexdigits_upcase
+                0x0000000000000000       0x11 libbb/lib.a(messages.o)
+ .rodata.bb_default_login_shell
+                0x0000000000000000        0x9 libbb/lib.a(messages.o)
+ .rodata.bb_PATH_root_path
+                0x0000000000000000       0x23 libbb/lib.a(messages.o)
+ .rodata.const_int_0
+                0x0000000000000000        0x4 libbb/lib.a(messages.o)
+ .rodata.bb_path_wtmp_file
+                0x0000000000000000        0xe libbb/lib.a(messages.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libbb/lib.a(messages.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libbb/lib.a(messages.o)
+ .text          0x0000000000000000        0x0 libbb/lib.a(perror_msg.o)
+ .data          0x0000000000000000        0x0 libbb/lib.a(perror_msg.o)
+ .bss           0x0000000000000000        0x0 libbb/lib.a(perror_msg.o)
+ .text.bb_simple_perror_msg_and_die
+                0x0000000000000000       0x28 libbb/lib.a(perror_msg.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libbb/lib.a(perror_msg.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libbb/lib.a(perror_msg.o)
+ .text          0x0000000000000000        0x0 libbb/lib.a(ptr_to_globals.o)
+ .data          0x0000000000000000        0x0 libbb/lib.a(ptr_to_globals.o)
+ .bss           0x0000000000000000        0x0 libbb/lib.a(ptr_to_globals.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libbb/lib.a(ptr_to_globals.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libbb/lib.a(ptr_to_globals.o)
+ .text          0x0000000000000000        0x0 libbb/lib.a(skip_whitespace.o)
+ .data          0x0000000000000000        0x0 libbb/lib.a(skip_whitespace.o)
+ .bss           0x0000000000000000        0x0 libbb/lib.a(skip_whitespace.o)
+ .text.skip_non_whitespace
+                0x0000000000000000       0x3e libbb/lib.a(skip_whitespace.o)
+ .rodata        0x0000000000000000        0x6 libbb/lib.a(skip_whitespace.o)
+ .text.skip_dev_pfx
+                0x0000000000000000       0x36 libbb/lib.a(skip_whitespace.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libbb/lib.a(skip_whitespace.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libbb/lib.a(skip_whitespace.o)
+ .text          0x0000000000000000        0x0 libbb/lib.a(verror_msg.o)
+ .data          0x0000000000000000        0x0 libbb/lib.a(verror_msg.o)
+ .bss           0x0000000000000000        0x0 libbb/lib.a(verror_msg.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libbb/lib.a(verror_msg.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libbb/lib.a(verror_msg.o)
+ .text          0x0000000000000000        0x0 libbb/lib.a(wfopen.o)
+ .data          0x0000000000000000        0x0 libbb/lib.a(wfopen.o)
+ .bss           0x0000000000000000        0x0 libbb/lib.a(wfopen.o)
+ .text.fopen_or_warn
+                0x0000000000000000       0x49 libbb/lib.a(wfopen.o)
+ .text.fopen_for_write
+                0x0000000000000000       0x26 libbb/lib.a(wfopen.o)
+ .text.xfopen_for_write
+                0x0000000000000000       0x26 libbb/lib.a(wfopen.o)
+ .text.xfdopen_helper
+                0x0000000000000000       0x5f libbb/lib.a(wfopen.o)
+ .text.xfdopen_for_read
+                0x0000000000000000       0x1e libbb/lib.a(wfopen.o)
+ .text.xfdopen_for_write
+                0x0000000000000000       0x21 libbb/lib.a(wfopen.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libbb/lib.a(wfopen.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libbb/lib.a(wfopen.o)
+ .text          0x0000000000000000        0x0 libbb/lib.a(xfunc_die.o)
+ .data          0x0000000000000000        0x0 libbb/lib.a(xfunc_die.o)
+ .bss           0x0000000000000000        0x0 libbb/lib.a(xfunc_die.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libbb/lib.a(xfunc_die.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libbb/lib.a(xfunc_die.o)
+ .text          0x0000000000000000        0x0 libbb/lib.a(xfuncs.o)
+ .data          0x0000000000000000        0x0 libbb/lib.a(xfuncs.o)
+ .bss           0x0000000000000000        0x0 libbb/lib.a(xfuncs.o)
+ .text.ndelay_on
+                0x0000000000000000       0x5f libbb/lib.a(xfuncs.o)
+ .text.ndelay_off
+                0x0000000000000000       0x5f libbb/lib.a(xfuncs.o)
+ .text.close_on_exec_on
+                0x0000000000000000       0x2c libbb/lib.a(xfuncs.o)
+ .text.strncpy_IFNAMSIZ
+                0x0000000000000000       0x2f libbb/lib.a(xfuncs.o)
+ .text.itoa_to_buf
+                0x0000000000000000       0x5b libbb/lib.a(xfuncs.o)
+ .text.itoa     0x0000000000000000       0x32 libbb/lib.a(xfuncs.o)
+ .text.bin2hex  0x0000000000000000       0x92 libbb/lib.a(xfuncs.o)
+ .text.hex2bin  0x0000000000000000      0x17a libbb/lib.a(xfuncs.o)
+ .text.bb_putchar_stderr
+                0x0000000000000000       0x2a libbb/lib.a(xfuncs.o)
+ .text.full_write1_str
+                0x0000000000000000       0x34 libbb/lib.a(xfuncs.o)
+ .text.tcsetattr_stdin_TCSANOW
+                0x0000000000000000       0x29 libbb/lib.a(xfuncs.o)
+ .text.set_termios_to_raw
+                0x0000000000000000      0x114 libbb/lib.a(xfuncs.o)
+ .text.safe_waitpid
+                0x0000000000000000       0x4c libbb/lib.a(xfuncs.o)
+ .text.wait_any_nohang
+                0x0000000000000000       0x29 libbb/lib.a(xfuncs.o)
+ .text.wait4pid
+                0x0000000000000000       0xa2 libbb/lib.a(xfuncs.o)
+ .text.wait_for_exitstatus
+                0x0000000000000000       0x6e libbb/lib.a(xfuncs.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libbb/lib.a(xfuncs.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libbb/lib.a(xfuncs.o)
+ .text          0x0000000000000000        0x0 libbb/lib.a(xfuncs_printf.o)
+ .data          0x0000000000000000        0x0 libbb/lib.a(xfuncs_printf.o)
+ .bss           0x0000000000000000        0x0 libbb/lib.a(xfuncs_printf.o)
+ .text.malloc_or_warn
+                0x0000000000000000       0x4a libbb/lib.a(xfuncs_printf.o)
+ .text.xmemdup  0x0000000000000000       0x43 libbb/lib.a(xfuncs_printf.o)
+ .text.open3_or_warn
+                0x0000000000000000       0x5c libbb/lib.a(xfuncs_printf.o)
+ .text.open_or_warn
+                0x0000000000000000       0x2e libbb/lib.a(xfuncs_printf.o)
+ .text.xopen_nonblocking
+                0x0000000000000000       0x24 libbb/lib.a(xfuncs_printf.o)
+ .text.xopen_as_uid_gid
+                0x0000000000000000       0x77 libbb/lib.a(xfuncs_printf.o)
+ .text.xunlink  0x0000000000000000       0x3d libbb/lib.a(xfuncs_printf.o)
+ .text.xrename  0x0000000000000000       0x4c libbb/lib.a(xfuncs_printf.o)
+ .text.rename_or_warn
+                0x0000000000000000       0x56 libbb/lib.a(xfuncs_printf.o)
+ .text.xpipe    0x0000000000000000       0x35 libbb/lib.a(xfuncs_printf.o)
+ .text.xwrite   0x0000000000000000       0x72 libbb/lib.a(xfuncs_printf.o)
+ .text.xwrite_str
+                0x0000000000000000       0x37 libbb/lib.a(xfuncs_printf.o)
+ .text.xclose   0x0000000000000000       0x32 libbb/lib.a(xfuncs_printf.o)
+ .text.xlseek   0x0000000000000000       0x71 libbb/lib.a(xfuncs_printf.o)
+ .text.xmkstemp
+                0x0000000000000000       0x47 libbb/lib.a(xfuncs_printf.o)
+ .text.die_if_ferror
+                0x0000000000000000       0x40 libbb/lib.a(xfuncs_printf.o)
+ .text.die_if_ferror_stdout
+                0x0000000000000000       0x24 libbb/lib.a(xfuncs_printf.o)
+ .text.bb_putchar
+                0x0000000000000000       0x1c libbb/lib.a(xfuncs_printf.o)
+ .text.xprint_and_close_file
+                0x0000000000000000       0x49 libbb/lib.a(xfuncs_printf.o)
+ .text.xsetenv  0x0000000000000000       0x45 libbb/lib.a(xfuncs_printf.o)
+ .text.bb_unsetenv
+                0x0000000000000000       0x7a libbb/lib.a(xfuncs_printf.o)
+ .text.bb_unsetenv_and_free
+                0x0000000000000000       0x2d libbb/lib.a(xfuncs_printf.o)
+ .text.xsetegid
+                0x0000000000000000       0x32 libbb/lib.a(xfuncs_printf.o)
+ .text.xseteuid
+                0x0000000000000000       0x32 libbb/lib.a(xfuncs_printf.o)
+ .text.xfchdir  0x0000000000000000       0x32 libbb/lib.a(xfuncs_printf.o)
+ .text.xchroot  0x0000000000000000       0x49 libbb/lib.a(xfuncs_printf.o)
+ .text.warn_opendir
+                0x0000000000000000       0x4a libbb/lib.a(xfuncs_printf.o)
+ .text.xopendir
+                0x0000000000000000       0x4a libbb/lib.a(xfuncs_printf.o)
+ .text.xlisten  0x0000000000000000       0x3c libbb/lib.a(xfuncs_printf.o)
+ .text.xsendto  0x0000000000000000       0x6f libbb/lib.a(xfuncs_printf.o)
+ .text.xstat    0x0000000000000000       0x48 libbb/lib.a(xfuncs_printf.o)
+ .text.xfstat   0x0000000000000000       0x40 libbb/lib.a(xfuncs_printf.o)
+ .text.selinux_or_die
+                0x0000000000000000       0x19 libbb/lib.a(xfuncs_printf.o)
+ .text.ioctl_or_perror_and_die
+                0x0000000000000000      0x117 libbb/lib.a(xfuncs_printf.o)
+ .text.ioctl_or_perror
+                0x0000000000000000      0x112 libbb/lib.a(xfuncs_printf.o)
+ .text.bb_ioctl_or_warn
+                0x0000000000000000       0x57 libbb/lib.a(xfuncs_printf.o)
+ .text.bb_xioctl
+                0x0000000000000000       0x57 libbb/lib.a(xfuncs_printf.o)
+ .text.xmalloc_ttyname
+                0x0000000000000000       0x79 libbb/lib.a(xfuncs_printf.o)
+ .text.generate_uuid
+                0x0000000000000000      0x114 libbb/lib.a(xfuncs_printf.o)
+ .text.xvfork_parent_waits_and_exits
+                0x0000000000000000       0x85 libbb/lib.a(xfuncs_printf.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libbb/lib.a(xfuncs_printf.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libbb/lib.a(xfuncs_printf.o)
+ .text          0x0000000000000000        0x0 libbb/lib.a(xreadlink.o)
+ .data          0x0000000000000000        0x0 libbb/lib.a(xreadlink.o)
+ .bss           0x0000000000000000        0x0 libbb/lib.a(xreadlink.o)
+ .rodata        0x0000000000000000       0x27 libbb/lib.a(xreadlink.o)
+ .text.xmalloc_readlink_or_warn
+                0x0000000000000000       0x7f libbb/lib.a(xreadlink.o)
+ .text.xmalloc_realpath
+                0x0000000000000000       0x24 libbb/lib.a(xreadlink.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libbb/lib.a(xreadlink.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libbb/lib.a(xreadlink.o)
+ .text          0x0000000000000000        0x0 libbb/lib.a(copyfd.o)
+ .data          0x0000000000000000        0x0 libbb/lib.a(copyfd.o)
+ .bss           0x0000000000000000        0x0 libbb/lib.a(copyfd.o)
+ .rodata        0x0000000000000000       0x22 libbb/lib.a(copyfd.o)
+ .text.bb_full_fd_action
+                0x0000000000000000      0x1f6 libbb/lib.a(copyfd.o)
+ .text.bb_copyfd_size
+                0x0000000000000000       0x3c libbb/lib.a(copyfd.o)
+ .text.bb_copyfd_exact_size
+                0x0000000000000000       0x69 libbb/lib.a(copyfd.o)
+ .text.bb_copyfd_eof
+                0x0000000000000000       0x2b libbb/lib.a(copyfd.o)
+ .debug_info    0x0000000000000000      0xc71 libbb/lib.a(copyfd.o)
+ .debug_abbrev  0x0000000000000000      0x216 libbb/lib.a(copyfd.o)
+ .debug_aranges
+                0x0000000000000000       0x60 libbb/lib.a(copyfd.o)
+ .debug_ranges  0x0000000000000000       0x50 libbb/lib.a(copyfd.o)
+ .debug_line    0x0000000000000000      0x2d2 libbb/lib.a(copyfd.o)
+ .debug_str     0x0000000000000000      0xa25 libbb/lib.a(copyfd.o)
+ .comment       0x0000000000000000       0x2c libbb/lib.a(copyfd.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libbb/lib.a(copyfd.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libbb/lib.a(copyfd.o)
+ .debug_frame   0x0000000000000000       0xa0 libbb/lib.a(copyfd.o)
+ .text          0x0000000000000000        0x0 libbb/lib.a(full_write.o)
+ .data          0x0000000000000000        0x0 libbb/lib.a(full_write.o)
+ .bss           0x0000000000000000        0x0 libbb/lib.a(full_write.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libbb/lib.a(full_write.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libbb/lib.a(full_write.o)
+ .text          0x0000000000000000        0x0 libbb/lib.a(read.o)
+ .data          0x0000000000000000        0x0 libbb/lib.a(read.o)
+ .bss           0x0000000000000000        0x0 libbb/lib.a(read.o)
+ .text.safe_read
+                0x0000000000000000       0x53 libbb/lib.a(read.o)
+ .text.full_read
+                0x0000000000000000       0x97 libbb/lib.a(read.o)
+ .text.read_close
+                0x0000000000000000       0x48 libbb/lib.a(read.o)
+ .text.open_read_close
+                0x0000000000000000       0x5e libbb/lib.a(read.o)
+ .debug_info    0x0000000000000000      0xbbc libbb/lib.a(read.o)
+ .debug_abbrev  0x0000000000000000      0x1a7 libbb/lib.a(read.o)
+ .debug_aranges
+                0x0000000000000000       0x60 libbb/lib.a(read.o)
+ .debug_ranges  0x0000000000000000       0x50 libbb/lib.a(read.o)
+ .debug_line    0x0000000000000000      0x272 libbb/lib.a(read.o)
+ .debug_str     0x0000000000000000      0x9bd libbb/lib.a(read.o)
+ .comment       0x0000000000000000       0x2c libbb/lib.a(read.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libbb/lib.a(read.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libbb/lib.a(read.o)
+ .debug_frame   0x0000000000000000       0x98 libbb/lib.a(read.o)
+ .text          0x0000000000000000        0x0 libbb/lib.a(safe_write.o)
+ .data          0x0000000000000000        0x0 libbb/lib.a(safe_write.o)
+ .bss           0x0000000000000000        0x0 libbb/lib.a(safe_write.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libbb/lib.a(safe_write.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libbb/lib.a(safe_write.o)
+ .text          0x0000000000000000        0x0 libbb/lib.a(signals.o)
+ .data          0x0000000000000000        0x0 libbb/lib.a(signals.o)
+ .bss           0x0000000000000000        0x0 libbb/lib.a(signals.o)
+ .text.sigprocmask_allsigs
+                0x0000000000000000       0x67 libbb/lib.a(signals.o)
+ .text.sig_block
+                0x0000000000000000       0x7a libbb/lib.a(signals.o)
+ .text.wait_for_any_sig
+                0x0000000000000000       0x55 libbb/lib.a(signals.o)
+ .text.signal_SA_RESTART_empty_mask
+                0x0000000000000000       0x85 libbb/lib.a(signals.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libbb/lib.a(signals.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libbb/lib.a(signals.o)
+ .text          0x0000000000000000        0x0 libbb/lib.a(time.o)
+ .data          0x0000000000000000        0x0 libbb/lib.a(time.o)
+ .bss           0x0000000000000000        0x0 libbb/lib.a(time.o)
+ .text.bb_strtol
+                0x0000000000000000       0x30 libbb/lib.a(time.o)
+ .text.parse_datestr
+                0x0000000000000000      0x743 libbb/lib.a(time.o)
+ .text.validate_tm_time
+                0x0000000000000000       0x4d libbb/lib.a(time.o)
+ .text.strftime_fmt
+                0x0000000000000000       0x90 libbb/lib.a(time.o)
+ .text.strftime_HHMMSS
+                0x0000000000000000       0x38 libbb/lib.a(time.o)
+ .text.strftime_YYYYMMDDHHMMSS
+                0x0000000000000000       0x38 libbb/lib.a(time.o)
+ .text.monotonic_ns
+                0x0000000000000000       0x50 libbb/lib.a(time.o)
+ .text.monotonic_us
+                0x0000000000000000       0x71 libbb/lib.a(time.o)
+ .text.monotonic_ms
+                0x0000000000000000       0x71 libbb/lib.a(time.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libbb/lib.a(time.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libbb/lib.a(time.o)
+ .text          0x0000000000000000        0x0 libbb/lib.a(bb_strtonum.o)
+ .data          0x0000000000000000        0x0 libbb/lib.a(bb_strtonum.o)
+ .bss           0x0000000000000000        0x0 libbb/lib.a(bb_strtonum.o)
+ .text.bb_strtoull
+                0x0000000000000000       0xbc libbb/lib.a(bb_strtonum.o)
+ .text.bb_strtoll
+                0x0000000000000000       0xdc libbb/lib.a(bb_strtonum.o)
+ .text.bb_strtoi
+                0x0000000000000000      0x107 libbb/lib.a(bb_strtonum.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libbb/lib.a(bb_strtonum.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libbb/lib.a(bb_strtonum.o)
+ .text          0x0000000000000000        0x0 libpwdgrp/lib.a(uidgid_get.o)
+ .data          0x0000000000000000        0x0 libpwdgrp/lib.a(uidgid_get.o)
+ .bss           0x0000000000000000        0x0 libpwdgrp/lib.a(uidgid_get.o)
+ .rodata        0x0000000000000000       0x16 libpwdgrp/lib.a(uidgid_get.o)
+ .text.xget_uidgid
+                0x0000000000000000       0x47 libpwdgrp/lib.a(uidgid_get.o)
+ .text.parse_chown_usergroup_or_die
+                0x0000000000000000       0xf1 libpwdgrp/lib.a(uidgid_get.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libpwdgrp/lib.a(uidgid_get.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libpwdgrp/lib.a(uidgid_get.o)
+ .text          0x0000000000000000        0x0 sysklogd/lib.a(klogd.o)
+ .data          0x0000000000000000        0x0 sysklogd/lib.a(klogd.o)
+ .bss           0x0000000000000000        0x0 sysklogd/lib.a(klogd.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 sysklogd/lib.a(klogd.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 sysklogd/lib.a(klogd.o)
+ .text          0x0000000000000000        0x0 sysklogd/lib.a(logread.o)
+ .data          0x0000000000000000        0x0 sysklogd/lib.a(logread.o)
+ .bss           0x0000000000000000        0x0 sysklogd/lib.a(logread.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 sysklogd/lib.a(logread.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 sysklogd/lib.a(logread.o)
+ .text          0x0000000000000000        0x0 sysklogd/lib.a(syslogd_and_logger.o)
+ .data          0x0000000000000000        0x0 sysklogd/lib.a(syslogd_and_logger.o)
+ .bss           0x0000000000000000        0x0 sysklogd/lib.a(syslogd_and_logger.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 sysklogd/lib.a(syslogd_and_logger.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 sysklogd/lib.a(syslogd_and_logger.o)
+ .text          0x0000000000000000        0x0 libbb/lib.a(bb_pwd.o)
+ .data          0x0000000000000000        0x0 libbb/lib.a(bb_pwd.o)
+ .bss           0x0000000000000000        0x0 libbb/lib.a(bb_pwd.o)
+ .text.bb_strtoul
+                0x0000000000000000       0x30 libbb/lib.a(bb_pwd.o)
+ .rodata        0x0000000000000000       0x3f libbb/lib.a(bb_pwd.o)
+ .text.xgetpwnam
+                0x0000000000000000       0x4a libbb/lib.a(bb_pwd.o)
+ .text.xgetgrnam
+                0x0000000000000000       0x4a libbb/lib.a(bb_pwd.o)
+ .text.xgetpwuid
+                0x0000000000000000       0x45 libbb/lib.a(bb_pwd.o)
+ .text.xgetgrgid
+                0x0000000000000000       0x45 libbb/lib.a(bb_pwd.o)
+ .text.xuid2uname
+                0x0000000000000000       0x29 libbb/lib.a(bb_pwd.o)
+ .text.xgid2group
+                0x0000000000000000       0x29 libbb/lib.a(bb_pwd.o)
+ .text.gid2group
+                0x0000000000000000       0x38 libbb/lib.a(bb_pwd.o)
+ .text.gid2group_utoa
+                0x0000000000000000       0x3b libbb/lib.a(bb_pwd.o)
+ .text.xuname2uid
+                0x0000000000000000       0x2e libbb/lib.a(bb_pwd.o)
+ .text.xgroup2gid
+                0x0000000000000000       0x2e libbb/lib.a(bb_pwd.o)
+ .text.get_ug_id
+                0x0000000000000000       0x54 libbb/lib.a(bb_pwd.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libbb/lib.a(bb_pwd.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libbb/lib.a(bb_pwd.o)
+ .text          0x0000000000000000        0x0 libbb/lib.a(common_bufsiz.o)
+ .data          0x0000000000000000        0x0 libbb/lib.a(common_bufsiz.o)
+ .bss           0x0000000000000000        0x0 libbb/lib.a(common_bufsiz.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libbb/lib.a(common_bufsiz.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libbb/lib.a(common_bufsiz.o)
+ .text          0x0000000000000000        0x0 libbb/lib.a(device_open.o)
+ .data          0x0000000000000000        0x0 libbb/lib.a(device_open.o)
+ .bss           0x0000000000000000        0x0 libbb/lib.a(device_open.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libbb/lib.a(device_open.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libbb/lib.a(device_open.o)
+ .text          0x0000000000000000        0x0 libbb/lib.a(fflush_stdout_and_exit.o)
+ .data          0x0000000000000000        0x0 libbb/lib.a(fflush_stdout_and_exit.o)
+ .bss           0x0000000000000000        0x0 libbb/lib.a(fflush_stdout_and_exit.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libbb/lib.a(fflush_stdout_and_exit.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libbb/lib.a(fflush_stdout_and_exit.o)
+ .text          0x0000000000000000        0x0 libbb/lib.a(getopt32.o)
+ .data          0x0000000000000000        0x0 libbb/lib.a(getopt32.o)
+ .bss           0x0000000000000000        0x0 libbb/lib.a(getopt32.o)
+ .data.rel.ro.local.bb_argv_dash
+                0x0000000000000000       0x10 libbb/lib.a(getopt32.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libbb/lib.a(getopt32.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libbb/lib.a(getopt32.o)
+ .text          0x0000000000000000        0x0 libbb/lib.a(kernel_version.o)
+ .data          0x0000000000000000        0x0 libbb/lib.a(kernel_version.o)
+ .bss           0x0000000000000000        0x0 libbb/lib.a(kernel_version.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libbb/lib.a(kernel_version.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libbb/lib.a(kernel_version.o)
+ .text          0x0000000000000000        0x0 libbb/lib.a(parse_config.o)
+ .data          0x0000000000000000        0x0 libbb/lib.a(parse_config.o)
+ .bss           0x0000000000000000        0x0 libbb/lib.a(parse_config.o)
+ .text.config_open
+                0x0000000000000000       0x26 libbb/lib.a(parse_config.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libbb/lib.a(parse_config.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libbb/lib.a(parse_config.o)
+ .text          0x0000000000000000        0x0 libbb/lib.a(pidfile.o)
+ .data          0x0000000000000000        0x0 libbb/lib.a(pidfile.o)
+ .bss           0x0000000000000000        0x0 libbb/lib.a(pidfile.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libbb/lib.a(pidfile.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libbb/lib.a(pidfile.o)
+ .text          0x0000000000000000        0x0 libbb/lib.a(safe_gethostname.o)
+ .data          0x0000000000000000        0x0 libbb/lib.a(safe_gethostname.o)
+ .bss           0x0000000000000000        0x0 libbb/lib.a(safe_gethostname.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libbb/lib.a(safe_gethostname.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libbb/lib.a(safe_gethostname.o)
+ .text          0x0000000000000000        0x0 libbb/lib.a(safe_strncpy.o)
+ .data          0x0000000000000000        0x0 libbb/lib.a(safe_strncpy.o)
+ .bss           0x0000000000000000        0x0 libbb/lib.a(safe_strncpy.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libbb/lib.a(safe_strncpy.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libbb/lib.a(safe_strncpy.o)
+ .text          0x0000000000000000        0x0 libbb/lib.a(vfork_daemon_rexec.o)
+ .data          0x0000000000000000        0x0 libbb/lib.a(vfork_daemon_rexec.o)
+ .bss           0x0000000000000000        0x0 libbb/lib.a(vfork_daemon_rexec.o)
+ .text.spawn    0x0000000000000000       0xa4 libbb/lib.a(vfork_daemon_rexec.o)
+ .text.xspawn   0x0000000000000000       0x3e libbb/lib.a(vfork_daemon_rexec.o)
+ .text.spawn_and_wait
+                0x0000000000000000       0x2e libbb/lib.a(vfork_daemon_rexec.o)
+ .text.bb_sanitize_stdio
+                0x0000000000000000       0x18 libbb/lib.a(vfork_daemon_rexec.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libbb/lib.a(vfork_daemon_rexec.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libbb/lib.a(vfork_daemon_rexec.o)
+ .text          0x0000000000000000        0x0 libbb/lib.a(wfopen_input.o)
+ .data          0x0000000000000000        0x0 libbb/lib.a(wfopen_input.o)
+ .bss           0x0000000000000000        0x0 libbb/lib.a(wfopen_input.o)
+ .rodata        0x0000000000000000        0x2 libbb/lib.a(wfopen_input.o)
+ .text.fopen_or_warn_stdin
+                0x0000000000000000       0x66 libbb/lib.a(wfopen_input.o)
+ .text.xfopen_stdin
+                0x0000000000000000       0x38 libbb/lib.a(wfopen_input.o)
+ .text.open_or_warn_stdin
+                0x0000000000000000       0x5e libbb/lib.a(wfopen_input.o)
+ .text.xopen_stdin
+                0x0000000000000000       0x35 libbb/lib.a(wfopen_input.o)
+ .debug_info    0x0000000000000000      0xb2f libbb/lib.a(wfopen_input.o)
+ .debug_abbrev  0x0000000000000000      0x185 libbb/lib.a(wfopen_input.o)
+ .debug_aranges
+                0x0000000000000000       0x60 libbb/lib.a(wfopen_input.o)
+ .debug_ranges  0x0000000000000000       0x50 libbb/lib.a(wfopen_input.o)
+ .debug_line    0x0000000000000000      0x262 libbb/lib.a(wfopen_input.o)
+ .debug_str     0x0000000000000000      0x9b3 libbb/lib.a(wfopen_input.o)
+ .comment       0x0000000000000000       0x2c libbb/lib.a(wfopen_input.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libbb/lib.a(wfopen_input.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libbb/lib.a(wfopen_input.o)
+ .debug_frame   0x0000000000000000       0x98 libbb/lib.a(wfopen_input.o)
+ .text          0x0000000000000000        0x0 libbb/lib.a(xatonum.o)
+ .data          0x0000000000000000        0x0 libbb/lib.a(xatonum.o)
+ .bss           0x0000000000000000        0x0 libbb/lib.a(xatonum.o)
+ .text.xstrtoull_range
+                0x0000000000000000       0x3f libbb/lib.a(xatonum.o)
+ .text.xstrtoull_sfx
+                0x0000000000000000       0x40 libbb/lib.a(xatonum.o)
+ .text.xstrtoull
+                0x0000000000000000       0x39 libbb/lib.a(xatonum.o)
+ .text.xatoull_range_sfx
+                0x0000000000000000       0x43 libbb/lib.a(xatonum.o)
+ .text.xatoull_sfx
+                0x0000000000000000       0x3b libbb/lib.a(xatonum.o)
+ .text.xatoull  0x0000000000000000       0x24 libbb/lib.a(xatonum.o)
+ .text.xstrtoll_range_sfx
+                0x0000000000000000       0xea libbb/lib.a(xatonum.o)
+ .text.xstrtoll_range
+                0x0000000000000000       0x3f libbb/lib.a(xatonum.o)
+ .text.xstrtoll
+                0x0000000000000000       0x41 libbb/lib.a(xatonum.o)
+ .text.xatoll_range_sfx
+                0x0000000000000000       0x43 libbb/lib.a(xatonum.o)
+ .text.xatoll_range
+                0x0000000000000000       0x3e libbb/lib.a(xatonum.o)
+ .text.xatoll_sfx
+                0x0000000000000000       0x43 libbb/lib.a(xatonum.o)
+ .text.xatoll   0x0000000000000000       0x3e libbb/lib.a(xatonum.o)
+ .text.xstrtou_range
+                0x0000000000000000       0x3d libbb/lib.a(xatonum.o)
+ .text.xstrtou_sfx
+                0x0000000000000000       0x3e libbb/lib.a(xatonum.o)
+ .text.xstrtou  0x0000000000000000       0x37 libbb/lib.a(xatonum.o)
+ .text.xatou_range_sfx
+                0x0000000000000000       0x41 libbb/lib.a(xatonum.o)
+ .text.xatou_sfx
+                0x0000000000000000       0x39 libbb/lib.a(xatonum.o)
+ .text.xatou    0x0000000000000000       0x24 libbb/lib.a(xatonum.o)
+ .text.xstrtoi_range_sfx
+                0x0000000000000000       0xd9 libbb/lib.a(xatonum.o)
+ .text.xstrtoi_range
+                0x0000000000000000       0x3d libbb/lib.a(xatonum.o)
+ .text.xstrtoi  0x0000000000000000       0x37 libbb/lib.a(xatonum.o)
+ .text.xatoi_range_sfx
+                0x0000000000000000       0x41 libbb/lib.a(xatonum.o)
+ .text.xatoi_range
+                0x0000000000000000       0x38 libbb/lib.a(xatonum.o)
+ .text.xatoi_sfx
+                0x0000000000000000       0x39 libbb/lib.a(xatonum.o)
+ .text.xatoi    0x0000000000000000       0x34 libbb/lib.a(xatonum.o)
+ .text.xatou16  0x0000000000000000       0x29 libbb/lib.a(xatonum.o)
+ .rodata.bkm_suffixes
+                0x0000000000000000       0x20 libbb/lib.a(xatonum.o)
+ .rodata.cwbkMG_suffixes
+                0x0000000000000000       0x80 libbb/lib.a(xatonum.o)
+ .rodata.kmg_i_suffixes
+                0x0000000000000000       0x80 libbb/lib.a(xatonum.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libbb/lib.a(xatonum.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libbb/lib.a(xatonum.o)
+ .text          0x0000000000000000        0x0 libbb/lib.a(xconnect.o)
+ .data          0x0000000000000000        0x0 libbb/lib.a(xconnect.o)
+ .bss           0x0000000000000000        0x0 libbb/lib.a(xconnect.o)
+ .text.setsockopt_int
+                0x0000000000000000       0x38 libbb/lib.a(xconnect.o)
+ .text.setsockopt_1
+                0x0000000000000000       0x31 libbb/lib.a(xconnect.o)
+ .text.setsockopt_SOL_SOCKET_int
+                0x0000000000000000       0x31 libbb/lib.a(xconnect.o)
+ .text.setsockopt_SOL_SOCKET_1
+                0x0000000000000000       0x2b libbb/lib.a(xconnect.o)
+ .text.setsockopt_reuseaddr
+                0x0000000000000000       0x22 libbb/lib.a(xconnect.o)
+ .text.setsockopt_broadcast
+                0x0000000000000000       0x21 libbb/lib.a(xconnect.o)
+ .text.setsockopt_keepalive
+                0x0000000000000000       0x21 libbb/lib.a(xconnect.o)
+ .text.setsockopt_bindtodevice
+                0x0000000000000000       0x98 libbb/lib.a(xconnect.o)
+ .text.get_lsa  0x0000000000000000       0xd0 libbb/lib.a(xconnect.o)
+ .text.get_sock_lsa
+                0x0000000000000000       0x26 libbb/lib.a(xconnect.o)
+ .text.get_peer_lsa
+                0x0000000000000000       0x26 libbb/lib.a(xconnect.o)
+ .text.xconnect
+                0x0000000000000000       0x7b libbb/lib.a(xconnect.o)
+ .text.bb_lookup_port
+                0x0000000000000000       0xc5 libbb/lib.a(xconnect.o)
+ .text.get_nport
+                0x0000000000000000       0x2a libbb/lib.a(xconnect.o)
+ .text.xhost2sockaddr
+                0x0000000000000000       0x2e libbb/lib.a(xconnect.o)
+ .text.xdotted2sockaddr
+                0x0000000000000000       0x2e libbb/lib.a(xconnect.o)
+ .text.xsocket_type
+                0x0000000000000000       0x99 libbb/lib.a(xconnect.o)
+ .text.xsocket_stream
+                0x0000000000000000       0x29 libbb/lib.a(xconnect.o)
+ .text.create_and_bind_or_die
+                0x0000000000000000      0x104 libbb/lib.a(xconnect.o)
+ .text.create_and_bind_stream_or_die
+                0x0000000000000000       0x2e libbb/lib.a(xconnect.o)
+ .text.create_and_bind_dgram_or_die
+                0x0000000000000000       0x2e libbb/lib.a(xconnect.o)
+ .text.create_and_connect_stream_or_die
+                0x0000000000000000       0x89 libbb/lib.a(xconnect.o)
+ .text.xconnect_stream
+                0x0000000000000000       0x55 libbb/lib.a(xconnect.o)
+ .text.sockaddr2str
+                0x0000000000000000       0xd4 libbb/lib.a(xconnect.o)
+ .text.xmalloc_sockaddr2host
+                0x0000000000000000       0x24 libbb/lib.a(xconnect.o)
+ .text.xmalloc_sockaddr2host_noport
+                0x0000000000000000       0x24 libbb/lib.a(xconnect.o)
+ .text.xmalloc_sockaddr2hostonly_noport
+                0x0000000000000000       0x24 libbb/lib.a(xconnect.o)
+ .text.xmalloc_sockaddr2dotted
+                0x0000000000000000       0x24 libbb/lib.a(xconnect.o)
+ .text.xmalloc_sockaddr2dotted_noport
+                0x0000000000000000       0x24 libbb/lib.a(xconnect.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libbb/lib.a(xconnect.o)
+ .note.gnu.property
+                0x0000000000000000       0x20 libbb/lib.a(xconnect.o)
+ .data          0x0000000000000000        0x0 /usr/lib/x86_64-linux-gnu/libc_nonshared.a(elf-init.oS)
+ .bss           0x0000000000000000        0x0 /usr/lib/x86_64-linux-gnu/libc_nonshared.a(elf-init.oS)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /usr/lib/x86_64-linux-gnu/libc_nonshared.a(elf-init.oS)
+ .note.gnu.property
+                0x0000000000000000       0x20 /usr/lib/x86_64-linux-gnu/libc_nonshared.a(elf-init.oS)
+ .data          0x0000000000000000        0x0 /usr/lib/x86_64-linux-gnu/libc_nonshared.a(stat64.oS)
+ .bss           0x0000000000000000        0x0 /usr/lib/x86_64-linux-gnu/libc_nonshared.a(stat64.oS)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /usr/lib/x86_64-linux-gnu/libc_nonshared.a(stat64.oS)
+ .note.gnu.property
+                0x0000000000000000       0x20 /usr/lib/x86_64-linux-gnu/libc_nonshared.a(stat64.oS)
+ .data          0x0000000000000000        0x0 /usr/lib/x86_64-linux-gnu/libc_nonshared.a(fstat64.oS)
+ .bss           0x0000000000000000        0x0 /usr/lib/x86_64-linux-gnu/libc_nonshared.a(fstat64.oS)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /usr/lib/x86_64-linux-gnu/libc_nonshared.a(fstat64.oS)
+ .note.gnu.property
+                0x0000000000000000       0x20 /usr/lib/x86_64-linux-gnu/libc_nonshared.a(fstat64.oS)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o
+ .note.gnu.property
+                0x0000000000000000       0x20 /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o
+ .note.gnu.property
+                0x0000000000000000       0x20 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+LOAD /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o
+LOAD /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o
+START GROUP
+LOAD applets/built-in.o
+LOAD archival/lib.a
+LOAD archival/libarchive/lib.a
+LOAD console-tools/lib.a
+LOAD coreutils/lib.a
+LOAD coreutils/libcoreutils/lib.a
+LOAD debianutils/lib.a
+LOAD e2fsprogs/lib.a
+LOAD editors/lib.a
+LOAD findutils/lib.a
+LOAD init/lib.a
+LOAD libbb/lib.a
+LOAD libpwdgrp/lib.a
+LOAD loginutils/lib.a
+LOAD mailutils/lib.a
+LOAD miscutils/lib.a
+LOAD modutils/lib.a
+LOAD networking/lib.a
+LOAD networking/libiproute/lib.a
+LOAD networking/udhcp/lib.a
+LOAD printutils/lib.a
+LOAD procps/lib.a
+LOAD runit/lib.a
+LOAD selinux/lib.a
+LOAD shell/lib.a
+LOAD sysklogd/lib.a
+LOAD util-linux/lib.a
+LOAD util-linux/volume_id/lib.a
+LOAD archival/built-in.o
+LOAD archival/libarchive/built-in.o
+LOAD console-tools/built-in.o
+LOAD coreutils/built-in.o
+LOAD coreutils/libcoreutils/built-in.o
+LOAD debianutils/built-in.o
+LOAD e2fsprogs/built-in.o
+LOAD editors/built-in.o
+LOAD findutils/built-in.o
+LOAD init/built-in.o
+LOAD libbb/built-in.o
+LOAD libpwdgrp/built-in.o
+LOAD loginutils/built-in.o
+LOAD mailutils/built-in.o
+LOAD miscutils/built-in.o
+LOAD modutils/built-in.o
+LOAD networking/built-in.o
+LOAD networking/libiproute/built-in.o
+LOAD networking/udhcp/built-in.o
+LOAD printutils/built-in.o
+LOAD procps/built-in.o
+LOAD runit/built-in.o
+LOAD selinux/built-in.o
+LOAD shell/built-in.o
+LOAD sysklogd/built-in.o
+LOAD util-linux/built-in.o
+LOAD util-linux/volume_id/built-in.o
+END GROUP
+START GROUP
+LOAD /usr/local/lib/libhiredis.so
+END GROUP
+LOAD /usr/lib/gcc/x86_64-linux-gnu/9/libgcc.a
+LOAD /usr/lib/gcc/x86_64-linux-gnu/9/libgcc_eh.a
+LOAD /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/libc.so
+START GROUP
+LOAD /lib/x86_64-linux-gnu/libc.so.6
+LOAD /usr/lib/x86_64-linux-gnu/libc_nonshared.a
+LOAD /lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+END GROUP
+LOAD /usr/lib/gcc/x86_64-linux-gnu/9/libgcc.a
+LOAD /usr/lib/gcc/x86_64-linux-gnu/9/libgcc_eh.a
+LOAD /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o
+LOAD /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o
+                [!provide]                        PROVIDE (__executable_start = SEGMENT_START ("text-segment", 0x0))
+                0x0000000000000318                . = (SEGMENT_START ("text-segment", 0x0) + SIZEOF_HEADERS)
+
+.interp         0x0000000000000318       0x1c
+ *(SORT_BY_ALIGNMENT(.interp))
+ .interp        0x0000000000000318       0x1c /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+
+.note.gnu.property
+                0x0000000000000338       0x20
+ .note.gnu.property
+                0x0000000000000338       0x20 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+
+.note.gnu.build-id
+                0x0000000000000358       0x24
+ *(SORT_BY_ALIGNMENT(.note.gnu.build-id))
+ .note.gnu.build-id
+                0x0000000000000358       0x24 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+
+.note.ABI-tag   0x000000000000037c       0x20
+ .note.ABI-tag  0x000000000000037c       0x20 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+
+.hash
+ *(SORT_BY_ALIGNMENT(.hash))
+
+.gnu.hash       0x00000000000003a0       0x38
+ *(SORT_BY_ALIGNMENT(.gnu.hash))
+ .gnu.hash      0x00000000000003a0       0x38 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+
+.dynsym         0x00000000000003d8      0xb28
+ *(SORT_BY_ALIGNMENT(.dynsym))
+ .dynsym        0x00000000000003d8      0xb28 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+
+.dynstr         0x0000000000000f00      0x415
+ *(SORT_BY_ALIGNMENT(.dynstr))
+ .dynstr        0x0000000000000f00      0x415 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+
+.gnu.version    0x0000000000001316       0xee
+ *(SORT_BY_ALIGNMENT(.gnu.version))
+ .gnu.version   0x0000000000001316       0xee /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+
+.gnu.version_d  0x0000000000001408        0x0
+ *(SORT_BY_ALIGNMENT(.gnu.version_d))
+ .gnu.version_d
+                0x0000000000001408        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+
+.gnu.version_r  0x0000000000001408       0x50
+ *(SORT_BY_ALIGNMENT(.gnu.version_r))
+ .gnu.version_r
+                0x0000000000001408       0x50 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+
+.rela.dyn       0x0000000000001458      0x588
+ *(SORT_BY_ALIGNMENT(.rela.init))
+ *(SORT_BY_ALIGNMENT(.rela.text) SORT_BY_ALIGNMENT(.rela.text.*) SORT_BY_ALIGNMENT(.rela.gnu.linkonce.t.*))
+ .rela.text.bb_show_usage
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.lbb_prepare
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.install_links
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.busybox_main
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.run_applet_no_and_exit
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.run_applet_and_exit
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.main
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.bb_perror_msg
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.bb_perror_msg_and_die
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.bb_verror_msg
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.xfunc_die
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.xmalloc_follow_symlinks
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.safe_write
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.record_signo
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.ret_ERANGE
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.handle_errors
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.bb_strtou
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.get_uidgid
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.klogd_main
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.sem_up
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.logread_main
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.parse_syslogdcfg
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.ipcsyslog_cleanup
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.ipcsyslog_init
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.log_to_shmem
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.db_ctx_cleanup
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.db_ctx_init
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.log_to_db
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.kmsg_init
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.log_to_kmsg
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.log_locally
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.timestamp_and_log
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.timestamp_and_log_internal
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.split_escape_and_log
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.do_syslogd
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.syslogd_main
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.logger_main
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.fflush_stdout_and_exit
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.getopt32
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.write_pidfile
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.xstrtoull_range_sfx
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.bb_strtoui
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.xstrtou_range_sfx
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text.str2sockaddr
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.text     0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ *(SORT_BY_ALIGNMENT(.rela.fini))
+ *(SORT_BY_ALIGNMENT(.rela.rodata) SORT_BY_ALIGNMENT(.rela.rodata.*) SORT_BY_ALIGNMENT(.rela.gnu.linkonce.r.*))
+ *(SORT_BY_ALIGNMENT(.rela.data) SORT_BY_ALIGNMENT(.rela.data.*) SORT_BY_ALIGNMENT(.rela.gnu.linkonce.d.*))
+ .rela.data.rel.ro
+                0x0000000000001458        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.data.rel.local
+                0x0000000000001458       0x18 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.data.rel.ro.applet_main
+                0x0000000000001470       0x60 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.data.rel.ro.local.install_dir
+                0x00000000000014d0       0x78 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.data.rel.local.msg_eol
+                0x0000000000001548       0x18 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.data.rel.local.prioritynames
+                0x0000000000001560      0x120 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.data.rel.local.facilitynames
+                0x0000000000001680      0x210 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.data.rel.ro.local.init_data
+                0x0000000000001890       0x18 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ *(SORT_BY_ALIGNMENT(.rela.tdata) SORT_BY_ALIGNMENT(.rela.tdata.*) SORT_BY_ALIGNMENT(.rela.gnu.linkonce.td.*))
+ *(SORT_BY_ALIGNMENT(.rela.tbss) SORT_BY_ALIGNMENT(.rela.tbss.*) SORT_BY_ALIGNMENT(.rela.gnu.linkonce.tb.*))
+ *(SORT_BY_ALIGNMENT(.rela.ctors))
+ *(SORT_BY_ALIGNMENT(.rela.dtors))
+ *(SORT_BY_ALIGNMENT(.rela.got))
+ .rela.got      0x00000000000018a8       0xa8 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ *(SORT_BY_ALIGNMENT(.rela.bss) SORT_BY_ALIGNMENT(.rela.bss.*) SORT_BY_ALIGNMENT(.rela.gnu.linkonce.b.*))
+ .rela.bss      0x0000000000001950       0x60 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ *(SORT_BY_ALIGNMENT(.rela.ldata) SORT_BY_ALIGNMENT(.rela.ldata.*) SORT_BY_ALIGNMENT(.rela.gnu.linkonce.l.*))
+ *(SORT_BY_ALIGNMENT(.rela.lbss) SORT_BY_ALIGNMENT(.rela.lbss.*) SORT_BY_ALIGNMENT(.rela.gnu.linkonce.lb.*))
+ *(SORT_BY_ALIGNMENT(.rela.lrodata) SORT_BY_ALIGNMENT(.rela.lrodata.*) SORT_BY_ALIGNMENT(.rela.gnu.linkonce.lr.*))
+ *(SORT_BY_ALIGNMENT(.rela.ifunc))
+ .rela.ifunc    0x00000000000019b0        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.fini_array
+                0x00000000000019b0       0x18 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .rela.init_array
+                0x00000000000019c8       0x18 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+
+.rela.plt       0x00000000000019e0      0xa08
+ *(SORT_BY_ALIGNMENT(.rela.plt))
+ .rela.plt      0x00000000000019e0      0xa08 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ *(SORT_BY_ALIGNMENT(.rela.iplt))
+                0x0000000000003000                . = ALIGN (CONSTANT (MAXPAGESIZE))
+
+.init           0x0000000000003000       0x1b
+ *(SORT_NONE(.init))
+ .init          0x0000000000003000       0x16 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o
+                0x0000000000003000                _init
+ .init          0x0000000000003016        0x5 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o
+
+.plt            0x0000000000003020      0x6c0
+ *(SORT_BY_ALIGNMENT(.plt))
+ .plt           0x0000000000003020      0x6c0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ *(SORT_BY_ALIGNMENT(.iplt))
+
+.plt.got        0x00000000000036e0       0x10
+ *(SORT_BY_ALIGNMENT(.plt.got))
+ .plt.got       0x00000000000036e0       0x10 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+                0x00000000000036e0                __cxa_finalize@@GLIBC_2.2.5
+
+.plt.sec        0x00000000000036f0      0x6b0
+ *(SORT_BY_ALIGNMENT(.plt.sec))
+ .plt.sec       0x00000000000036f0      0x6b0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+                0x00000000000036f0                getenv@@GLIBC_2.2.5
+                0x0000000000003700                sigprocmask@@GLIBC_2.2.5
+                0x0000000000003710                raise@@GLIBC_2.2.5
+                0x0000000000003720                free@@GLIBC_2.2.5
+                0x0000000000003730                semget@@GLIBC_2.2.5
+                0x0000000000003740                strcasecmp@@GLIBC_2.2.5
+                0x0000000000003750                closelog@@GLIBC_2.2.5
+                0x0000000000003760                localtime@@GLIBC_2.2.5
+                0x0000000000003770                __errno_location@@GLIBC_2.2.5
+                0x0000000000003780                unlink@@GLIBC_2.2.5
+                0x0000000000003790                strncpy@@GLIBC_2.2.5
+                0x00000000000037a0                _exit@@GLIBC_2.2.5
+                0x00000000000037b0                strcpy@@GLIBC_2.2.5
+                0x00000000000037c0                mallopt@@GLIBC_2.2.5
+                0x00000000000037d0                isatty@@GLIBC_2.2.5
+                0x00000000000037e0                sigaction@@GLIBC_2.2.5
+                0x00000000000037f0                vsnprintf@@GLIBC_2.2.5
+                0x0000000000003800                strchrnul@@GLIBC_2.2.5
+                0x0000000000003810                shmdt@@GLIBC_2.2.5
+                0x0000000000003820                readlink@@GLIBC_2.2.5
+                0x0000000000003830                write@@GLIBC_2.2.5
+                0x0000000000003840                getpid@@GLIBC_2.2.5
+                0x0000000000003850                vasprintf@@GLIBC_2.2.5
+                0x0000000000003860                setresuid@@GLIBC_2.2.5
+                0x0000000000003870                fclose@@GLIBC_2.2.5
+                0x0000000000003880                __xstat64@@GLIBC_2.2.5
+                0x0000000000003890                getpwuid@@GLIBC_2.2.5
+                0x00000000000038a0                strlen@@GLIBC_2.2.5
+                0x00000000000038b0                chdir@@GLIBC_2.2.5
+                0x00000000000038c0                __stack_chk_fail@@GLIBC_2.4
+                0x00000000000038d0                getuid@@GLIBC_2.2.5
+                0x00000000000038e0                setresgid@@GLIBC_2.2.5
+                0x00000000000038f0                getopt_long@@GLIBC_2.2.5
+                0x0000000000003900                htons@@GLIBC_2.2.5
+                0x0000000000003910                dup2@@GLIBC_2.2.5
+                0x0000000000003920                strchr@@GLIBC_2.2.5
+                0x0000000000003930                printf@@GLIBC_2.2.5
+                0x0000000000003940                getgrgid@@GLIBC_2.2.5
+                0x0000000000003950                snprintf@@GLIBC_2.2.5
+                0x0000000000003960                strrchr@@GLIBC_2.2.5
+                0x0000000000003970                uname@@GLIBC_2.2.5
+                0x0000000000003980                dup@@GLIBC_2.2.5
+                0x0000000000003990                memset@@GLIBC_2.2.5
+                0x00000000000039a0                geteuid@@GLIBC_2.2.5
+                0x00000000000039b0                ioctl@@GLIBC_2.2.5
+                0x00000000000039c0                strnlen@@GLIBC_2.2.5
+                0x00000000000039d0                sendto@@GLIBC_2.2.5
+                0x00000000000039e0                close@@GLIBC_2.2.5
+                0x00000000000039f0                setsid@@GLIBC_2.2.5
+                0x0000000000003a00                strspn@@GLIBC_2.2.5
+                0x0000000000003a10                strcspn@@GLIBC_2.2.5
+                0x0000000000003a20                read@@GLIBC_2.2.5
+                0x0000000000003a30                memcmp@@GLIBC_2.2.5
+                0x0000000000003a40                fputs_unlocked@@GLIBC_2.2.5
+                0x0000000000003a50                strtoull@@GLIBC_2.2.5
+                0x0000000000003a60                __fxstat64@@GLIBC_2.2.5
+                0x0000000000003a70                strcmp@@GLIBC_2.2.5
+                0x0000000000003a80                signal@@GLIBC_2.2.5
+                0x0000000000003a90                getpwnam@@GLIBC_2.2.5
+                0x0000000000003aa0                syscall@@GLIBC_2.2.5
+                0x0000000000003ab0                sigemptyset@@GLIBC_2.2.5
+                0x0000000000003ac0                fopen64@@GLIBC_2.2.5
+                0x0000000000003ad0                memcpy@@GLIBC_2.14
+                0x0000000000003ae0                getgrnam@@GLIBC_2.2.5
+                0x0000000000003af0                time@@GLIBC_2.2.5
+                0x0000000000003b00                getgid@@GLIBC_2.2.5
+                0x0000000000003b10                inet_aton@@GLIBC_2.2.5
+                0x0000000000003b20                fgets_unlocked@@GLIBC_2.2.5
+                0x0000000000003b30                redisFree
+                0x0000000000003b40                malloc@@GLIBC_2.2.5
+                0x0000000000003b50                fflush@@GLIBC_2.2.5
+                0x0000000000003b60                klogctl@@GLIBC_2.2.5
+                0x0000000000003b70                syslog@@GLIBC_2.2.5
+                0x0000000000003b80                realloc@@GLIBC_2.2.5
+                0x0000000000003b90                chmod@@GLIBC_2.2.5
+                0x0000000000003ba0                bind@@GLIBC_2.2.5
+                0x0000000000003bb0                freeReplyObject
+                0x0000000000003bc0                open64@@GLIBC_2.2.5
+                0x0000000000003bd0                strftime@@GLIBC_2.2.5
+                0x0000000000003be0                fcntl64@@GLIBC_2.28
+                0x0000000000003bf0                memmove@@GLIBC_2.2.5
+                0x0000000000003c00                setgid@@GLIBC_2.2.5
+                0x0000000000003c10                shmctl@@GLIBC_2.2.5
+                0x0000000000003c20                strtok@@GLIBC_2.2.5
+                0x0000000000003c30                rename@@GLIBC_2.2.5
+                0x0000000000003c40                semctl@@GLIBC_2.2.5
+                0x0000000000003c50                strtoul@@GLIBC_2.2.5
+                0x0000000000003c60                shmat@@GLIBC_2.2.5
+                0x0000000000003c70                shmget@@GLIBC_2.2.5
+                0x0000000000003c80                atoi@@GLIBC_2.2.5
+                0x0000000000003c90                getline@@GLIBC_2.2.5
+                0x0000000000003ca0                redisCommand
+                0x0000000000003cb0                openlog@@GLIBC_2.2.5
+                0x0000000000003cc0                semop@@GLIBC_2.2.5
+                0x0000000000003cd0                sprintf@@GLIBC_2.2.5
+                0x0000000000003ce0                exit@@GLIBC_2.2.5
+                0x0000000000003cf0                setuid@@GLIBC_2.2.5
+                0x0000000000003d00                getaddrinfo@@GLIBC_2.2.5
+                0x0000000000003d10                strdup@@GLIBC_2.2.5
+                0x0000000000003d20                redisConnect
+                0x0000000000003d30                strerror@@GLIBC_2.2.5
+                0x0000000000003d40                sleep@@GLIBC_2.2.5
+                0x0000000000003d50                sigaddset@@GLIBC_2.2.5
+                0x0000000000003d60                fork@@GLIBC_2.2.5
+                0x0000000000003d70                feof_unlocked@@GLIBC_2.2.5
+                0x0000000000003d80                freeaddrinfo@@GLIBC_2.2.5
+                0x0000000000003d90                socket@@GLIBC_2.2.5
+
+.text           0x0000000000003da0     0x8730
+ *(SORT_BY_ALIGNMENT(.text.unlikely) SORT_BY_ALIGNMENT(.text.*_unlikely) SORT_BY_ALIGNMENT(.text.unlikely.*))
+ *(SORT_BY_ALIGNMENT(.text.exit) SORT_BY_ALIGNMENT(.text.exit.*))
+ *(SORT_BY_ALIGNMENT(.text.startup) SORT_BY_ALIGNMENT(.text.startup.*))
+ *(SORT_BY_ALIGNMENT(.text.hot) SORT_BY_ALIGNMENT(.text.hot.*))
+ *(SORT_BY_NAME(SORT_BY_ALIGNMENT(.text.sorted.*)))
+ *(SORT_BY_ALIGNMENT(.text) SORT_BY_ALIGNMENT(.stub) SORT_BY_ALIGNMENT(.text.*) SORT_BY_ALIGNMENT(.gnu.linkonce.t.*))
+ .text          0x0000000000003da0       0x2f /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+                0x0000000000003da0                _start
+ *fill*         0x0000000000003dcf        0x1 
+ .text          0x0000000000003dd0       0xb9 /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o
+ *fill*         0x0000000000003e89        0x7 
+ .text          0x0000000000003e90       0x75 /usr/lib/x86_64-linux-gnu/libc_nonshared.a(elf-init.oS)
+                0x0000000000003e90                __libc_csu_init
+                0x0000000000003f00                __libc_csu_fini
+ *fill*         0x0000000000003f05        0xb 
+ .text          0x0000000000003f10       0x14 /usr/lib/x86_64-linux-gnu/libc_nonshared.a(stat64.oS)
+                0x0000000000003f10                stat64
+ *fill*         0x0000000000003f24        0xc 
+ .text          0x0000000000003f30       0x13 /usr/lib/x86_64-linux-gnu/libc_nonshared.a(fstat64.oS)
+                0x0000000000003f30                fstat64
+ .text.bb_show_usage
+                0x0000000000003f43       0xd8 libbb/lib.a(appletlib.o)
+                0x0000000000003f43                bb_show_usage
+ .text.find_applet_by_name
+                0x000000000000401b       0xa2 libbb/lib.a(appletlib.o)
+                0x000000000000401b                find_applet_by_name
+ .text.lbb_prepare
+                0x00000000000040bd       0x30 libbb/lib.a(appletlib.o)
+                0x00000000000040bd                lbb_prepare
+ .text.get_trimmed_slice
+                0x00000000000040ed       0x72 libbb/lib.a(appletlib.o)
+ .text.parse_config_file
+                0x000000000000415f      0x4c9 libbb/lib.a(appletlib.o)
+ .text.ingroup  0x0000000000004628       0x87 libbb/lib.a(appletlib.o)
+ .text.check_suid
+                0x00000000000046af      0x230 libbb/lib.a(appletlib.o)
+ .text.install_links
+                0x00000000000048df      0x153 libbb/lib.a(appletlib.o)
+ .text.busybox_main
+                0x0000000000004a32      0x3d0 libbb/lib.a(appletlib.o)
+ .text.run_applet_no_and_exit
+                0x0000000000004e02       0xca libbb/lib.a(appletlib.o)
+                0x0000000000004e02                run_applet_no_and_exit
+ .text.run_applet_and_exit
+                0x0000000000004ecc       0x8e libbb/lib.a(appletlib.o)
+ .text.main     0x0000000000004f5a       0x99 libbb/lib.a(appletlib.o)
+                0x0000000000004f5a                main
+ .text.is_prefixed_with
+                0x0000000000004ff3       0x48 libbb/lib.a(compare_string_array.o)
+                0x0000000000004ff3                is_prefixed_with
+ .text.concat_path_file
+                0x000000000000503b       0x8b libbb/lib.a(concat_path_file.o)
+                0x000000000000503b                concat_path_file
+ .text.bb_basename
+                0x00000000000050c6       0x41 libbb/lib.a(get_last_path_component.o)
+                0x00000000000050c6                bb_basename
+ .text.bb_get_last_path_component_nostrip
+                0x0000000000005107       0x5d libbb/lib.a(get_last_path_component.o)
+                0x0000000000005107                bb_get_last_path_component_nostrip
+ .text.bb_get_last_path_component_strip
+                0x0000000000005164       0x69 libbb/lib.a(get_last_path_component.o)
+                0x0000000000005164                bb_get_last_path_component_strip
+ .text.last_char_is
+                0x00000000000051cd       0x67 libbb/lib.a(last_char_is.o)
+                0x00000000000051cd                last_char_is
+ .text.llist_add_to
+                0x0000000000005234       0x50 libbb/lib.a(llist.o)
+                0x0000000000005234                llist_add_to
+ .text.llist_add_to_end
+                0x0000000000005284       0x58 libbb/lib.a(llist.o)
+                0x0000000000005284                llist_add_to_end
+ .text.llist_pop
+                0x00000000000052dc       0x60 libbb/lib.a(llist.o)
+                0x00000000000052dc                llist_pop
+ .text.llist_free
+                0x000000000000533c       0x4b libbb/lib.a(llist.o)
+                0x000000000000533c                llist_free
+ .text.bb_perror_msg
+                0x0000000000005387       0xf8 libbb/lib.a(perror_msg.o)
+                0x0000000000005387                bb_perror_msg
+ .text.bb_perror_msg_and_die
+                0x000000000000547f       0xe1 libbb/lib.a(perror_msg.o)
+                0x000000000000547f                bb_perror_msg_and_die
+ .text.bb_simple_perror_msg
+                0x0000000000005560       0x2c libbb/lib.a(perror_msg.o)
+                0x0000000000005560                bb_simple_perror_msg
+ .text.skip_whitespace
+                0x000000000000558c       0x32 libbb/lib.a(skip_whitespace.o)
+                0x000000000000558c                skip_whitespace
+ .text.bb_verror_msg
+                0x00000000000055be      0x365 libbb/lib.a(verror_msg.o)
+                0x00000000000055be                bb_verror_msg
+ .text.bb_error_msg_and_die
+                0x0000000000005923       0xbf libbb/lib.a(verror_msg.o)
+                0x0000000000005923                bb_error_msg_and_die
+ .text.bb_error_msg
+                0x00000000000059e2       0xd6 libbb/lib.a(verror_msg.o)
+                0x00000000000059e2                bb_error_msg
+ .text.fopen_for_read
+                0x0000000000005ab8       0x26 libbb/lib.a(wfopen.o)
+                0x0000000000005ab8                fopen_for_read
+ .text.xfopen_for_read
+                0x0000000000005ade       0x26 libbb/lib.a(wfopen.o)
+                0x0000000000005ade                xfopen_for_read
+ .text.xfunc_die
+                0x0000000000005b04       0x30 libbb/lib.a(xfunc_die.o)
+                0x0000000000005b04                xfunc_die
+ .text.utoa_to_buf
+                0x0000000000005b34       0xbd libbb/lib.a(xfuncs.o)
+                0x0000000000005b34                utoa_to_buf
+ .text.utoa     0x0000000000005bf1       0x32 libbb/lib.a(xfuncs.o)
+                0x0000000000005bf1                utoa
+ .text.full_write2_str
+                0x0000000000005c23       0x34 libbb/lib.a(xfuncs.o)
+                0x0000000000005c23                full_write2_str
+ .text.wh_helper
+                0x0000000000005c57       0x72 libbb/lib.a(xfuncs.o)
+ .text.get_terminal_width_height
+                0x0000000000005cc9      0x17d libbb/lib.a(xfuncs.o)
+                0x0000000000005cc9                get_terminal_width_height
+ .text.get_terminal_width
+                0x0000000000005e46       0x52 libbb/lib.a(xfuncs.o)
+                0x0000000000005e46                get_terminal_width
+ .text.xmalloc  0x0000000000005e98       0x4a libbb/lib.a(xfuncs_printf.o)
+                0x0000000000005e98                xmalloc
+ .text.xrealloc
+                0x0000000000005ee2       0x54 libbb/lib.a(xfuncs_printf.o)
+                0x0000000000005ee2                xrealloc
+ .text.xzalloc  0x0000000000005f36       0x40 libbb/lib.a(xfuncs_printf.o)
+                0x0000000000005f36                xzalloc
+ .text.xstrdup  0x0000000000005f76       0x51 libbb/lib.a(xfuncs_printf.o)
+                0x0000000000005f76                xstrdup
+ .text.xstrndup
+                0x0000000000005fc7       0xb0 libbb/lib.a(xfuncs_printf.o)
+                0x0000000000005fc7                xstrndup
+ .text.xfopen   0x0000000000006077       0x55 libbb/lib.a(xfuncs_printf.o)
+                0x0000000000006077                xfopen
+ .text.xopen3   0x00000000000060cc       0x5c libbb/lib.a(xfuncs_printf.o)
+                0x00000000000060cc                xopen3
+ .text.xopen    0x0000000000006128       0x2e libbb/lib.a(xfuncs_printf.o)
+                0x0000000000006128                xopen
+ .text.xdup2    0x0000000000006156       0x3e libbb/lib.a(xfuncs_printf.o)
+                0x0000000000006156                xdup2
+ .text.xmove_fd
+                0x0000000000006194       0x3e libbb/lib.a(xfuncs_printf.o)
+                0x0000000000006194                xmove_fd
+ .text.fflush_all
+                0x00000000000061d2       0x17 libbb/lib.a(xfuncs_printf.o)
+                0x00000000000061d2                fflush_all
+ .text.xasprintf
+                0x00000000000061e9       0xf9 libbb/lib.a(xfuncs_printf.o)
+                0x00000000000061e9                xasprintf
+ .text.xsetgid  0x00000000000062e2       0x32 libbb/lib.a(xfuncs_printf.o)
+                0x00000000000062e2                xsetgid
+ .text.xsetuid  0x0000000000006314       0x32 libbb/lib.a(xfuncs_printf.o)
+                0x0000000000006314                xsetuid
+ .text.xchdir   0x0000000000006346       0x3d libbb/lib.a(xfuncs_printf.o)
+                0x0000000000006346                xchdir
+ .text.xsocket  0x0000000000006383       0x4e libbb/lib.a(xfuncs_printf.o)
+                0x0000000000006383                xsocket
+ .text.xbind    0x00000000000063d1       0x45 libbb/lib.a(xfuncs_printf.o)
+                0x00000000000063d1                xbind
+ .text.xfork    0x0000000000006416       0x35 libbb/lib.a(xfuncs_printf.o)
+                0x0000000000006416                xfork
+ .text.xmalloc_readlink
+                0x000000000000644b       0xa8 libbb/lib.a(xreadlink.o)
+                0x000000000000644b                xmalloc_readlink
+ .text.xmalloc_follow_symlinks
+                0x00000000000064f3      0x150 libbb/lib.a(xreadlink.o)
+                0x00000000000064f3                xmalloc_follow_symlinks
+ .text.full_write
+                0x0000000000006643       0x8c libbb/lib.a(full_write.o)
+                0x0000000000006643                full_write
+ .text.safe_write
+                0x00000000000066cf       0x53 libbb/lib.a(safe_write.o)
+                0x00000000000066cf                safe_write
+ .text.record_signo
+                0x0000000000006722       0x14 libbb/lib.a(signals.o)
+                0x0000000000006722                record_signo
+ .text.sigaction_set
+                0x0000000000006736       0x2c libbb/lib.a(signals.o)
+                0x0000000000006736                sigaction_set
+ .text.bb_signals
+                0x0000000000006762       0x5f libbb/lib.a(signals.o)
+                0x0000000000006762                bb_signals
+ .text.bb_signals_recursive_norestart
+                0x00000000000067c1       0xb0 libbb/lib.a(signals.o)
+                0x00000000000067c1                bb_signals_recursive_norestart
+ .text.sig_unblock
+                0x0000000000006871       0x7a libbb/lib.a(signals.o)
+                0x0000000000006871                sig_unblock
+ .text.kill_myself_with_sig
+                0x00000000000068eb       0x41 libbb/lib.a(signals.o)
+                0x00000000000068eb                kill_myself_with_sig
+ .text.signal_no_SA_RESTART_empty_mask
+                0x000000000000692c       0x7a libbb/lib.a(signals.o)
+                0x000000000000692c                signal_no_SA_RESTART_empty_mask
+ .text.get_mono
+                0x00000000000069a6       0x45 libbb/lib.a(time.o)
+ .text.monotonic_sec
+                0x00000000000069eb       0x41 libbb/lib.a(time.o)
+                0x00000000000069eb                monotonic_sec
+ .text.bb_ascii_isalnum
+                0x0000000000006a2c       0x40 libbb/lib.a(bb_strtonum.o)
+ .text.ret_ERANGE
+                0x0000000000006a6c       0x19 libbb/lib.a(bb_strtonum.o)
+ .text.handle_errors
+                0x0000000000006a85       0x61 libbb/lib.a(bb_strtonum.o)
+ .text.bb_strtou
+                0x0000000000006ae6       0xcf libbb/lib.a(bb_strtonum.o)
+                0x0000000000006ae6                bb_strtou
+ .text.get_uidgid
+                0x0000000000006bb5      0x21b libpwdgrp/lib.a(uidgid_get.o)
+                0x0000000000006bb5                get_uidgid
+ .text.klogd_open
+                0x0000000000006dd0       0x22 sysklogd/lib.a(klogd.o)
+ .text.klogd_setloglevel
+                0x0000000000006df2       0x27 sysklogd/lib.a(klogd.o)
+ .text.klogd_read
+                0x0000000000006e19       0x2c sysklogd/lib.a(klogd.o)
+ .text.klogd_close
+                0x0000000000006e45       0x36 sysklogd/lib.a(klogd.o)
+ .text.klogd_main
+                0x0000000000006e7b      0x330 sysklogd/lib.a(klogd.o)
+                0x0000000000006e7b                klogd_main
+ .text.sem_up   0x00000000000071ab       0x3f sysklogd/lib.a(logread.o)
+ .text.interrupted
+                0x00000000000071ea       0x17 sysklogd/lib.a(logread.o)
+ .text.logread_main
+                0x0000000000007201      0x36b sysklogd/lib.a(logread.o)
+                0x0000000000007201                logread_main
+ .text.xatoul_range
+                0x000000000000756c       0x32 sysklogd/lib.a(syslogd_and_logger.o)
+ .text.find_by_name
+                0x000000000000759e       0x4f sysklogd/lib.a(syslogd_and_logger.o)
+ .text.find_by_val
+                0x00000000000075ed       0x3c sysklogd/lib.a(syslogd_and_logger.o)
+ .text.parse_syslogdcfg
+                0x0000000000007629      0x4bc sysklogd/lib.a(syslogd_and_logger.o)
+ .text.ipcsyslog_cleanup
+                0x0000000000007ae5       0x91 sysklogd/lib.a(syslogd_and_logger.o)
+ .text.ipcsyslog_init
+                0x0000000000007b76      0x15c sysklogd/lib.a(syslogd_and_logger.o)
+ .text.log_to_shmem
+                0x0000000000007cd2      0x198 sysklogd/lib.a(syslogd_and_logger.o)
+ .text.db_ctx_cleanup
+                0x0000000000007e6a       0x49 sysklogd/lib.a(syslogd_and_logger.o)
+ .text.db_ctx_init
+                0x0000000000007eb3      0x1c2 sysklogd/lib.a(syslogd_and_logger.o)
+ .text.log_to_db
+                0x0000000000008075      0x11a sysklogd/lib.a(syslogd_and_logger.o)
+                0x0000000000008075                log_to_db
+ .text.kmsg_init
+                0x000000000000818f       0x4d sysklogd/lib.a(syslogd_and_logger.o)
+ .text.kmsg_cleanup
+                0x00000000000081dc        0x6 sysklogd/lib.a(syslogd_and_logger.o)
+ .text.log_to_kmsg
+                0x00000000000081e2       0x75 sysklogd/lib.a(syslogd_and_logger.o)
+ .text.log_locally
+                0x0000000000008257      0x537 sysklogd/lib.a(syslogd_and_logger.o)
+ .text.parse_fac_prio_20
+                0x000000000000878e       0xb3 sysklogd/lib.a(syslogd_and_logger.o)
+ .text.timestamp_and_log
+                0x0000000000008841      0xb0f sysklogd/lib.a(syslogd_and_logger.o)
+ .text.timestamp_and_log_internal
+                0x0000000000009350       0x3b sysklogd/lib.a(syslogd_and_logger.o)
+ .text.split_escape_and_log
+                0x000000000000938b      0x185 sysklogd/lib.a(syslogd_and_logger.o)
+ .text.create_socket
+                0x0000000000009510      0x110 sysklogd/lib.a(syslogd_and_logger.o)
+ .text.try_to_resolve_remote
+                0x0000000000009620       0xa9 sysklogd/lib.a(syslogd_and_logger.o)
+ .text.do_syslogd
+                0x00000000000096c9      0x3b2 sysklogd/lib.a(syslogd_and_logger.o)
+ .text.syslogd_main
+                0x0000000000009a7b      0x596 sysklogd/lib.a(syslogd_and_logger.o)
+                0x0000000000009a7b                syslogd_main
+ .text.decode   0x000000000000a011       0x7d sysklogd/lib.a(syslogd_and_logger.o)
+ .text.pencode  0x000000000000a08e      0x107 sysklogd/lib.a(syslogd_and_logger.o)
+ .text.logger_main
+                0x000000000000a195      0x211 sysklogd/lib.a(syslogd_and_logger.o)
+                0x000000000000a195                logger_main
+ .text.uid2uname
+                0x000000000000a3a6       0x38 libbb/lib.a(bb_pwd.o)
+                0x000000000000a3a6                uid2uname
+ .text.uid2uname_utoa
+                0x000000000000a3de       0x3b libbb/lib.a(bb_pwd.o)
+                0x000000000000a3de                uid2uname_utoa
+ .text.device_open
+                0x000000000000a419       0x96 libbb/lib.a(device_open.o)
+                0x000000000000a419                device_open
+ .text.fflush_stdout_and_exit
+                0x000000000000a4af       0x41 libbb/lib.a(fflush_stdout_and_exit.o)
+                0x000000000000a4af                fflush_stdout_and_exit
+ .text.getopt32
+                0x000000000000a4f0      0xe85 libbb/lib.a(getopt32.o)
+                0x000000000000a4f0                getopt32
+ .text.get_linux_version_code
+                0x000000000000b375       0xc9 libbb/lib.a(kernel_version.o)
+                0x000000000000b375                get_linux_version_code
+ .text.config_open2
+                0x000000000000b43e       0x59 libbb/lib.a(parse_config.o)
+                0x000000000000b43e                config_open2
+ .text.config_close
+                0x000000000000b497       0x5a libbb/lib.a(parse_config.o)
+                0x000000000000b497                config_close
+ .text.get_line_with_continuation
+                0x000000000000b4f1      0x1a8 libbb/lib.a(parse_config.o)
+ .text.config_read
+                0x000000000000b699      0x287 libbb/lib.a(parse_config.o)
+                0x000000000000b699                config_read
+ .text.write_pidfile
+                0x000000000000b920      0x12a libbb/lib.a(pidfile.o)
+                0x000000000000b920                write_pidfile
+ .text.safe_gethostname
+                0x000000000000ba4a       0x6f libbb/lib.a(safe_gethostname.o)
+                0x000000000000ba4a                safe_gethostname
+ .text.safe_strncpy
+                0x000000000000bab9       0x5b libbb/lib.a(safe_strncpy.o)
+                0x000000000000bab9                safe_strncpy
+ .text.overlapping_strcpy
+                0x000000000000bb14       0x45 libbb/lib.a(safe_strncpy.o)
+                0x000000000000bb14                overlapping_strcpy
+ .text.bb_daemonize_or_rexec
+                0x000000000000bb59      0x13d libbb/lib.a(vfork_daemon_rexec.o)
+                0x000000000000bb59                bb_daemonize_or_rexec
+ .text.xstrtoull_range_sfx
+                0x000000000000bc96      0x1e9 libbb/lib.a(xatonum.o)
+                0x000000000000bc96                xstrtoull_range_sfx
+ .text.xatoull_range
+                0x000000000000be7f       0x3e libbb/lib.a(xatonum.o)
+                0x000000000000be7f                xatoull_range
+ .text.bb_strtoui
+                0x000000000000bebd       0x5a libbb/lib.a(xatonum.o)
+ .text.xstrtou_range_sfx
+                0x000000000000bf17      0x1cd libbb/lib.a(xatonum.o)
+                0x000000000000bf17                xstrtou_range_sfx
+ .text.xatou_range
+                0x000000000000c0e4       0x38 libbb/lib.a(xatonum.o)
+                0x000000000000c0e4                xatou_range
+ .text.xatoi_positive
+                0x000000000000c11c       0x29 libbb/lib.a(xatonum.o)
+                0x000000000000c11c                xatoi_positive
+ .text.set_nport
+                0x000000000000c145       0x36 libbb/lib.a(xconnect.o)
+                0x000000000000c145                set_nport
+ .text.str2sockaddr
+                0x000000000000c17b      0x327 libbb/lib.a(xconnect.o)
+ .text.host2sockaddr
+                0x000000000000c4a2       0x2e libbb/lib.a(xconnect.o)
+                0x000000000000c4a2                host2sockaddr
+ *(SORT_BY_ALIGNMENT(.gnu.warning))
+
+.fini           0x000000000000c4d0        0xd
+ *(SORT_NONE(.fini))
+ .fini          0x000000000000c4d0        0x8 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o
+                0x000000000000c4d0                _fini
+ .fini          0x000000000000c4d8        0x5 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o
+                [!provide]                        PROVIDE (__etext = .)
+                [!provide]                        PROVIDE (_etext = .)
+                [!provide]                        PROVIDE (etext = .)
+                0x000000000000d000                . = ALIGN (CONSTANT (MAXPAGESIZE))
+                0x000000000000d000                . = SEGMENT_START ("rodata-segment", (ALIGN (CONSTANT (MAXPAGESIZE)) + (. & (CONSTANT (MAXPAGESIZE) - 0x1))))
+
+.rodata         0x000000000000d000     0x11a6
+ *(SORT_BY_ALIGNMENT(.rodata) SORT_BY_ALIGNMENT(.rodata.*) SORT_BY_ALIGNMENT(.gnu.linkonce.r.*))
+ .rodata.bb_null_long_options
+                0x000000000000d000       0x20 libbb/lib.a(getopt32.o)
+ .rodata.init_sem
+                0x000000000000d020       0x12 sysklogd/lib.a(logread.o)
+ *fill*         0x000000000000d032        0x6 
+ .rodata        0x000000000000d038      0x398 libbb/lib.a(appletlib.o)
+ .rodata        0x000000000000d3d0      0x1a7 libbb/lib.a(xfuncs_printf.o)
+ *fill*         0x000000000000d577        0x1 
+ .rodata        0x000000000000d578       0xc8 libbb/lib.a(time.o)
+ .rodata        0x000000000000d640       0x77 sysklogd/lib.a(logread.o)
+ *fill*         0x000000000000d6b7        0x1 
+ .rodata        0x000000000000d6b8      0x415 sysklogd/lib.a(syslogd_and_logger.o)
+ *fill*         0x000000000000dacd        0x3 
+ .rodata        0x000000000000dad0       0x28 libbb/lib.a(parse_config.o)
+ .rodata        0x000000000000daf8       0x65 libbb/lib.a(xatonum.o)
+ *fill*         0x000000000000db5d        0x1 
+ .rodata.mode_mask.8425
+                0x000000000000db5e       0x14 libbb/lib.a(appletlib.o)
+ .rodata.applet_names
+                0x000000000000db72       0x1e libbb/lib.a(appletlib.o)
+                0x000000000000db72                applet_names
+ .rodata.applet_install_loc
+                0x000000000000db90        0x2 libbb/lib.a(appletlib.o)
+                0x000000000000db90                applet_install_loc
+ .rodata.usage_messages
+                0x000000000000db92      0x475 libbb/lib.a(appletlib.o)
+ .rodata.usr_bin
+                0x000000000000e007        0xa libbb/lib.a(appletlib.o)
+ .rodata.usr_sbin
+                0x000000000000e011        0xb libbb/lib.a(appletlib.o)
+ .rodata.config_file.8408
+                0x000000000000e01c       0x12 libbb/lib.a(appletlib.o)
+ .rodata.mode_chars.8424
+                0x000000000000e02e        0xd libbb/lib.a(appletlib.o)
+ .rodata        0x000000000000e03b        0xa libbb/lib.a(concat_path_file.o)
+ .rodata.bb_banner
+                0x000000000000e045       0x2e libbb/lib.a(messages.o)
+                0x000000000000e045                bb_banner
+ .rodata.bb_msg_memory_exhausted
+                0x000000000000e073        0xe libbb/lib.a(messages.o)
+                0x000000000000e073                bb_msg_memory_exhausted
+ .rodata.bb_msg_standard_output
+                0x000000000000e081       0x10 libbb/lib.a(messages.o)
+                0x000000000000e081                bb_msg_standard_output
+ .rodata.bb_busybox_exec_path
+                0x000000000000e091        0xf libbb/lib.a(messages.o)
+                0x000000000000e091                bb_busybox_exec_path
+ .rodata        0x000000000000e0a0        0x3 libbb/lib.a(perror_msg.o)
+ .rodata        0x000000000000e0a3        0x6 libbb/lib.a(verror_msg.o)
+ .rodata        0x000000000000e0a9        0x4 libbb/lib.a(wfopen.o)
+ .rodata        0x000000000000e0ad       0x1f libbb/lib.a(xfuncs.o)
+ .rodata        0x000000000000e0cc       0x53 sysklogd/lib.a(klogd.o)
+ .rodata        0x000000000000e11f        0xd libbb/lib.a(getopt32.o)
+ .rodata        0x000000000000e12c        0x2 libbb/lib.a(kernel_version.o)
+ .rodata        0x000000000000e12e        0x2 libbb/lib.a(safe_gethostname.o)
+ .rodata        0x000000000000e130        0xc libbb/lib.a(vfork_daemon_rexec.o)
+ .rodata        0x000000000000e13c       0x6a libbb/lib.a(xconnect.o)
+
+.rodata1
+ *(SORT_BY_ALIGNMENT(.rodata1))
+
+.eh_frame_hdr   0x000000000000e1a8       0x4c
+ *(SORT_BY_ALIGNMENT(.eh_frame_hdr))
+ .eh_frame_hdr  0x000000000000e1a8       0x4c /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+                0x000000000000e1a8                __GNU_EH_FRAME_HDR
+ *(SORT_BY_ALIGNMENT(.eh_frame_entry) SORT_BY_ALIGNMENT(.eh_frame_entry.*))
+
+.eh_frame       0x000000000000e1f8      0x118
+ *(SORT_BY_ALIGNMENT(.eh_frame))
+ .eh_frame      0x000000000000e1f8       0x30 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+                                         0x2c (size before relaxing)
+ *fill*         0x000000000000e228        0x0 
+ .eh_frame      0x000000000000e228       0x28 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+                                         0x40 (size before relaxing)
+ .eh_frame      0x000000000000e250       0x18 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+                                         0x30 (size before relaxing)
+ .eh_frame      0x000000000000e268       0x18 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+                                         0x30 (size before relaxing)
+ .eh_frame      0x000000000000e280       0x60 /usr/lib/x86_64-linux-gnu/libc_nonshared.a(elf-init.oS)
+                                         0x78 (size before relaxing)
+ .eh_frame      0x000000000000e2e0       0x18 /usr/lib/x86_64-linux-gnu/libc_nonshared.a(stat64.oS)
+                                         0x30 (size before relaxing)
+ .eh_frame      0x000000000000e2f8       0x14 /usr/lib/x86_64-linux-gnu/libc_nonshared.a(fstat64.oS)
+                                         0x30 (size before relaxing)
+ .eh_frame      0x000000000000e30c        0x4 /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o
+ *(SORT_BY_ALIGNMENT(.eh_frame.*))
+
+.gcc_except_table
+ *(SORT_BY_ALIGNMENT(.gcc_except_table) SORT_BY_ALIGNMENT(.gcc_except_table.*))
+
+.gnu_extab
+ *(SORT_BY_ALIGNMENT(.gnu_extab*))
+
+.exception_ranges
+ *(SORT_BY_ALIGNMENT(.exception_ranges*))
+                0x000000000000f930                . = DATA_SEGMENT_ALIGN (CONSTANT (MAXPAGESIZE), CONSTANT (COMMONPAGESIZE))
+
+.eh_frame
+ *(SORT_BY_ALIGNMENT(.eh_frame))
+ *(SORT_BY_ALIGNMENT(.eh_frame.*))
+
+.gnu_extab
+ *(SORT_BY_ALIGNMENT(.gnu_extab))
+
+.gcc_except_table
+ *(SORT_BY_ALIGNMENT(.gcc_except_table) SORT_BY_ALIGNMENT(.gcc_except_table.*))
+
+.exception_ranges
+ *(SORT_BY_ALIGNMENT(.exception_ranges*))
+
+.tdata          0x000000000000f930        0x0
+                [!provide]                        PROVIDE (__tdata_start = .)
+ *(SORT_BY_ALIGNMENT(.tdata) SORT_BY_ALIGNMENT(.tdata.*) SORT_BY_ALIGNMENT(.gnu.linkonce.td.*))
+
+.tbss
+ *(SORT_BY_ALIGNMENT(.tbss) SORT_BY_ALIGNMENT(.tbss.*) SORT_BY_ALIGNMENT(.gnu.linkonce.tb.*))
+ *(SORT_BY_ALIGNMENT(.tcommon))
+
+.preinit_array  0x000000000000f930        0x0
+                [!provide]                        PROVIDE (__preinit_array_start = .)
+ *(SORT_BY_ALIGNMENT(.preinit_array))
+                [!provide]                        PROVIDE (__preinit_array_end = .)
+
+.init_array     0x000000000000f930        0x8
+                0x000000000000f930                PROVIDE (__init_array_start = .)
+ *(SORT_BY_INIT_PRIORITY(.init_array.*) SORT_BY_INIT_PRIORITY(.ctors.*))
+ *(SORT_BY_ALIGNMENT(.init_array) SORT_BY_ALIGNMENT(EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .ctors))
+ .init_array    0x000000000000f930        0x8 /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o
+                0x000000000000f938                PROVIDE (__init_array_end = .)
+
+.fini_array     0x000000000000f938        0x8
+                [!provide]                        PROVIDE (__fini_array_start = .)
+ *(SORT_BY_INIT_PRIORITY(.fini_array.*) SORT_BY_INIT_PRIORITY(.dtors.*))
+ *(SORT_BY_ALIGNMENT(.fini_array) SORT_BY_ALIGNMENT(EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .dtors))
+ .fini_array    0x000000000000f938        0x8 /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o
+                [!provide]                        PROVIDE (__fini_array_end = .)
+
+.ctors
+ *crtbegin.o(SORT_BY_ALIGNMENT(.ctors))
+ *crtbegin?.o(SORT_BY_ALIGNMENT(.ctors))
+ *(SORT_BY_ALIGNMENT(EXCLUDE_FILE(*crtend?.o *crtend.o) .ctors))
+ *(SORT_BY_NAME(SORT_BY_ALIGNMENT(.ctors.*)))
+ *(SORT_BY_ALIGNMENT(.ctors))
+
+.dtors
+ *crtbegin.o(SORT_BY_ALIGNMENT(.dtors))
+ *crtbegin?.o(SORT_BY_ALIGNMENT(.dtors))
+ *(SORT_BY_ALIGNMENT(EXCLUDE_FILE(*crtend?.o *crtend.o) .dtors))
+ *(SORT_BY_NAME(SORT_BY_ALIGNMENT(.dtors.*)))
+ *(SORT_BY_ALIGNMENT(.dtors))
+
+.jcr
+ *(SORT_BY_ALIGNMENT(.jcr))
+
+.data.rel.ro    0x000000000000f940      0x100
+ *(SORT_BY_ALIGNMENT(.data.rel.ro.local*) SORT_BY_ALIGNMENT(.gnu.linkonce.d.rel.ro.local.*))
+ .data.rel.ro.local.install_dir
+                0x000000000000f940       0x28 libbb/lib.a(appletlib.o)
+ *fill*         0x000000000000f968       0x18 
+ .data.rel.ro.local.init_data
+                0x000000000000f980       0xa0 sysklogd/lib.a(syslogd_and_logger.o)
+ *(SORT_BY_ALIGNMENT(.data.rel.ro) SORT_BY_ALIGNMENT(.data.rel.ro.*) SORT_BY_ALIGNMENT(.gnu.linkonce.d.rel.ro.*))
+ .data.rel.ro.applet_main
+                0x000000000000fa20       0x20 libbb/lib.a(appletlib.o)
+                0x000000000000fa20                applet_main
+ .data.rel.ro   0x000000000000fa40        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+
+.dynamic        0x000000000000fa40      0x200
+ *(SORT_BY_ALIGNMENT(.dynamic))
+ .dynamic       0x000000000000fa40      0x200 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+                0x000000000000fa40                _DYNAMIC
+
+.got            0x000000000000fc40      0x3a8
+ *(SORT_BY_ALIGNMENT(.got.plt))
+ .got.plt       0x000000000000fc40      0x370 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+                0x000000000000fc40                _GLOBAL_OFFSET_TABLE_
+ *(SORT_BY_ALIGNMENT(.igot.plt))
+ *(SORT_BY_ALIGNMENT(.got))
+ .got           0x000000000000ffb0       0x38 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ *(SORT_BY_ALIGNMENT(.igot))
+                0x0000000000010000                . = DATA_SEGMENT_RELRO_END (., 0x0)
+
+.data           0x0000000000010000      0x263
+ *(SORT_BY_ALIGNMENT(.data) SORT_BY_ALIGNMENT(.data.*) SORT_BY_ALIGNMENT(.gnu.linkonce.d.*))
+ .data.rel.local.prioritynames
+                0x0000000000010000       0xd0 sysklogd/lib.a(syslogd_and_logger.o)
+                0x0000000000010000                prioritynames
+ *fill*         0x00000000000100d0       0x10 
+ .data.rel.local.facilitynames
+                0x00000000000100e0      0x170 sysklogd/lib.a(syslogd_and_logger.o)
+                0x00000000000100e0                facilitynames
+ .data.rel.local
+                0x0000000000010250        0x8 /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o
+                0x0000000000010250                __dso_handle
+ .data.rel.local.msg_eol
+                0x0000000000010258        0x8 libbb/lib.a(verror_msg.o)
+                0x0000000000010258                msg_eol
+ .data.xfunc_error_retval
+                0x0000000000010260        0x1 libbb/lib.a(default_error_retval.o)
+                0x0000000000010260                xfunc_error_retval
+ .data.syslog_level
+                0x0000000000010261        0x1 libbb/lib.a(verror_msg.o)
+                0x0000000000010261                syslog_level
+ .data.logmode  0x0000000000010262        0x1 libbb/lib.a(verror_msg.o)
+                0x0000000000010262                logmode
+
+.tm_clone_table
+                0x0000000000010268        0x0
+ .tm_clone_table
+                0x0000000000010268        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o
+ .tm_clone_table
+                0x0000000000010268        0x0 /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o
+
+.data1
+ *(SORT_BY_ALIGNMENT(.data1))
+                0x0000000000010263                _edata = .
+                [!provide]                        PROVIDE (edata = .)
+                0x0000000000010268                . = .
+                0x0000000000010263                __bss_start = .
+
+.bss            0x0000000000010270      0x480
+ *(SORT_BY_ALIGNMENT(.dynbss))
+ *fill*         0x0000000000010270        0x0 
+ .dynbss        0x0000000000010270       0x28 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+                0x0000000000010270                stdout@@GLIBC_2.2.5
+                0x0000000000010280                stdin@@GLIBC_2.2.5
+                0x0000000000010288                optind@@GLIBC_2.2.5
+                0x0000000000010290                optarg@@GLIBC_2.2.5
+ *(SORT_BY_ALIGNMENT(.bss) SORT_BY_ALIGNMENT(.bss.*) SORT_BY_ALIGNMENT(.gnu.linkonce.b.*))
+ .bss.suid_config
+                0x0000000000010298        0x8 libbb/lib.a(appletlib.o)
+ .bss.local_buf
+                0x00000000000102a0        0xc libbb/lib.a(xfuncs.o)
+ .bss.ruid      0x00000000000102ac        0x4 libbb/lib.a(appletlib.o)
+ .bss           0x00000000000102b0        0x1 /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o
+ .bss.suid_cfg_readable
+                0x00000000000102b1        0x1 libbb/lib.a(appletlib.o)
+ *(SORT_BY_ALIGNMENT(COMMON))
+ *fill*         0x00000000000102b2        0x6 
+ COMMON         0x00000000000102b8        0x8 libbb/lib.a(appletlib.o)
+                0x00000000000102b8                applet_name
+ COMMON         0x00000000000102c0       0x10 libbb/lib.a(ptr_to_globals.o)
+                0x00000000000102c0                bb_errno
+                0x00000000000102c8                ptr_to_globals
+ COMMON         0x00000000000102d0        0x8 libbb/lib.a(xfunc_die.o)
+                0x00000000000102d0                die_func
+ COMMON         0x00000000000102d8      0x400 libbb/lib.a(common_bufsiz.o)
+                0x00000000000102d8                bb_common_bufsiz1
+ COMMON         0x00000000000106d8       0x14 libbb/lib.a(getopt32.o)
+                0x00000000000106d8                opt_complementary
+                0x00000000000106e0                applet_long_options
+                0x00000000000106e8                option_mask32
+ COMMON         0x00000000000106ec        0x1 libbb/lib.a(signals.o)
+                0x00000000000106ec                bb_got_signal
+ COMMON         0x00000000000106ed        0x1 libbb/lib.a(pidfile.o)
+                0x00000000000106ed                wrote_pidfile
+                0x00000000000106f0                . = ALIGN ((. != 0x0)?0x8:0x1)
+ *fill*         0x00000000000106ee        0x2 
+
+.lbss
+ *(SORT_BY_ALIGNMENT(.dynlbss))
+ *(SORT_BY_ALIGNMENT(.lbss) SORT_BY_ALIGNMENT(.lbss.*) SORT_BY_ALIGNMENT(.gnu.linkonce.lb.*))
+ *(SORT_BY_ALIGNMENT(LARGE_COMMON))
+                0x00000000000106f0                . = ALIGN (0x8)
+                0x00000000000106f0                . = SEGMENT_START ("ldata-segment", .)
+
+.lrodata
+ *(SORT_BY_ALIGNMENT(.lrodata) SORT_BY_ALIGNMENT(.lrodata.*) SORT_BY_ALIGNMENT(.gnu.linkonce.lr.*))
+
+.ldata          0x00000000000126f0        0x0
+ *(SORT_BY_ALIGNMENT(.ldata) SORT_BY_ALIGNMENT(.ldata.*) SORT_BY_ALIGNMENT(.gnu.linkonce.l.*))
+                0x00000000000126f0                . = ALIGN ((. != 0x0)?0x8:0x1)
+                0x00000000000126f0                . = ALIGN (0x8)
+                0x00000000000106f0                _end = .
+                [!provide]                        PROVIDE (end = .)
+                0x00000000000126f0                . = DATA_SEGMENT_END (.)
+
+.stab
+ *(SORT_BY_ALIGNMENT(.stab))
+
+.stabstr
+ *(SORT_BY_ALIGNMENT(.stabstr))
+
+.stab.excl
+ *(SORT_BY_ALIGNMENT(.stab.excl))
+
+.stab.exclstr
+ *(SORT_BY_ALIGNMENT(.stab.exclstr))
+
+.stab.index
+ *(SORT_BY_ALIGNMENT(.stab.index))
+
+.stab.indexstr
+ *(SORT_BY_ALIGNMENT(.stab.indexstr))
+
+.comment        0x0000000000000000       0x2b
+ *(SORT_BY_ALIGNMENT(.comment))
+ .comment       0x0000000000000000       0x2b /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o
+                                         0x2c (size before relaxing)
+ .comment       0x000000000000002b       0x2c libbb/lib.a(appletlib.o)
+ .comment       0x000000000000002b       0x2c libbb/lib.a(compare_string_array.o)
+ .comment       0x000000000000002b       0x2c libbb/lib.a(concat_path_file.o)
+ .comment       0x000000000000002b       0x2c libbb/lib.a(default_error_retval.o)
+ .comment       0x000000000000002b       0x2c libbb/lib.a(get_last_path_component.o)
+ .comment       0x000000000000002b       0x2c libbb/lib.a(last_char_is.o)
+ .comment       0x000000000000002b       0x2c libbb/lib.a(llist.o)
+ .comment       0x000000000000002b       0x2c libbb/lib.a(messages.o)
+ .comment       0x000000000000002b       0x2c libbb/lib.a(perror_msg.o)
+ .comment       0x000000000000002b       0x2c libbb/lib.a(ptr_to_globals.o)
+ .comment       0x000000000000002b       0x2c libbb/lib.a(skip_whitespace.o)
+ .comment       0x000000000000002b       0x2c libbb/lib.a(verror_msg.o)
+ .comment       0x000000000000002b       0x2c libbb/lib.a(wfopen.o)
+ .comment       0x000000000000002b       0x2c libbb/lib.a(xfunc_die.o)
+ .comment       0x000000000000002b       0x2c libbb/lib.a(xfuncs.o)
+ .comment       0x000000000000002b       0x2c libbb/lib.a(xfuncs_printf.o)
+ .comment       0x000000000000002b       0x2c libbb/lib.a(xreadlink.o)
+ .comment       0x000000000000002b       0x2c libbb/lib.a(full_write.o)
+ .comment       0x000000000000002b       0x2c libbb/lib.a(safe_write.o)
+ .comment       0x000000000000002b       0x2c libbb/lib.a(signals.o)
+ .comment       0x000000000000002b       0x2c libbb/lib.a(time.o)
+ .comment       0x000000000000002b       0x2c libbb/lib.a(bb_strtonum.o)
+ .comment       0x000000000000002b       0x2c libpwdgrp/lib.a(uidgid_get.o)
+ .comment       0x000000000000002b       0x2c sysklogd/lib.a(klogd.o)
+ .comment       0x000000000000002b       0x2c sysklogd/lib.a(logread.o)
+ .comment       0x000000000000002b       0x2c sysklogd/lib.a(syslogd_and_logger.o)
+ .comment       0x000000000000002b       0x2c libbb/lib.a(bb_pwd.o)
+ .comment       0x000000000000002b       0x2c libbb/lib.a(common_bufsiz.o)
+ .comment       0x000000000000002b       0x2c libbb/lib.a(device_open.o)
+ .comment       0x000000000000002b       0x2c libbb/lib.a(fflush_stdout_and_exit.o)
+ .comment       0x000000000000002b       0x2c libbb/lib.a(getopt32.o)
+ .comment       0x000000000000002b       0x2c libbb/lib.a(kernel_version.o)
+ .comment       0x000000000000002b       0x2c libbb/lib.a(parse_config.o)
+ .comment       0x000000000000002b       0x2c libbb/lib.a(pidfile.o)
+ .comment       0x000000000000002b       0x2c libbb/lib.a(safe_gethostname.o)
+ .comment       0x000000000000002b       0x2c libbb/lib.a(safe_strncpy.o)
+ .comment       0x000000000000002b       0x2c libbb/lib.a(vfork_daemon_rexec.o)
+ .comment       0x000000000000002b       0x2c libbb/lib.a(xatonum.o)
+ .comment       0x000000000000002b       0x2c libbb/lib.a(xconnect.o)
+ .comment       0x000000000000002b       0x2c /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o
+
+.gnu.build.attributes
+ *(SORT_BY_ALIGNMENT(.gnu.build.attributes) SORT_BY_ALIGNMENT(.gnu.build.attributes.*))
+
+.debug
+ *(SORT_BY_ALIGNMENT(.debug))
+
+.line
+ *(SORT_BY_ALIGNMENT(.line))
+
+.debug_srcinfo
+ *(SORT_BY_ALIGNMENT(.debug_srcinfo))
+
+.debug_sfnames
+ *(SORT_BY_ALIGNMENT(.debug_sfnames))
+
+.debug_aranges  0x0000000000000000     0x1770
+ *(SORT_BY_ALIGNMENT(.debug_aranges))
+ .debug_aranges
+                0x0000000000000000       0xe0 libbb/lib.a(appletlib.o)
+ .debug_aranges
+                0x00000000000000e0       0x80 libbb/lib.a(compare_string_array.o)
+ .debug_aranges
+                0x0000000000000160       0x30 libbb/lib.a(concat_path_file.o)
+ .debug_aranges
+                0x0000000000000190       0x20 libbb/lib.a(default_error_retval.o)
+ .debug_aranges
+                0x00000000000001b0       0x50 libbb/lib.a(get_last_path_component.o)
+ .debug_aranges
+                0x0000000000000200       0x30 libbb/lib.a(last_char_is.o)
+ .debug_aranges
+                0x0000000000000230       0x90 libbb/lib.a(llist.o)
+ .debug_aranges
+                0x00000000000002c0       0x20 libbb/lib.a(messages.o)
+ .debug_aranges
+                0x00000000000002e0       0x60 libbb/lib.a(perror_msg.o)
+ .debug_aranges
+                0x0000000000000340       0x20 libbb/lib.a(ptr_to_globals.o)
+ .debug_aranges
+                0x0000000000000360       0x50 libbb/lib.a(skip_whitespace.o)
+ .debug_aranges
+                0x00000000000003b0       0x50 libbb/lib.a(verror_msg.o)
+ .debug_aranges
+                0x0000000000000400       0xa0 libbb/lib.a(wfopen.o)
+ .debug_aranges
+                0x00000000000004a0       0x30 libbb/lib.a(xfunc_die.o)
+ .debug_aranges
+                0x00000000000004d0      0x180 libbb/lib.a(xfuncs.o)
+ .debug_aranges
+                0x0000000000000650      0x3c0 libbb/lib.a(xfuncs_printf.o)
+ .debug_aranges
+                0x0000000000000a10       0x60 libbb/lib.a(xreadlink.o)
+ .debug_aranges
+                0x0000000000000a70       0x30 libbb/lib.a(full_write.o)
+ .debug_aranges
+                0x0000000000000aa0       0x30 libbb/lib.a(safe_write.o)
+ .debug_aranges
+                0x0000000000000ad0       0xd0 libbb/lib.a(signals.o)
+ .debug_aranges
+                0x0000000000000ba0       0xd0 libbb/lib.a(time.o)
+ .debug_aranges
+                0x0000000000000c70       0x90 libbb/lib.a(bb_strtonum.o)
+ .debug_aranges
+                0x0000000000000d00       0x50 libpwdgrp/lib.a(uidgid_get.o)
+ .debug_aranges
+                0x0000000000000d50       0x70 sysklogd/lib.a(klogd.o)
+ .debug_aranges
+                0x0000000000000dc0       0x50 sysklogd/lib.a(logread.o)
+ .debug_aranges
+                0x0000000000000e10      0x1b0 sysklogd/lib.a(syslogd_and_logger.o)
+ .debug_aranges
+                0x0000000000000fc0      0x100 libbb/lib.a(bb_pwd.o)
+ .debug_aranges
+                0x00000000000010c0       0x20 libbb/lib.a(common_bufsiz.o)
+ .debug_aranges
+                0x00000000000010e0       0x30 libbb/lib.a(device_open.o)
+ .debug_aranges
+                0x0000000000001110       0x30 libbb/lib.a(fflush_stdout_and_exit.o)
+ .debug_aranges
+                0x0000000000001140       0x30 libbb/lib.a(getopt32.o)
+ .debug_aranges
+                0x0000000000001170       0x30 libbb/lib.a(kernel_version.o)
+ .debug_aranges
+                0x00000000000011a0       0x70 libbb/lib.a(parse_config.o)
+ .debug_aranges
+                0x0000000000001210       0x30 libbb/lib.a(pidfile.o)
+ .debug_aranges
+                0x0000000000001240       0x30 libbb/lib.a(safe_gethostname.o)
+ .debug_aranges
+                0x0000000000001270       0x40 libbb/lib.a(safe_strncpy.o)
+ .debug_aranges
+                0x00000000000012b0       0x70 libbb/lib.a(vfork_daemon_rexec.o)
+ .debug_aranges
+                0x0000000000001320      0x230 libbb/lib.a(xatonum.o)
+ .debug_aranges
+                0x0000000000001550      0x220 libbb/lib.a(xconnect.o)
+
+.debug_pubnames
+ *(SORT_BY_ALIGNMENT(.debug_pubnames))
+
+.debug_info     0x0000000000000000    0x2216e
+ *(SORT_BY_ALIGNMENT(.debug_info) SORT_BY_ALIGNMENT(.gnu.linkonce.wi.*))
+ .debug_info    0x0000000000000000     0x1852 libbb/lib.a(appletlib.o)
+ .debug_info    0x0000000000001852      0xc4a libbb/lib.a(compare_string_array.o)
+ .debug_info    0x000000000000249c      0xa7e libbb/lib.a(concat_path_file.o)
+ .debug_info    0x0000000000002f1a      0xa9c libbb/lib.a(default_error_retval.o)
+ .debug_info    0x00000000000039b6      0xaf1 libbb/lib.a(get_last_path_component.o)
+ .debug_info    0x00000000000044a7      0xa8c libbb/lib.a(last_char_is.o)
+ .debug_info    0x0000000000004f33      0xca1 libbb/lib.a(llist.o)
+ .debug_info    0x0000000000005bd4      0xbbc libbb/lib.a(messages.o)
+ .debug_info    0x0000000000006790      0xb6d libbb/lib.a(perror_msg.o)
+ .debug_info    0x00000000000072fd       0x87 libbb/lib.a(ptr_to_globals.o)
+ .debug_info    0x0000000000007384      0xac1 libbb/lib.a(skip_whitespace.o)
+ .debug_info    0x0000000000007e45      0xccc libbb/lib.a(verror_msg.o)
+ .debug_info    0x0000000000008b11      0xbe8 libbb/lib.a(wfopen.o)
+ .debug_info    0x00000000000096f9      0xac2 libbb/lib.a(xfunc_die.o)
+ .debug_info    0x000000000000a1bb     0x128a libbb/lib.a(xfuncs.o)
+ .debug_info    0x000000000000b445     0x1ce0 libbb/lib.a(xfuncs_printf.o)
+ .debug_info    0x000000000000d125      0xbe3 libbb/lib.a(xreadlink.o)
+ .debug_info    0x000000000000dd08      0xaba libbb/lib.a(full_write.o)
+ .debug_info    0x000000000000e7c2      0xaaa libbb/lib.a(safe_write.o)
+ .debug_info    0x000000000000f26c     0x113f libbb/lib.a(signals.o)
+ .debug_info    0x00000000000103ab      0xeb0 libbb/lib.a(time.o)
+ .debug_info    0x000000000001125b      0xcad libbb/lib.a(bb_strtonum.o)
+ .debug_info    0x0000000000011f08      0xc87 libpwdgrp/lib.a(uidgid_get.o)
+ .debug_info    0x0000000000012b8f      0xc6b sysklogd/lib.a(klogd.o)
+ .debug_info    0x00000000000137fa      0xd47 sysklogd/lib.a(logread.o)
+ .debug_info    0x0000000000014541     0x29f2 sysklogd/lib.a(syslogd_and_logger.o)
+ .debug_info    0x0000000000016f33      0xecb libbb/lib.a(bb_pwd.o)
+ .debug_info    0x0000000000017dfe      0xac9 libbb/lib.a(common_bufsiz.o)
+ .debug_info    0x00000000000188c7      0xa98 libbb/lib.a(device_open.o)
+ .debug_info    0x000000000001935f      0xa5d libbb/lib.a(fflush_stdout_and_exit.o)
+ .debug_info    0x0000000000019dbc      0xf21 libbb/lib.a(getopt32.o)
+ .debug_info    0x000000000001acdd      0xafb libbb/lib.a(kernel_version.o)
+ .debug_info    0x000000000001b7d8      0xcf7 libbb/lib.a(parse_config.o)
+ .debug_info    0x000000000001c4cf      0xc92 libbb/lib.a(pidfile.o)
+ .debug_info    0x000000000001d161      0xad1 libbb/lib.a(safe_gethostname.o)
+ .debug_info    0x000000000001dc32      0xabc libbb/lib.a(safe_strncpy.o)
+ .debug_info    0x000000000001e6ee      0xc27 libbb/lib.a(vfork_daemon_rexec.o)
+ .debug_info    0x000000000001f315     0x1637 libbb/lib.a(xatonum.o)
+ .debug_info    0x000000000002094c     0x1822 libbb/lib.a(xconnect.o)
+
+.debug_abbrev   0x0000000000000000     0x4c8d
+ *(SORT_BY_ALIGNMENT(.debug_abbrev))
+ .debug_abbrev  0x0000000000000000      0x3b8 libbb/lib.a(appletlib.o)
+ .debug_abbrev  0x00000000000003b8      0x1b0 libbb/lib.a(compare_string_array.o)
+ .debug_abbrev  0x0000000000000568      0x167 libbb/lib.a(concat_path_file.o)
+ .debug_abbrev  0x00000000000006cf      0x177 libbb/lib.a(default_error_retval.o)
+ .debug_abbrev  0x0000000000000846      0x196 libbb/lib.a(get_last_path_component.o)
+ .debug_abbrev  0x00000000000009dc      0x170 libbb/lib.a(last_char_is.o)
+ .debug_abbrev  0x0000000000000b4c      0x223 libbb/lib.a(llist.o)
+ .debug_abbrev  0x0000000000000d6f      0x177 libbb/lib.a(messages.o)
+ .debug_abbrev  0x0000000000000ee6      0x1cc libbb/lib.a(perror_msg.o)
+ .debug_abbrev  0x00000000000010b2       0x5e libbb/lib.a(ptr_to_globals.o)
+ .debug_abbrev  0x0000000000001110      0x1a3 libbb/lib.a(skip_whitespace.o)
+ .debug_abbrev  0x00000000000012b3      0x243 libbb/lib.a(verror_msg.o)
+ .debug_abbrev  0x00000000000014f6      0x1b2 libbb/lib.a(wfopen.o)
+ .debug_abbrev  0x00000000000016a8      0x198 libbb/lib.a(xfunc_die.o)
+ .debug_abbrev  0x0000000000001840      0x2cb libbb/lib.a(xfuncs.o)
+ .debug_abbrev  0x0000000000001b0b      0x2da libbb/lib.a(xfuncs_printf.o)
+ .debug_abbrev  0x0000000000001de5      0x1ca libbb/lib.a(xreadlink.o)
+ .debug_abbrev  0x0000000000001faf      0x17d libbb/lib.a(full_write.o)
+ .debug_abbrev  0x000000000000212c      0x17d libbb/lib.a(safe_write.o)
+ .debug_abbrev  0x00000000000022a9      0x271 libbb/lib.a(signals.o)
+ .debug_abbrev  0x000000000000251a      0x254 libbb/lib.a(time.o)
+ .debug_abbrev  0x000000000000276e      0x1fd libbb/lib.a(bb_strtonum.o)
+ .debug_abbrev  0x000000000000296b      0x1d0 libpwdgrp/lib.a(uidgid_get.o)
+ .debug_abbrev  0x0000000000002b3b      0x23a sysklogd/lib.a(klogd.o)
+ .debug_abbrev  0x0000000000002d75      0x22b sysklogd/lib.a(logread.o)
+ .debug_abbrev  0x0000000000002fa0      0x447 sysklogd/lib.a(syslogd_and_logger.o)
+ .debug_abbrev  0x00000000000033e7      0x1b7 libbb/lib.a(bb_pwd.o)
+ .debug_abbrev  0x000000000000359e      0x18a libbb/lib.a(common_bufsiz.o)
+ .debug_abbrev  0x0000000000003728      0x167 libbb/lib.a(device_open.o)
+ .debug_abbrev  0x000000000000388f      0x157 libbb/lib.a(fflush_stdout_and_exit.o)
+ .debug_abbrev  0x00000000000039e6      0x24a libbb/lib.a(getopt32.o)
+ .debug_abbrev  0x0000000000003c30      0x189 libbb/lib.a(kernel_version.o)
+ .debug_abbrev  0x0000000000003db9      0x218 libbb/lib.a(parse_config.o)
+ .debug_abbrev  0x0000000000003fd1      0x1c8 libbb/lib.a(pidfile.o)
+ .debug_abbrev  0x0000000000004199      0x178 libbb/lib.a(safe_gethostname.o)
+ .debug_abbrev  0x0000000000004311      0x183 libbb/lib.a(safe_strncpy.o)
+ .debug_abbrev  0x0000000000004494      0x226 libbb/lib.a(vfork_daemon_rexec.o)
+ .debug_abbrev  0x00000000000046ba      0x22d libbb/lib.a(xatonum.o)
+ .debug_abbrev  0x00000000000048e7      0x3a6 libbb/lib.a(xconnect.o)
+
+.debug_line     0x0000000000000000     0x97ce
+ *(SORT_BY_ALIGNMENT(.debug_line) SORT_BY_ALIGNMENT(.debug_line.*) SORT_BY_ALIGNMENT(.debug_line_end))
+ .debug_line    0x0000000000000000      0x93d libbb/lib.a(appletlib.o)
+ .debug_line    0x000000000000093d      0x329 libbb/lib.a(compare_string_array.o)
+ .debug_line    0x0000000000000c66      0x1f8 libbb/lib.a(concat_path_file.o)
+ .debug_line    0x0000000000000e5e      0x1c5 libbb/lib.a(default_error_retval.o)
+ .debug_line    0x0000000000001023      0x24e libbb/lib.a(get_last_path_component.o)
+ .debug_line    0x0000000000001271      0x1ee libbb/lib.a(last_char_is.o)
+ .debug_line    0x000000000000145f      0x2fc libbb/lib.a(llist.o)
+ .debug_line    0x000000000000175b      0x1b9 libbb/lib.a(messages.o)
+ .debug_line    0x0000000000001914      0x27b libbb/lib.a(perror_msg.o)
+ .debug_line    0x0000000000001b8f       0x4f libbb/lib.a(ptr_to_globals.o)
+ .debug_line    0x0000000000001bde      0x25a libbb/lib.a(skip_whitespace.o)
+ .debug_line    0x0000000000001e38      0x33d libbb/lib.a(verror_msg.o)
+ .debug_line    0x0000000000002175      0x2c1 libbb/lib.a(wfopen.o)
+ .debug_line    0x0000000000002436      0x1da libbb/lib.a(xfunc_die.o)
+ .debug_line    0x0000000000002610      0x6df libbb/lib.a(xfuncs.o)
+ .debug_line    0x0000000000002cef      0xb5b libbb/lib.a(xfuncs_printf.o)
+ .debug_line    0x000000000000384a      0x2b5 libbb/lib.a(xreadlink.o)
+ .debug_line    0x0000000000003aff      0x1e9 libbb/lib.a(full_write.o)
+ .debug_line    0x0000000000003ce8      0x1e3 libbb/lib.a(safe_write.o)
+ .debug_line    0x0000000000003ecb      0x3a4 libbb/lib.a(signals.o)
+ .debug_line    0x000000000000426f      0x51c libbb/lib.a(time.o)
+ .debug_line    0x000000000000478b      0x3de libbb/lib.a(bb_strtonum.o)
+ .debug_line    0x0000000000004b69      0x2dd libpwdgrp/lib.a(uidgid_get.o)
+ .debug_line    0x0000000000004e46      0x330 sysklogd/lib.a(klogd.o)
+ .debug_line    0x0000000000005176      0x36b sysklogd/lib.a(logread.o)
+ .debug_line    0x00000000000054e1     0x132a sysklogd/lib.a(syslogd_and_logger.o)
+ .debug_line    0x000000000000680b      0x404 libbb/lib.a(bb_pwd.o)
+ .debug_line    0x0000000000006c0f      0x1d1 libbb/lib.a(common_bufsiz.o)
+ .debug_line    0x0000000000006de0      0x1f5 libbb/lib.a(device_open.o)
+ .debug_line    0x0000000000006fd5      0x1db libbb/lib.a(fflush_stdout_and_exit.o)
+ .debug_line    0x00000000000071b0      0x712 libbb/lib.a(getopt32.o)
+ .debug_line    0x00000000000078c2      0x239 libbb/lib.a(kernel_version.o)
+ .debug_line    0x0000000000007afb      0x3da libbb/lib.a(parse_config.o)
+ .debug_line    0x0000000000007ed5      0x251 libbb/lib.a(pidfile.o)
+ .debug_line    0x0000000000008126      0x21c libbb/lib.a(safe_gethostname.o)
+ .debug_line    0x0000000000008342      0x20a libbb/lib.a(safe_strncpy.o)
+ .debug_line    0x000000000000854c      0x2e1 libbb/lib.a(vfork_daemon_rexec.o)
+ .debug_line    0x000000000000882d      0x7ce libbb/lib.a(xatonum.o)
+ .debug_line    0x0000000000008ffb      0x7d3 libbb/lib.a(xconnect.o)
+
+.debug_frame    0x0000000000000000     0x29a8
+ *(SORT_BY_ALIGNMENT(.debug_frame))
+ .debug_frame   0x0000000000000000      0x1b8 libbb/lib.a(appletlib.o)
+ .debug_frame   0x00000000000001b8       0xd0 libbb/lib.a(compare_string_array.o)
+ .debug_frame   0x0000000000000288       0x38 libbb/lib.a(concat_path_file.o)
+ .debug_frame   0x00000000000002c0       0x78 libbb/lib.a(get_last_path_component.o)
+ .debug_frame   0x0000000000000338       0x38 libbb/lib.a(last_char_is.o)
+ .debug_frame   0x0000000000000370       0xe8 libbb/lib.a(llist.o)
+ .debug_frame   0x0000000000000458       0xa8 libbb/lib.a(perror_msg.o)
+ .debug_frame   0x0000000000000500       0x68 libbb/lib.a(skip_whitespace.o)
+ .debug_frame   0x0000000000000568       0x88 libbb/lib.a(verror_msg.o)
+ .debug_frame   0x00000000000005f0      0x118 libbb/lib.a(wfopen.o)
+ .debug_frame   0x0000000000000708       0x40 libbb/lib.a(xfunc_die.o)
+ .debug_frame   0x0000000000000748      0x2c8 libbb/lib.a(xfuncs.o)
+ .debug_frame   0x0000000000000a10      0x770 libbb/lib.a(xfuncs_printf.o)
+ .debug_frame   0x0000000000001180       0x98 libbb/lib.a(xreadlink.o)
+ .debug_frame   0x0000000000001218       0x38 libbb/lib.a(full_write.o)
+ .debug_frame   0x0000000000001250       0x38 libbb/lib.a(safe_write.o)
+ .debug_frame   0x0000000000001288      0x178 libbb/lib.a(signals.o)
+ .debug_frame   0x0000000000001400      0x1c8 libbb/lib.a(time.o)
+ .debug_frame   0x00000000000015c8       0xe8 libbb/lib.a(bb_strtonum.o)
+ .debug_frame   0x00000000000016b0       0x80 libpwdgrp/lib.a(uidgid_get.o)
+ .debug_frame   0x0000000000001730       0xb8 sysklogd/lib.a(klogd.o)
+ .debug_frame   0x00000000000017e8       0x78 sysklogd/lib.a(logread.o)
+ .debug_frame   0x0000000000001860      0x3e8 sysklogd/lib.a(syslogd_and_logger.o)
+ .debug_frame   0x0000000000001c48      0x1d8 libbb/lib.a(bb_pwd.o)
+ .debug_frame   0x0000000000001e20       0x38 libbb/lib.a(device_open.o)
+ .debug_frame   0x0000000000001e58       0x40 libbb/lib.a(fflush_stdout_and_exit.o)
+ .debug_frame   0x0000000000001e98       0x40 libbb/lib.a(getopt32.o)
+ .debug_frame   0x0000000000001ed8       0x40 libbb/lib.a(kernel_version.o)
+ .debug_frame   0x0000000000001f18       0xb8 libbb/lib.a(parse_config.o)
+ .debug_frame   0x0000000000001fd0       0x40 libbb/lib.a(pidfile.o)
+ .debug_frame   0x0000000000002010       0x38 libbb/lib.a(safe_gethostname.o)
+ .debug_frame   0x0000000000002048       0x50 libbb/lib.a(safe_strncpy.o)
+ .debug_frame   0x0000000000002098       0xb8 libbb/lib.a(vfork_daemon_rexec.o)
+ .debug_frame   0x0000000000002150      0x438 libbb/lib.a(xatonum.o)
+ .debug_frame   0x0000000000002588      0x420 libbb/lib.a(xconnect.o)
+
+.debug_str      0x0000000000000000     0x33ce
+ *(SORT_BY_ALIGNMENT(.debug_str))
+ .debug_str     0x0000000000000000      0xd12 libbb/lib.a(appletlib.o)
+                                        0xe7b (size before relaxing)
+ .debug_str     0x0000000000000d12       0xb6 libbb/lib.a(compare_string_array.o)
+                                        0xa22 (size before relaxing)
+ .debug_str     0x0000000000000dc8       0x33 libbb/lib.a(concat_path_file.o)
+                                        0x98d (size before relaxing)
+ .debug_str     0x0000000000000dfb       0x1d libbb/lib.a(default_error_retval.o)
+                                        0x9f2 (size before relaxing)
+ .debug_str     0x0000000000000e18       0x76 libbb/lib.a(get_last_path_component.o)
+                                        0x9d5 (size before relaxing)
+ .debug_str     0x0000000000000e8e       0x22 libbb/lib.a(last_char_is.o)
+                                        0x977 (size before relaxing)
+ .debug_str     0x0000000000000eb0       0x8a libbb/lib.a(llist.o)
+                                        0xa05 (size before relaxing)
+ .debug_str     0x0000000000000f3a       0x11 libbb/lib.a(messages.o)
+                                        0x9e6 (size before relaxing)
+ .debug_str     0x0000000000000f4b       0xcc libbb/lib.a(perror_msg.o)
+                                        0xa29 (size before relaxing)
+ .debug_str     0x0000000000001017       0x17 libbb/lib.a(ptr_to_globals.o)
+                                        0x217 (size before relaxing)
+ .debug_str     0x000000000000102e       0x52 libbb/lib.a(skip_whitespace.o)
+                                        0x9a7 (size before relaxing)
+ .debug_str     0x0000000000001080       0xc6 libbb/lib.a(verror_msg.o)
+                                        0xb06 (size before relaxing)
+ .debug_str     0x0000000000001146       0x7e libbb/lib.a(wfopen.o)
+                                        0x9fc (size before relaxing)
+ .debug_str     0x00000000000011c4       0x1c libbb/lib.a(xfunc_die.o)
+                                        0x9f1 (size before relaxing)
+ .debug_str     0x00000000000011e0      0x222 libbb/lib.a(xfuncs.o)
+                                        0xc45 (size before relaxing)
+ .debug_str     0x0000000000001402      0x34f libbb/lib.a(xfuncs_printf.o)
+                                        0xec1 (size before relaxing)
+ .debug_str     0x0000000000001751       0xa8 libbb/lib.a(xreadlink.o)
+                                        0xa09 (size before relaxing)
+ .debug_str     0x00000000000017f9       0x1e libbb/lib.a(full_write.o)
+                                        0x98b (size before relaxing)
+ .debug_str     0x0000000000001817       0x1e libbb/lib.a(safe_write.o)
+                                        0x98b (size before relaxing)
+ .debug_str     0x0000000000001835      0x28e libbb/lib.a(signals.o)
+                                        0xca7 (size before relaxing)
+ .debug_str     0x0000000000001ac3      0x123 libbb/lib.a(time.o)
+                                        0xab7 (size before relaxing)
+ .debug_str     0x0000000000001be6       0x7e libbb/lib.a(bb_strtonum.o)
+                                        0x9dd (size before relaxing)
+ .debug_str     0x0000000000001c64       0x50 libpwdgrp/lib.a(uidgid_get.o)
+                                        0xa43 (size before relaxing)
+ .debug_str     0x0000000000001cb4      0x11d sysklogd/lib.a(klogd.o)
+                                        0xacd (size before relaxing)
+ .debug_str     0x0000000000001dd1       0xe7 sysklogd/lib.a(logread.o)
+                                        0xb03 (size before relaxing)
+ .debug_str     0x0000000000001eb8      0xad5 sysklogd/lib.a(syslogd_and_logger.o)
+                                       0x17e7 (size before relaxing)
+ .debug_str     0x000000000000298d       0xae libbb/lib.a(bb_pwd.o)
+                                        0xaa8 (size before relaxing)
+ .debug_str     0x0000000000002a3b       0x16 libbb/lib.a(common_bufsiz.o)
+                                        0xa0c (size before relaxing)
+ .debug_str     0x0000000000002a51       0x20 libbb/lib.a(device_open.o)
+                                        0x981 (size before relaxing)
+ .debug_str     0x0000000000002a71       0x36 libbb/lib.a(fflush_stdout_and_exit.o)
+                                        0x992 (size before relaxing)
+ .debug_str     0x0000000000002aa7      0x11a libbb/lib.a(getopt32.o)
+                                        0xbcf (size before relaxing)
+ .debug_str     0x0000000000002bc1       0x6a libbb/lib.a(kernel_version.o)
+                                        0x9c4 (size before relaxing)
+ .debug_str     0x0000000000002c2b       0x83 libbb/lib.a(parse_config.o)
+                                        0xab1 (size before relaxing)
+ .debug_str     0x0000000000002cae       0x25 libbb/lib.a(pidfile.o)
+                                        0xb03 (size before relaxing)
+ .debug_str     0x0000000000002cd3       0x2a libbb/lib.a(safe_gethostname.o)
+                                        0x9bb (size before relaxing)
+ .debug_str     0x0000000000002cfd       0x35 libbb/lib.a(safe_strncpy.o)
+                                        0x98f (size before relaxing)
+ .debug_str     0x0000000000002d32       0x60 libbb/lib.a(vfork_daemon_rexec.o)
+                                        0xa7f (size before relaxing)
+ .debug_str     0x0000000000002d92      0x1d2 libbb/lib.a(xatonum.o)
+                                        0xbd3 (size before relaxing)
+ .debug_str     0x0000000000002f64      0x46a libbb/lib.a(xconnect.o)
+                                        0xec1 (size before relaxing)
+
+.debug_loc
+ *(SORT_BY_ALIGNMENT(.debug_loc))
+
+.debug_macinfo
+ *(SORT_BY_ALIGNMENT(.debug_macinfo))
+
+.debug_weaknames
+ *(SORT_BY_ALIGNMENT(.debug_weaknames))
+
+.debug_funcnames
+ *(SORT_BY_ALIGNMENT(.debug_funcnames))
+
+.debug_typenames
+ *(SORT_BY_ALIGNMENT(.debug_typenames))
+
+.debug_varnames
+ *(SORT_BY_ALIGNMENT(.debug_varnames))
+
+.debug_pubtypes
+ *(SORT_BY_ALIGNMENT(.debug_pubtypes))
+
+.debug_ranges   0x0000000000000000     0x1730
+ *(SORT_BY_ALIGNMENT(.debug_ranges))
+ .debug_ranges  0x0000000000000000      0x160 libbb/lib.a(appletlib.o)
+ .debug_ranges  0x0000000000000160       0x70 libbb/lib.a(compare_string_array.o)
+ .debug_ranges  0x00000000000001d0       0x20 libbb/lib.a(concat_path_file.o)
+ .debug_ranges  0x00000000000001f0       0x40 libbb/lib.a(get_last_path_component.o)
+ .debug_ranges  0x0000000000000230       0x20 libbb/lib.a(last_char_is.o)
+ .debug_ranges  0x0000000000000250       0x80 libbb/lib.a(llist.o)
+ .debug_ranges  0x00000000000002d0       0x50 libbb/lib.a(perror_msg.o)
+ .debug_ranges  0x0000000000000320       0x40 libbb/lib.a(skip_whitespace.o)
+ .debug_ranges  0x0000000000000360       0x70 libbb/lib.a(verror_msg.o)
+ .debug_ranges  0x00000000000003d0       0x90 libbb/lib.a(wfopen.o)
+ .debug_ranges  0x0000000000000460       0x20 libbb/lib.a(xfunc_die.o)
+ .debug_ranges  0x0000000000000480      0x170 libbb/lib.a(xfuncs.o)
+ .debug_ranges  0x00000000000005f0      0x3b0 libbb/lib.a(xfuncs_printf.o)
+ .debug_ranges  0x00000000000009a0       0x50 libbb/lib.a(xreadlink.o)
+ .debug_ranges  0x00000000000009f0       0x20 libbb/lib.a(full_write.o)
+ .debug_ranges  0x0000000000000a10       0x20 libbb/lib.a(safe_write.o)
+ .debug_ranges  0x0000000000000a30       0xc0 libbb/lib.a(signals.o)
+ .debug_ranges  0x0000000000000af0       0xf0 libbb/lib.a(time.o)
+ .debug_ranges  0x0000000000000be0       0x80 libbb/lib.a(bb_strtonum.o)
+ .debug_ranges  0x0000000000000c60       0x40 libpwdgrp/lib.a(uidgid_get.o)
+ .debug_ranges  0x0000000000000ca0       0x90 sysklogd/lib.a(klogd.o)
+ .debug_ranges  0x0000000000000d30       0x40 sysklogd/lib.a(logread.o)
+ .debug_ranges  0x0000000000000d70      0x2f0 sysklogd/lib.a(syslogd_and_logger.o)
+ .debug_ranges  0x0000000000001060       0xf0 libbb/lib.a(bb_pwd.o)
+ .debug_ranges  0x0000000000001150       0x20 libbb/lib.a(device_open.o)
+ .debug_ranges  0x0000000000001170       0x20 libbb/lib.a(fflush_stdout_and_exit.o)
+ .debug_ranges  0x0000000000001190       0x20 libbb/lib.a(getopt32.o)
+ .debug_ranges  0x00000000000011b0       0x20 libbb/lib.a(kernel_version.o)
+ .debug_ranges  0x00000000000011d0       0x60 libbb/lib.a(parse_config.o)
+ .debug_ranges  0x0000000000001230       0x20 libbb/lib.a(pidfile.o)
+ .debug_ranges  0x0000000000001250       0x20 libbb/lib.a(safe_gethostname.o)
+ .debug_ranges  0x0000000000001270       0x30 libbb/lib.a(safe_strncpy.o)
+ .debug_ranges  0x00000000000012a0       0x60 libbb/lib.a(vfork_daemon_rexec.o)
+ .debug_ranges  0x0000000000001300      0x220 libbb/lib.a(xatonum.o)
+ .debug_ranges  0x0000000000001520      0x210 libbb/lib.a(xconnect.o)
+
+.debug_macro
+ *(SORT_BY_ALIGNMENT(.debug_macro))
+
+.debug_addr
+ *(SORT_BY_ALIGNMENT(.debug_addr))
+
+.gnu.attributes
+ *(SORT_BY_ALIGNMENT(.gnu.attributes))
+
+/DISCARD/
+ *(SORT_BY_ALIGNMENT(.note.GNU-stack))
+ *(SORT_BY_ALIGNMENT(.gnu_debuglink))
+ *(SORT_BY_ALIGNMENT(.gnu.lto_*))
+OUTPUT(busybox_unstripped elf64-x86-64)

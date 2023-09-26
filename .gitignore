@@ -1,2 +1,5 @@
 *.o
 *.log
+.config
+.config.old
+.gitignore

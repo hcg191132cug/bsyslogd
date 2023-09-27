@@ -3,3 +3,9 @@
 .config
 .config.old
 .gitignore
+*.cmd
+*.a
+*.map
+*.out
+.config
+_install/*

@@ -597,19 +597,19 @@ syslogd (SYSLOGD) [Y/n/?] y
   Linux kernel printk buffer support (FEATURE_KMSG_SYSLOG) [Y/n/?] y
   Redis log support (FEATURE_DB_SYSLOG) [Y/n/?] y
   SPLIT   include/autoconf.h -> include/config/*
-  GEN     include/bbconfigopts.h
   HOSTCC  applets/usage
+  GEN     include/bbconfigopts.h
   HOSTCC  applets/applet_tables
   GEN     include/common_bufsiz.h
 applets/usage.c: In function ‘main’:
 applets/usage.c:52:3: warning: ignoring return value of ‘write’, declared with attribute warn_unused_result [-Wunused-result]
    52 |   write(STDOUT_FILENO, usage_array[i].usage, strlen(usage_array[i].usage) + 1);
       |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  GEN     include/applet_tables.h include/NUM_APPLETS.h
-  GEN     include/applet_tables.h include/NUM_APPLETS.h
-  HOSTCC  applets/usage_pod
   GEN     include/usage_compressed.h
+  GEN     include/applet_tables.h include/NUM_APPLETS.h
+  GEN     include/applet_tables.h include/NUM_APPLETS.h
   CC      applets/applets.o
+  HOSTCC  applets/usage_pod
 applets/usage_pod.c: In function ‘main’:
 applets/usage_pod.c:74:3: warning: format not a string literal and no format arguments [-Wformat-security]
    74 |   printf(usage_array[i].aname);
@@ -619,13 +619,9 @@ applets/usage_pod.c:74:3: warning: format not a string literal and no format arg
   DOC     BusyBox.txt
   DOC     busybox.1
   DOC     BusyBox.html
-  CC      libbb/appletlib.o
   CC      sysklogd/syslogd_and_logger.o
+  CC      libbb/appletlib.o
   CC      libbb/lineedit.o
-libbb/lineedit.c: In function ‘read_line_input’:
-libbb/lineedit.c:2362:43: warning: passing argument 3 to restrict-qualified parameter aliases with argument 2 [-Wrestrict]
- 2362 |  sigaction(SIGWINCH, &S.SIGWINCH_handler, &S.SIGWINCH_handler);
-      |                      ~~~~~~~~~~~~~~~~~~~  ^~~~~~~~~~~~~~~~~~~
 In file included from sysklogd/syslogd_and_logger.c:47:
 sysklogd/syslogd.c:726:6: warning: no previous prototype for ‘log_to_db’ [-Wmissing-prototypes]
   726 | void log_to_db(char* level, char* brief_key, char* time, char* source, char* description, int is_alarm)
@@ -659,9 +655,6 @@ sysklogd/syslogd.c:1213:20: warning: function declared ‘noreturn’ has a ‘r
 sysklogd/syslogd.c:1272:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
  1272 |     struct ifreq nif;
       |     ^~~~~~
-sysklogd/syslogd.c:1273:31: error: expected identifier before ‘,’ token
- 1273 |     strncpy(nif.ifr_name, rh->, IFNAMSIZ);
-      |                               ^
 sysklogd/syslogd.c: In function ‘syslogd_main’:
 sysklogd/syslogd.c:1325:2: warning: statement with no effect [-Wunused-value]
  1325 |  sizeof(remoteHost_t);
@@ -681,9 +674,6 @@ In file included from sysklogd/syslogd_and_logger.c:47:
 sysklogd/syslogd.c:1354:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
  1354 |  size_t remote_port_len = 0;
       |  ^~~~~~
-sysklogd/syslogd.c:1360:22: error: assignment of read-only member ‘remoteHostport’
- 1360 |   rh->remoteHostport = xatou_range(remote_cfg_tok[1], 1000, 65535);
-      |                      ^
 sysklogd/syslogd.c:1367:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
  1367 |  size_t remote_nif_len = 0;
       |  ^~~~~~
@@ -731,7 +721,16 @@ sysklogd/syslogd.c: In function ‘do_syslogd’:
 sysklogd/syslogd.c:1213:20: warning: ‘noreturn’ function does return
  1213 |   if(db_ctx_init())return;
       |                    ^
-make[1]: *** [scripts/Makefile.build:198: sysklogd/syslogd_and_logger.o] Error 1
-make: *** [Makefile:742: sysklogd] Error 2
-make: *** Waiting for unfinished jobs....
+libbb/lineedit.c: In function ‘read_line_input’:
+libbb/lineedit.c:2362:43: warning: passing argument 3 to restrict-qualified parameter aliases with argument 2 [-Wrestrict]
+ 2362 |  sigaction(SIGWINCH, &S.SIGWINCH_handler, &S.SIGWINCH_handler);
+      |                      ~~~~~~~~~~~~~~~~~~~  ^~~~~~~~~~~~~~~~~~~
+  AR      sysklogd/lib.a
   AR      libbb/lib.a
+  LINK    busybox_unstripped
+Trying libraries: crypt hiredis m
+ Library crypt is not needed, excluding it
+ Library hiredis is needed, can't exclude it (yet)
+ Library m is not needed, excluding it
+ Library hiredis is needed, can't exclude it (yet)
+Final link with: hiredis

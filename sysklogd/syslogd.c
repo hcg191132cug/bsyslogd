@@ -952,7 +952,7 @@ static void timestamp_and_log(int pri, char *msg, int len)
 		char* time = str_time;
 		char level[10] = {0};
 		char type[20] = {0};
-		CODE *c_pri, *c_fac;
+		CODE *c_pri = 0, *c_fac;
 		c_fac = find_by_val(LOG_FAC(pri) << 3, facilitynames);
 		if (c_fac) {
 			snprintf(type,20,"%s",c_fac->c_name);
@@ -1214,7 +1214,7 @@ static void do_syslogd(void)
 	}
 		
 
-	timestamp_and_log_internal("syslogd started: BusyBox v" BB_VER);
+	//timestamp_and_log_internal("syslogd started: BusyBox v" BB_VER);
 
 	while (!bb_got_signal) {
 		ssize_t sz;
@@ -1300,7 +1300,7 @@ static void do_syslogd(void)
 		}
 	} /* while (!bb_got_signal) */
 
-	timestamp_and_log_internal("syslogd exiting");
+	//timestamp_and_log_internal("syslogd exiting");
 	remove_pidfile(CONFIG_PID_FILE_PATH "/syslogd.pid");
 	ipcsyslog_cleanup();
 	if (option_mask32 & OPT_kmsg)

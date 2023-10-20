@@ -1,4 +1,3 @@
-  HOSTLD  scripts/kconfig/conf
 scripts/kconfig/conf -o Config.in
 #
 # using defaults found in .config
@@ -592,12 +591,12 @@ syslogd (SYSLOGD) [N/y/?] n
   SPLIT   include/autoconf.h -> include/config/*
   HOSTCC  applets/usage
   HOSTCC  applets/applet_tables
+  GEN     include/bbconfigopts.h
+  GEN     include/common_bufsiz.h
 applets/usage.c: In function ‘main’:
 applets/usage.c:52:3: warning: ignoring return value of ‘write’, declared with attribute warn_unused_result [-Wunused-result]
    52 |   write(STDOUT_FILENO, usage_array[i].usage, strlen(usage_array[i].usage) + 1);
       |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  GEN     include/bbconfigopts.h
-  GEN     include/common_bufsiz.h
   GEN     include/usage_compressed.h
   GEN     include/applet_tables.h include/NUM_APPLETS.h
   GEN     include/applet_tables.h include/NUM_APPLETS.h
@@ -612,143 +611,89 @@ applets/usage_pod.c:74:3: warning: format not a string literal and no format arg
   DOC     BusyBox.txt
   DOC     busybox.1
   DOC     BusyBox.html
-  LD      archival/built-in.o
-  AR      archival/lib.a
-  LD      archival/libarchive/built-in.o
   CC      archival/libarchive/common.o
   CC      archival/libarchive/data_align.o
   CC      archival/libarchive/data_extract_all.o
   CC      archival/libarchive/data_skip.o
   CC      archival/libarchive/data_extract_to_stdout.o
-  CC      archival/libarchive/decompress_bunzip2.o
   CC      archival/libarchive/filter_accept_all.o
-  LD      console-tools/built-in.o
-  AR      console-tools/lib.a
-  LD      coreutils/built-in.o
-  AR      coreutils/lib.a
+  CC      archival/libarchive/decompress_bunzip2.o
   CC      archival/libarchive/filter_accept_list.o
-  LD      coreutils/libcoreutils/built-in.o
-  AR      coreutils/libcoreutils/lib.a
   CC      archival/libarchive/filter_accept_reject_list.o
   CC      archival/libarchive/find_list_entry.o
   CC      archival/libarchive/header_list.o
   CC      archival/libarchive/header_skip.o
   CC      archival/libarchive/header_verbose_list.o
-  CC      archival/libarchive/init_handle.o
-  LD      debianutils/built-in.o
-  CC      archival/libarchive/open_transformer.o
-  AR      debianutils/lib.a
-  LD      e2fsprogs/built-in.o
-  CC      archival/libarchive/seek_by_jump.o
-  AR      e2fsprogs/lib.a
-  CC      archival/libarchive/seek_by_read.o
-  LD      editors/built-in.o
-  AR      editors/lib.a
-  LD      findutils/built-in.o
-  AR      findutils/lib.a
-  LD      init/built-in.o
-  AR      init/lib.a
-  LD      libbb/built-in.o
   CC      libbb/appletlib.o
+  CC      archival/libarchive/init_handle.o
+  CC      archival/libarchive/open_transformer.o
+  CC      archival/libarchive/seek_by_jump.o
+  CC      archival/libarchive/seek_by_read.o
   CC      libbb/ask_confirmation.o
   CC      libbb/auto_string.o
   CC      libbb/bb_askpass.o
   CC      libbb/bb_bswap_64.o
+  CC      libpwdgrp/uidgid_get.o
   CC      libbb/bb_do_delay.o
   CC      libbb/bb_pwd.o
-  LD      libpwdgrp/built-in.o
-  AR      archival/libarchive/lib.a
-  CC      libpwdgrp/uidgid_get.o
-  LD      loginutils/built-in.o
   CC      libbb/bb_qsort.o
-  AR      loginutils/lib.a
+  AR      archival/libarchive/lib.a
   CC      libbb/bb_strtonum.o
   CC      libbb/change_identity.o
-  LD      mailutils/built-in.o
-  AR      mailutils/lib.a
+  AR      libpwdgrp/lib.a
   CC      libbb/chomp.o
   CC      libbb/common_bufsiz.o
-  LD      miscutils/built-in.o
   CC      libbb/compare_string_array.o
   CC      libbb/concat_path_file.o
-  AR      miscutils/lib.a
   CC      libbb/concat_subpath_file.o
-  AR      libpwdgrp/lib.a
   CC      libbb/copy_file.o
-  LD      modutils/built-in.o
-  AR      modutils/lib.a
   CC      libbb/copyfd.o
   CC      libbb/crc32.o
   CC      libbb/default_error_retval.o
-  LD      networking/built-in.o
   CC      libbb/device_open.o
   CC      libbb/dump.o
-  AR      networking/lib.a
+  CC      sysklogd/klogd.o
   CC      libbb/endofname.o
   CC      libbb/executable.o
   CC      libbb/fclose_nonstdin.o
   CC      libbb/fflush_stdout_and_exit.o
-  LD      networking/libiproute/built-in.o
   CC      libbb/fgets_str.o
-  AR      networking/libiproute/lib.a
   CC      libbb/find_pid_by_name.o
   CC      libbb/find_root_device.o
   CC      libbb/full_write.o
-  LD      networking/udhcp/built-in.o
   CC      libbb/get_console.o
-  AR      networking/udhcp/lib.a
   CC      libbb/get_last_path_component.o
   CC      libbb/get_line_from_file.o
+  AR      sysklogd/lib.a
   CC      libbb/get_shell_name.o
   CC      libbb/get_volsize.o
-  LD      printutils/built-in.o
-  AR      printutils/lib.a
   CC      libbb/getopt32.o
   CC      libbb/getpty.o
-  LD      procps/built-in.o
   CC      libbb/hash_md5_sha.o
   CC      libbb/herror_msg.o
-  AR      procps/lib.a
   CC      libbb/human_readable.o
   CC      libbb/inet_common.o
   CC      libbb/inode_hash.o
-  LD      runit/built-in.o
-  AR      runit/lib.a
   CC      libbb/isdirectory.o
   CC      libbb/kernel_version.o
   CC      libbb/last_char_is.o
   CC      libbb/lineedit.o
-  CC      libbb/lineedit_ptr_hack.o
-  LD      selinux/built-in.o
   CC      libbb/llist.o
   CC      libbb/login.o
-  AR      selinux/lib.a
   CC      libbb/make_directory.o
-  CC      libbb/makedev.o
   CC      libbb/match_fstype.o
   CC      libbb/messages.o
   CC      libbb/missing_syscalls.o
-  LD      shell/built-in.o
-  AR      shell/lib.a
+  CC      libbb/mode_string.o
+  CC      libbb/nuke_str.o
 libbb/lineedit.c: In function ‘read_line_input’:
 libbb/lineedit.c:2362:43: warning: passing argument 3 to restrict-qualified parameter aliases with argument 2 [-Wrestrict]
  2362 |  sigaction(SIGWINCH, &S.SIGWINCH_handler, &S.SIGWINCH_handler);
       |                      ~~~~~~~~~~~~~~~~~~~  ^~~~~~~~~~~~~~~~~~~
-  CC      libbb/mode_string.o
-  LD      sysklogd/built-in.o
-  CC      sysklogd/klogd.o
-  LD      util-linux/built-in.o
-  CC      libbb/nuke_str.o
   CC      libbb/parse_config.o
-  AR      util-linux/lib.a
-  LD      util-linux/volume_id/built-in.o
-  AR      util-linux/volume_id/lib.a
   CC      libbb/parse_mode.o
   CC      libbb/percent_decode.o
   CC      libbb/perror_msg.o
-  CC      libbb/perror_nomsg.o
-  AR      sysklogd/lib.a
-  CC      libbb/perror_nomsg_and_die.o
   CC      libbb/pidfile.o
   CC      libbb/platform.o
   CC      libbb/print_flags.o
@@ -757,7 +702,6 @@ libbb/lineedit.c:2362:43: warning: passing argument 3 to restrict-qualified para
   CC      libbb/process_escape_sequence.o
   CC      libbb/procps.o
   CC      libbb/progress.o
-  CC      libbb/ptr_to_globals.o
   CC      libbb/read.o
   CC      libbb/read_key.o
   CC      libbb/read_printf.o

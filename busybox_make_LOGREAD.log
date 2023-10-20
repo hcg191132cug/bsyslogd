@@ -589,14 +589,14 @@ logread (LOGREAD) [Y/n/?] y
   Double buffering (FEATURE_LOGREAD_REDUCED_LOCKING) [Y/n/?] y
 syslogd (SYSLOGD) [N/y/?] n
   SPLIT   include/autoconf.h -> include/config/*
-  GEN     include/bbconfigopts.h
   HOSTCC  applets/usage
+  GEN     include/bbconfigopts.h
   HOSTCC  applets/applet_tables
-  GEN     include/common_bufsiz.h
 applets/usage.c: In function ‘main’:
 applets/usage.c:52:3: warning: ignoring return value of ‘write’, declared with attribute warn_unused_result [-Wunused-result]
    52 |   write(STDOUT_FILENO, usage_array[i].usage, strlen(usage_array[i].usage) + 1);
       |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  GEN     include/common_bufsiz.h
   GEN     include/usage_compressed.h
   GEN     include/applet_tables.h include/NUM_APPLETS.h
   GEN     include/applet_tables.h include/NUM_APPLETS.h
@@ -613,36 +613,36 @@ applets/usage_pod.c:74:3: warning: format not a string literal and no format arg
   DOC     BusyBox.html
   CC      archival/libarchive/common.o
   CC      archival/libarchive/data_align.o
-  CC      archival/libarchive/data_extract_all.o
   CC      archival/libarchive/data_extract_to_stdout.o
   CC      archival/libarchive/data_skip.o
   CC      archival/libarchive/decompress_bunzip2.o
   CC      archival/libarchive/filter_accept_all.o
+  CC      archival/libarchive/data_extract_all.o
   CC      archival/libarchive/filter_accept_list.o
   CC      archival/libarchive/filter_accept_reject_list.o
-  CC      libbb/appletlib.o
   CC      archival/libarchive/find_list_entry.o
   CC      archival/libarchive/header_list.o
-  CC      libbb/ask_confirmation.o
   CC      archival/libarchive/header_skip.o
-  CC      libbb/auto_string.o
   CC      archival/libarchive/header_verbose_list.o
   CC      archival/libarchive/init_handle.o
+  CC      libbb/appletlib.o
   CC      archival/libarchive/open_transformer.o
-  CC      libbb/bb_askpass.o
+  CC      libbb/ask_confirmation.o
   CC      archival/libarchive/seek_by_jump.o
+  CC      libbb/auto_string.o
+  CC      archival/libarchive/seek_by_read.o
+  CC      libbb/bb_askpass.o
   CC      libbb/bb_bswap_64.o
   CC      libbb/bb_do_delay.o
-  CC      archival/libarchive/seek_by_read.o
+  CC      libpwdgrp/uidgid_get.o
   CC      libbb/bb_pwd.o
   CC      libbb/bb_qsort.o
-  CC      libpwdgrp/uidgid_get.o
   CC      libbb/bb_strtonum.o
   CC      libbb/change_identity.o
   CC      libbb/chomp.o
   CC      libbb/common_bufsiz.o
-  AR      libpwdgrp/lib.a
   AR      archival/libarchive/lib.a
+  AR      libpwdgrp/lib.a
   CC      libbb/compare_string_array.o
   CC      libbb/concat_path_file.o
   CC      libbb/concat_subpath_file.o
@@ -652,7 +652,6 @@ applets/usage_pod.c:74:3: warning: format not a string literal and no format arg
   CC      libbb/default_error_retval.o
   CC      libbb/device_open.o
   CC      libbb/dump.o
-  CC      sysklogd/logread.o
   CC      libbb/endofname.o
   CC      libbb/executable.o
   CC      libbb/fclose_nonstdin.o
@@ -661,7 +660,6 @@ applets/usage_pod.c:74:3: warning: format not a string literal and no format arg
   CC      libbb/find_pid_by_name.o
   CC      libbb/find_root_device.o
   CC      libbb/full_write.o
-  AR      sysklogd/lib.a
   CC      libbb/get_console.o
   CC      libbb/get_last_path_component.o
   CC      libbb/get_line_from_file.o
@@ -672,6 +670,7 @@ applets/usage_pod.c:74:3: warning: format not a string literal and no format arg
   CC      libbb/hash_md5_sha.o
   CC      libbb/herror_msg.o
   CC      libbb/human_readable.o
+  CC      sysklogd/logread.o
   CC      libbb/inet_common.o
   CC      libbb/inode_hash.o
   CC      libbb/isdirectory.o
@@ -681,14 +680,15 @@ applets/usage_pod.c:74:3: warning: format not a string literal and no format arg
   CC      libbb/llist.o
   CC      libbb/login.o
   CC      libbb/make_directory.o
-  CC      libbb/match_fstype.o
-  CC      libbb/messages.o
-  CC      libbb/missing_syscalls.o
+  AR      sysklogd/lib.a
 libbb/lineedit.c: In function ‘read_line_input’:
-  CC      libbb/mode_string.o
 libbb/lineedit.c:2362:43: warning: passing argument 3 to restrict-qualified parameter aliases with argument 2 [-Wrestrict]
  2362 |  sigaction(SIGWINCH, &S.SIGWINCH_handler, &S.SIGWINCH_handler);
       |                      ~~~~~~~~~~~~~~~~~~~  ^~~~~~~~~~~~~~~~~~~
+  CC      libbb/match_fstype.o
+  CC      libbb/messages.o
+  CC      libbb/missing_syscalls.o
+  CC      libbb/mode_string.o
   CC      libbb/nuke_str.o
   CC      libbb/parse_config.o
   CC      libbb/parse_mode.o

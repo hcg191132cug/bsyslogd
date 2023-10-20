@@ -591,7 +591,7 @@ syslogd (SYSLOGD) [Y/n/?] y
   Remote Log support (FEATURE_REMOTE_LOG) [Y/n/?] y
   Support -D (drop dups) option (FEATURE_SYSLOGD_DUP) [Y/n/?] y
   Support syslog.conf (FEATURE_SYSLOGD_CFG) [Y/n/?] y
-  Read buffer size in bytes (FEATURE_SYSLOGD_READ_BUFFER_SIZE) [256] 256
+  Read buffer size in bytes (FEATURE_SYSLOGD_READ_BUFFER_SIZE) [512] 512
   Circular Buffer support (FEATURE_IPC_SYSLOG) [Y/n/?] y
     Circular buffer size in Kbytes (minimum 4KB) (FEATURE_IPC_SYSLOG_BUFFER_SIZE) [16] 16
   Linux kernel printk buffer support (FEATURE_KMSG_SYSLOG) [Y/n/?] y
@@ -600,11 +600,11 @@ syslogd (SYSLOGD) [Y/n/?] y
   HOSTCC  applets/usage
   GEN     include/bbconfigopts.h
   HOSTCC  applets/applet_tables
-  GEN     include/common_bufsiz.h
 applets/usage.c: In function ‘main’:
 applets/usage.c:52:3: warning: ignoring return value of ‘write’, declared with attribute warn_unused_result [-Wunused-result]
    52 |   write(STDOUT_FILENO, usage_array[i].usage, strlen(usage_array[i].usage) + 1);
       |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  GEN     include/common_bufsiz.h
   GEN     include/usage_compressed.h
   GEN     include/applet_tables.h include/NUM_APPLETS.h
   GEN     include/applet_tables.h include/NUM_APPLETS.h
@@ -623,47 +623,100 @@ applets/usage_pod.c:74:3: warning: format not a string literal and no format arg
   CC      libbb/appletlib.o
   CC      libbb/lineedit.o
 In file included from sysklogd/syslogd_and_logger.c:47:
-sysklogd/syslogd.c:726:6: warning: no previous prototype for ‘log_to_db’ [-Wmissing-prototypes]
-  726 | void log_to_db(char* level, char* brief_key, char* time, char* source, char* description, int is_alarm)
+sysklogd/syslogd.c:741:6: warning: no previous prototype for ‘log_to_db’ [-Wmissing-prototypes]
+  741 | void log_to_db(char* level, char* brief_key, char* time, char* source, char* description, int is_alarm, int is_business)
       |      ^~~~~~~~~
+sysklogd/syslogd.c: In function ‘log_to_db’:
+sysklogd/syslogd.c:762:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+  762 |   long long n_counter = reply->integer;
+      |   ^~~~
 sysklogd/syslogd.c: In function ‘timestamp_and_log’:
-sysklogd/syslogd.c:952:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
-  952 |   char* time = str_time;
+sysklogd/syslogd.c:995:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+  995 |   char* time = str_time;
       |   ^~~~
-sysklogd/syslogd.c:956:9: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
-  956 |   c_fac = find_by_val(LOG_FAC(pri) << 3, facilitynames);
+sysklogd/syslogd.c:999:9: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+  999 |   c_fac = find_by_val(LOG_FAC(pri) << 3, facilitynames);
       |         ^
-sysklogd/syslogd.c:959:10: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
-  959 |    c_pri = find_by_val(LOG_PRI(pri), prioritynames);
+sysklogd/syslogd.c:1002:10: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ 1002 |    c_pri = find_by_val(LOG_PRI(pri), prioritynames);
       |          ^
-sysklogd/syslogd.c:967:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
-  967 |   char brief_key[30] = {0}, *msg_cursor;
+sysklogd/syslogd.c:1010:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 1010 |   char brief_key[30] = {0}, *msg_cursor;
       |   ^~~~
-sysklogd/syslogd.c:972:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
-  972 |   char description[255] = {0};
+sysklogd/syslogd.c:1015:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 1015 |   char description[1025] = {0};
       |   ^~~~
-sysklogd/syslogd.c:1001:6: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
- 1001 |      char* brief_itr = type_itr;
+sysklogd/syslogd.c:1044:6: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 1044 |      char *type_itr = level_itr;
       |      ^~~~
-sysklogd/syslogd.c:1025:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
- 1025 |   char source[64] = {0};
+sysklogd/syslogd.c:1058:7: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 1058 |       char* brief_itr = type_itr;
+      |       ^~~~
+sysklogd/syslogd.c:1083:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 1083 |   int is_business = 0;
+      |   ^~~
+sysklogd/syslogd.c: In function ‘split_recvbuf_as_syslog’:
+sysklogd/syslogd.c:1165:14: warning: initialization of ‘char’ from ‘char *’ makes integer from pointer without a cast [-Wint-conversion]
+ 1165 |  char oval = tmpbuf;
+      |              ^~~~~~
+sysklogd/syslogd.c:1165:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 1165 |  char oval = tmpbuf;
+      |  ^~~~
+sysklogd/syslogd.c:1193:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 1193 |  char* msg = lds->parsebuf;
+      |  ^~~~
+sysklogd/syslogd.c:1197:13: warning: declaration of ‘p’ shadows a previous local [-Wshadow]
+ 1197 |  struct tm *p;
+      |             ^
+sysklogd/syslogd.c:1163:8: note: shadowed declaration is here
+ 1163 |  char *p = tmpbuf;
+      |        ^
+sysklogd/syslogd.c:1216:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 1216 |   char msg_cpy[1024] = {0};
       |   ^~~~
+sysklogd/syslogd.c:1218:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 1218 |   CODE *c_pri = 0, *c_fac;
+      |   ^~~~
+sysklogd/syslogd.c:1219:9: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ 1219 |   c_fac = find_by_val(LOG_FAC(pri) << 3, facilitynames);
+      |         ^
+sysklogd/syslogd.c:1222:10: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ 1222 |    c_pri = find_by_val(LOG_PRI(pri), prioritynames);
+      |          ^
+sysklogd/syslogd.c:1230:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 1230 |   char *msg_cursor;
+      |   ^~~~
+sysklogd/syslogd.c:1260:6: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 1260 |      char *type_itr = level_itr;
+      |      ^~~~
+sysklogd/syslogd.c:1274:7: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 1274 |       char* brief_itr = type_itr;
+      |       ^~~~
+sysklogd/syslogd.c:1324:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 1324 |   char res[20];
+      |   ^~~~
+sysklogd/syslogd.c:1326:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 1326 |   char rtime[80] = {0};
+      |   ^~~~
+sysklogd/syslogd.c:1332:9: warning: assignment to ‘char *’ from ‘char’ makes pointer from integer without a cast [-Wint-conversion]
+ 1332 |  tmpbuf = oval;
+      |         ^
 sysklogd/syslogd.c: In function ‘do_syslogd’:
-sysklogd/syslogd.c:1213:20: warning: function declared ‘noreturn’ has a ‘return’ statement
- 1213 |   if(db_ctx_init())return;
+sysklogd/syslogd.c:1463:20: warning: function declared ‘noreturn’ has a ‘return’ statement
+ 1463 |   if(db_ctx_init())return;
       |                    ^~~~~~
-sysklogd/syslogd.c:1272:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
- 1272 |     struct ifreq nif;
+sysklogd/syslogd.c:1539:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 1539 |     struct ifreq nif;
       |     ^~~~~~
 sysklogd/syslogd.c: In function ‘syslogd_main’:
-sysklogd/syslogd.c:1325:2: warning: statement with no effect [-Wunused-value]
- 1325 |  sizeof(remoteHost_t);
+sysklogd/syslogd.c:1593:2: warning: statement with no effect [-Wunused-value]
+ 1593 |  sizeof(remoteHost_t);
       |  ^~~~~~
-sysklogd/syslogd.c:1336:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
- 1336 |  size_t remote_ip_len = 0;
+sysklogd/syslogd.c:1604:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 1604 |  size_t remote_ip_len = 0;
       |  ^~~~~~
-sysklogd/syslogd.c:1347:14: warning: passing argument 1 of ‘snprintf’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
- 1347 |   snprintf(rh->remoteHostname,30,"%s",remote_cfg_tok[0]);
+sysklogd/syslogd.c:1615:14: warning: passing argument 1 of ‘snprintf’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ 1615 |   snprintf(rh->remoteHostname,30,"%s",remote_cfg_tok[0]);
       |            ~~^~~~~~~~~~~~~~~~
 In file included from include/libbb.h:31,
                  from sysklogd/syslogd_and_logger.c:10:
@@ -671,14 +724,14 @@ In file included from include/libbb.h:31,
   354 | extern int snprintf (char *__restrict __s, size_t __maxlen,
       |                      ~~~~~~~~~~~~~~~~~^~~
 In file included from sysklogd/syslogd_and_logger.c:47:
-sysklogd/syslogd.c:1354:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
- 1354 |  size_t remote_port_len = 0;
+sysklogd/syslogd.c:1622:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 1622 |  size_t remote_port_len = 0;
       |  ^~~~~~
-sysklogd/syslogd.c:1367:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
- 1367 |  size_t remote_nif_len = 0;
+sysklogd/syslogd.c:1635:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 1635 |  size_t remote_nif_len = 0;
       |  ^~~~~~
-sysklogd/syslogd.c:1378:12: warning: passing argument 1 of ‘strcpy’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
- 1378 |   strcpy(rh->local_intfc, remote_cfg_tok[2]);
+sysklogd/syslogd.c:1646:12: warning: passing argument 1 of ‘strcpy’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ 1646 |   strcpy(rh->local_intfc, remote_cfg_tok[2]);
       |          ~~^~~~~~~~~~~~~
 In file included from include/libbb.h:35,
                  from sysklogd/syslogd_and_logger.c:10:
@@ -686,41 +739,76 @@ In file included from include/libbb.h:35,
   122 | extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
       |              ^~~~~~
 In file included from sysklogd/syslogd_and_logger.c:47:
-sysklogd/syslogd.c:1414:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
- 1414 |  char* db_cfg_tok[3];
+sysklogd/syslogd.c:1682:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 1682 |  char* db_cfg_tok[3];
       |  ^~~~
-sysklogd/syslogd.c:1417:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
- 1417 |  size_t db_ip_len = 0;
+sysklogd/syslogd.c:1685:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 1685 |  size_t db_ip_len = 0;
       |  ^~~~~~
-sysklogd/syslogd.c:1435:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
- 1435 |  size_t db_port_len = 0;
+sysklogd/syslogd.c:1703:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 1703 |  size_t db_port_len = 0;
       |  ^~~~~~
-sysklogd/syslogd.c:1448:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
- 1448 |  size_t db_pwd_len = 0;
+sysklogd/syslogd.c:1716:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 1716 |  size_t db_pwd_len = 0;
       |  ^~~~~~
 sysklogd/syslogd.c: In function ‘timestamp_and_log’:
-sysklogd/syslogd.c:979:29: warning: ‘%s’ directive output may be truncated writing up to 1023 bytes into a region of size 30 [-Wformat-truncation=]
-  979 |    snprintf(brief_key, 30, "%s", msg_cpy);
+sysklogd/syslogd.c:1022:29: warning: ‘%s’ directive output may be truncated writing up to 1023 bytes into a region of size 30 [-Wformat-truncation=]
+ 1022 |    snprintf(brief_key, 30, "%s", msg_cpy);
       |                             ^~   ~~~~~~~
-sysklogd/syslogd.c:979:4: note: ‘snprintf’ output between 1 and 1024 bytes into a destination of size 30
-  979 |    snprintf(brief_key, 30, "%s", msg_cpy);
+sysklogd/syslogd.c:1022:4: note: ‘snprintf’ output between 1 and 1024 bytes into a destination of size 30
+ 1022 |    snprintf(brief_key, 30, "%s", msg_cpy);
       |    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-sysklogd/syslogd.c:1027:35: warning: ‘ ’ directive output may be truncated writing 1 byte into a region of size between 0 and 64 [-Wformat-truncation=]
- 1027 |   else snprintf(source, 64, "%.64s %%7x%%01%s/%d/%s",  G.hostname, type, pri, brief_key);
-      |                                   ^
-sysklogd/syslogd.c:1027:8: note: ‘snprintf’ output between 11 and 133 bytes into a destination of size 64
- 1027 |   else snprintf(source, 64, "%.64s %%7x%%01%s/%d/%s",  G.hostname, type, pri, brief_key);
-      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-sysklogd/syslogd.c:1026:39: warning: ‘ ’ directive output may be truncated writing 1 byte into a region of size between 0 and 64 [-Wformat-truncation=]
- 1026 |   if(c_pri)snprintf(source, 64, "%.64s %%7x%%01%s/%d/%s",  G.hostname, type, LOG_PRI(pri), brief_key);
-      |                                       ^
-sysklogd/syslogd.c:1026:12: note: ‘snprintf’ output between 11 and 133 bytes into a destination of size 64
- 1026 |   if(c_pri)snprintf(source, 64, "%.64s %%7x%%01%s/%d/%s",  G.hostname, type, LOG_PRI(pri), brief_key);
-      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+sysklogd/syslogd.c:1106:31: warning: ‘ ’ directive output may be truncated writing 1 byte into a region of size between 0 and 64 [-Wformat-truncation=]
+ 1106 |    snprintf(source, 64, "%.64s %%7x%%01%s/%s/%s",  G.hostname, type, level, brief_key);
+      |                               ^
+sysklogd/syslogd.c:1106:4: note: ‘snprintf’ output between 10 and 131 bytes into a destination of size 64
+ 1106 |    snprintf(source, 64, "%.64s %%7x%%01%s/%s/%s",  G.hostname, type, level, brief_key);
+      |    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+sysklogd/syslogd.c:1100:32: warning: ‘ ’ directive output may be truncated writing 1 byte into a region of size between 0 and 64 [-Wformat-truncation=]
+ 1100 |     snprintf(source, 64, "%.64s %%7x%%01%s/%d/%s",  G.hostname, type, pri, brief_key);
+      |                                ^
+sysklogd/syslogd.c:1100:5: note: ‘snprintf’ output between 11 and 133 bytes into a destination of size 64
+ 1100 |     snprintf(source, 64, "%.64s %%7x%%01%s/%d/%s",  G.hostname, type, pri, brief_key);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+sysklogd/syslogd.c:1095:32: warning: ‘ ’ directive output may be truncated writing 1 byte into a region of size between 0 and 64 [-Wformat-truncation=]
+ 1095 |     snprintf(source, 64, "%.64s %%7x%%01%s/%d/%s",  G.hostname, type, LOG_PRI(pri), brief_key);
+      |                                ^
+sysklogd/syslogd.c:1095:5: note: ‘snprintf’ output between 11 and 133 bytes into a destination of size 64
+ 1095 |     snprintf(source, 64, "%.64s %%7x%%01%s/%d/%s",  G.hostname, type, LOG_PRI(pri), brief_key);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+sysklogd/syslogd.c: In function ‘split_recvbuf_as_syslog’:
+sysklogd/syslogd.c:1239:54: warning: ‘%s’ directive output may be truncated writing up to 1023 bytes into a region of size 30 [-Wformat-truncation=]
+ 1239 |    snprintf(lds->brief_key, sizeof(lds->brief_key), "%s", msg_cpy);
+      |                                                      ^~   ~~~~~~~
+sysklogd/syslogd.c:1239:4: note: ‘snprintf’ output between 1 and 1024 bytes into a destination of size 30
+ 1239 |    snprintf(lds->brief_key, sizeof(lds->brief_key), "%s", msg_cpy);
+      |    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+sysklogd/syslogd.c:1321:36: warning: ‘ ’ directive output may be truncated writing 1 byte into a region of size between 0 and 64 [-Wformat-truncation=]
+ 1321 |    snprintf(lds->source, 64, "%.64s %%7x%%01%s/%s/%s",  G.hostname, lds->type, lds->level, lds->brief_key);
+      |                                    ^
+sysklogd/syslogd.c:1321:4: note: ‘snprintf’ output between 10 and 131 bytes into a destination of size 64
+ 1321 |    snprintf(lds->source, 64, "%.64s %%7x%%01%s/%s/%s",  G.hostname, lds->type, lds->level, lds->brief_key);
+      |    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+sysklogd/syslogd.c:1315:37: warning: ‘ ’ directive output may be truncated writing 1 byte into a region of size between 0 and 64 [-Wformat-truncation=]
+ 1315 |     snprintf(lds->source, 64, "%.64s %%7x%%01%s/%d/%s",  G.hostname, lds->type, pri, lds->brief_key);
+      |                                     ^
+sysklogd/syslogd.c:1315:5: note: ‘snprintf’ output between 11 and 133 bytes into a destination of size 64
+ 1315 |     snprintf(lds->source, 64, "%.64s %%7x%%01%s/%d/%s",  G.hostname, lds->type, pri, lds->brief_key);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+sysklogd/syslogd.c:1310:37: warning: ‘ ’ directive output may be truncated writing 1 byte into a region of size between 0 and 64 [-Wformat-truncation=]
+ 1310 |     snprintf(lds->source, 64, "%.64s %%7x%%01%s/%d/%s",  G.hostname, lds->type, LOG_PRI(pri), lds->brief_key);
+      |                                     ^
+sysklogd/syslogd.c:1310:5: note: ‘snprintf’ output between 11 and 133 bytes into a destination of size 64
+ 1310 |     snprintf(lds->source, 64, "%.64s %%7x%%01%s/%d/%s",  G.hostname, lds->type, LOG_PRI(pri), lds->brief_key);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 sysklogd/syslogd.c: In function ‘do_syslogd’:
-sysklogd/syslogd.c:1213:20: warning: ‘noreturn’ function does return
- 1213 |   if(db_ctx_init())return;
+sysklogd/syslogd.c:1463:20: warning: ‘noreturn’ function does return
+ 1463 |   if(db_ctx_init())return;
       |                    ^
+At top level:
+sysklogd/syslogd.c:1153:13: warning: ‘timestamp_and_log_internal’ defined but not used [-Wunused-function]
+ 1153 | static void timestamp_and_log_internal(const char *msg)
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~
 libbb/lineedit.c: In function ‘read_line_input’:
 libbb/lineedit.c:2362:43: warning: passing argument 3 to restrict-qualified parameter aliases with argument 2 [-Wrestrict]
  2362 |  sigaction(SIGWINCH, &S.SIGWINCH_handler, &S.SIGWINCH_handler);

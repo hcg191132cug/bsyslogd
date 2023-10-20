@@ -588,9 +588,9 @@ logger (LOGGER) [Y/n/?] y
 logread (LOGREAD) [N/y/?] n
 syslogd (SYSLOGD) [N/y/?] n
   SPLIT   include/autoconf.h -> include/config/*
-  GEN     include/bbconfigopts.h
   HOSTCC  applets/usage
   HOSTCC  applets/applet_tables
+  GEN     include/bbconfigopts.h
   GEN     include/common_bufsiz.h
 applets/usage.c: In function ‘main’:
 applets/usage.c:52:3: warning: ignoring return value of ‘write’, declared with attribute warn_unused_result [-Wunused-result]
@@ -610,12 +610,12 @@ applets/usage_pod.c:74:3: warning: format not a string literal and no format arg
   DOC     BusyBox.txt
   DOC     busybox.1
   DOC     BusyBox.html
-  CC      archival/libarchive/data_align.o
   CC      archival/libarchive/common.o
-  CC      archival/libarchive/data_extract_all.o
+  CC      archival/libarchive/data_align.o
   CC      archival/libarchive/data_extract_to_stdout.o
-  CC      archival/libarchive/data_skip.o
+  CC      archival/libarchive/data_extract_all.o
   CC      archival/libarchive/decompress_bunzip2.o
+  CC      archival/libarchive/data_skip.o
   CC      archival/libarchive/filter_accept_all.o
   CC      archival/libarchive/filter_accept_list.o
   CC      archival/libarchive/filter_accept_reject_list.o
@@ -623,12 +623,12 @@ applets/usage_pod.c:74:3: warning: format not a string literal and no format arg
   CC      archival/libarchive/header_list.o
   CC      archival/libarchive/header_skip.o
   CC      archival/libarchive/header_verbose_list.o
-  CC      libbb/appletlib.o
   CC      archival/libarchive/init_handle.o
   CC      archival/libarchive/open_transformer.o
   CC      libpwdgrp/uidgid_get.o
   CC      archival/libarchive/seek_by_jump.o
   CC      archival/libarchive/seek_by_read.o
+  CC      libbb/appletlib.o
   CC      libbb/ask_confirmation.o
   CC      libbb/auto_string.o
   CC      libbb/bb_askpass.o
@@ -637,9 +637,9 @@ applets/usage_pod.c:74:3: warning: format not a string literal and no format arg
   AR      libpwdgrp/lib.a
   CC      libbb/bb_pwd.o
   CC      libbb/bb_qsort.o
+  AR      archival/libarchive/lib.a
   CC      libbb/bb_strtonum.o
   CC      libbb/change_identity.o
-  AR      archival/libarchive/lib.a
   CC      libbb/chomp.o
   CC      libbb/common_bufsiz.o
   CC      libbb/compare_string_array.o
@@ -652,14 +652,12 @@ applets/usage_pod.c:74:3: warning: format not a string literal and no format arg
   CC      libbb/device_open.o
   CC      libbb/dump.o
   CC      libbb/endofname.o
-  CC      sysklogd/syslogd_and_logger.o
   CC      libbb/executable.o
   CC      libbb/fclose_nonstdin.o
   CC      libbb/fflush_stdout_and_exit.o
   CC      libbb/fgets_str.o
   CC      libbb/find_pid_by_name.o
   CC      libbb/find_root_device.o
-  AR      sysklogd/lib.a
   CC      libbb/full_write.o
   CC      libbb/get_console.o
   CC      libbb/get_last_path_component.o
@@ -682,15 +680,16 @@ applets/usage_pod.c:74:3: warning: format not a string literal and no format arg
   CC      libbb/make_directory.o
   CC      libbb/match_fstype.o
   CC      libbb/messages.o
+  CC      libbb/missing_syscalls.o
 libbb/lineedit.c: In function ‘read_line_input’:
 libbb/lineedit.c:2362:43: warning: passing argument 3 to restrict-qualified parameter aliases with argument 2 [-Wrestrict]
  2362 |  sigaction(SIGWINCH, &S.SIGWINCH_handler, &S.SIGWINCH_handler);
       |                      ~~~~~~~~~~~~~~~~~~~  ^~~~~~~~~~~~~~~~~~~
-  CC      libbb/missing_syscalls.o
   CC      libbb/mode_string.o
   CC      libbb/nuke_str.o
   CC      libbb/parse_config.o
   CC      libbb/parse_mode.o
+  CC      sysklogd/syslogd_and_logger.o
   CC      libbb/percent_decode.o
   CC      libbb/perror_msg.o
   CC      libbb/pidfile.o
@@ -698,6 +697,7 @@ libbb/lineedit.c:2362:43: warning: passing argument 3 to restrict-qualified para
   CC      libbb/print_flags.o
   CC      libbb/printable.o
   CC      libbb/printable_string.o
+  AR      sysklogd/lib.a
   CC      libbb/process_escape_sequence.o
   CC      libbb/procps.o
   CC      libbb/progress.o
@@ -722,8 +722,8 @@ libbb/lineedit.c:2362:43: warning: passing argument 3 to restrict-qualified para
   CC      libbb/strrstr.o
   CC      libbb/sysconf.o
   CC      libbb/time.o
-  CC      libbb/trim.o
   CC      libbb/u_signal_names.o
+  CC      libbb/trim.o
   CC      libbb/ubi.o
   CC      libbb/unicode.o
   CC      libbb/utmp.o

@@ -218,6 +218,19 @@ struct shbuf_ds {
 	char data[1];   /* data/messages */
 };
 
+struct log_content_ds {
+	char level[10];
+	char brief_key[30];
+	char str_time[80];
+	char source[64];
+	char description[1025];
+	int is_alarm;
+	int is_business;
+	char type[20];
+	char parsebuf[2048];
+	char out_str[2048];
+};
+
 #if ENABLE_FEATURE_REMOTE_LOG
 typedef struct {
 	int remoteFD;
@@ -253,7 +266,8 @@ typedef struct db_config_t {
 	short db_port;
 	char db_pwd[30];
 	redisContext *rds_context;
-	unsigned long cnt;
+	unsigned long scnt;
+	unsigned long bcnt;
 } db_config_t;
 
 #endif
@@ -342,7 +356,8 @@ static const struct init_globals init_data = {
 		.db_port = 6379,
 		.db_pwd = {0},
 		.rds_context = 0,
-		.cnt = 0,
+		.scnt = 0,
+		.bcnt = 0,
 	},
 #endif
 };
@@ -723,16 +738,44 @@ static int db_ctx_init(void)
 	}
 	return 0;
 }
-void log_to_db(char* level, char* brief_key, char* time, char* source, char* description, int is_alarm)
+void log_to_db(char* level, char* brief_key, char* time, char* source, char* description, int is_alarm, int is_business)
 {
 	redisReply *reply = 0;
 	if(is_alarm)
-		reply = (redisReply*)redisCommand(G.redis_config.rds_context, "hmset blog:%d level %s type %s time %s source %s desc %s", 
-       	G.redis_config.cnt, level, brief_key, time, source, description);
+	{
+		reply = (redisReply *)redisCommand(G.redis_config.rds_context, "INCR blog_counter");
+		if (reply == NULL) {
+			return;
+		}
+		G.redis_config.bcnt = reply->integer;
+		freeReplyObject(reply);
+		reply = (redisReply*)redisCommand(G.redis_config.rds_context, "hmset blog:%lld level %s type %s time %s source %s desc %s", 
+       	G.redis_config.bcnt, level, brief_key, time, source, description);
+	}
+	else if (is_business)
+	{
+		// 发送 INCR 命令获取自增数据
+    	reply = (redisReply *)redisCommand(G.redis_config.rds_context, "INCR nlog_counter");
+		if (reply == NULL) {
+			return;
+		}
+		long long n_counter = reply->integer;
+		freeReplyObject(reply);
+		reply = (redisReply*)redisCommand(G.redis_config.rds_context, "hmset nlog:%lld level %s type %s time %s source %s desc %s", 
+       	n_counter, level, brief_key, time, source, description);
+	}
 	else
-		reply = (redisReply*)redisCommand(G.redis_config.rds_context, "hmset slog:%d level %s type %s time %s source %s desc %s", 
-       	G.redis_config.cnt, level, brief_key, time, source, description);
-	++G.redis_config.cnt;
+	{
+		reply = (redisReply *)redisCommand(G.redis_config.rds_context, "INCR slog_counter");
+		if (reply == NULL) {
+			return;
+		}
+		G.redis_config.scnt = reply->integer;
+		freeReplyObject(reply);
+		reply = (redisReply*)redisCommand(G.redis_config.rds_context, "hmset slog:%lld level %s type %s time %s source %s desc %s", 
+       	G.redis_config.scnt, level, brief_key, time, source, description);
+	}
+		
     if(reply == NULL)
     {
         return;
@@ -969,7 +1012,7 @@ static void timestamp_and_log(int pri, char *msg, int len)
 		msg_cursor = msg_cpy;
 		brief_len = strcspn(msg_cursor, ":");
 		msg_cursor += brief_len;
-		char description[255] = {0};
+		char description[1025] = {0};
 		int is_alarm = 0;
 		if(*msg_cursor == ':' && *(msg_cursor+1)==' ')
 		{
@@ -978,40 +1021,56 @@ static void timestamp_and_log(int pri, char *msg, int len)
 			//msg_cursor++;
 			snprintf(brief_key, 30, "%s", msg_cpy);
 			
-			snprintf(description, 255, "%s", msg_cursor+1);
+			snprintf(description, 1024, "%s", msg_cursor+1);
 			*old_val = ':';
 			if(*(msg_cursor+1) == '#')
 			{
 				//bb_perror_msg("parse #");
-				//#模块名|摘要|详细
-				char *type_itr = msg_cursor+2;
-				size_t type_len = 0;
-				type_len = strcspn(type_itr, "|");
-				if(*(type_itr+type_len) == '|')
+				//#等级|模块名|摘要|详细
+				char *level_itr = msg_cursor+2;
+				size_t level_len = 0;
+				level_len = strcspn(level_itr, "|");
+				if(*(level_itr+level_len) == '|')
 				{
-					//bb_perror_msg("parse | 1");
-					type_itr+=type_len;
-					old_val = type_itr;
-					*type_itr++='\0';
+					//bb_perror_msg("parse | 0");
+					level_itr += level_len;
+					old_val = level_itr;
+					*level_itr++='\0';
 					//type_itr++;
-					snprintf(type,20,"%s",msg_cursor+2);
+					snprintf(level,10,"%s",msg_cursor+2);
 					//bb_perror_msg("type %s", type);
 					*old_val = '|';
 
-					char* brief_itr = type_itr;
-					brief_len = 0;
-					brief_len = strcspn(brief_itr, "|");
-					if(*(brief_itr+brief_len) == '|')
+					char *type_itr = level_itr;
+					size_t type_len = 0;
+					type_len = strcspn(type_itr, "|");
+					if(*(type_itr+type_len) == '|')
 					{
-						//bb_perror_msg("parse | 2");
-						is_alarm = 1;
-						brief_itr += brief_len;
-						old_val = brief_itr;
-						*brief_itr++='\0';
-						//brief_itr++;
-						snprintf(brief_key,30,"%s",type_itr);
+						//bb_perror_msg("parse | 1");
+						type_itr+=type_len;
+						old_val = type_itr;
+						*type_itr++='\0';
+						//type_itr++;
+						snprintf(type,20,"%s",level_itr);
+						//bb_perror_msg("type %s", type);
 						*old_val = '|';
-						snprintf(description, 255, "%s", brief_itr);
+
+						char* brief_itr = type_itr;
+						brief_len = 0;
+						brief_len = strcspn(brief_itr, "|");
+						if(*(brief_itr+brief_len) == '|')
+						{
+							//bb_perror_msg("parse | 2");
+							is_alarm = 1;
+							brief_itr += brief_len;
+							old_val = brief_itr;
+							*brief_itr++='\0';
+							//brief_itr++;
+							snprintf(brief_key,30,"%s",type_itr);
+							*old_val = '|';
+							memset(description, 0, sizeof(description));
+							snprintf(description, 1024, "%s", brief_itr);
+						}
 					}
 				}
 			}
@@ -1019,17 +1078,34 @@ static void timestamp_and_log(int pri, char *msg, int len)
 		else
 		{
 			snprintf(brief_key, 16, "%s", msg);
-			snprintf(description, 255, "%s", msg);
+			snprintf(description, 1024, "%s", msg);
 		}
-		
+		int is_business = 0;
 		char source[64] = {0};
-		if(c_pri)snprintf(source, 64, "%.64s %%7x%%01%s/%d/%s",  G.hostname, type, LOG_PRI(pri), brief_key);
-		else snprintf(source, 64, "%.64s %%7x%%01%s/%d/%s",  G.hostname, type, pri, brief_key);
-		if(!is_alarm)
+		//非标准告警打入log日志 
+		//具体:等级8的告警是acl的业务日志,由于拿不到业务日志的key序号所以先存入redis的slog里
+		if(is_alarm && level[0] == '8') is_business = 1;
+		if(!is_alarm || is_business)
 		{
-			is_alarm = c_pri ? (LOG_PRI(pri) <= LOG_WARNING ? 1 : 0) : (pri <= LOG_WARNING ? 1 : 0);
+			memset(level, 0 , sizeof(level));
+			is_alarm = 0;
+			//is_alarm = c_pri ? (LOG_PRI(pri) <= LOG_WARNING ? 1 : 0) : (pri <= LOG_WARNING ? 1 : 0);
+			if(c_pri)
+			{
+				snprintf(source, 64, "%.64s %%7x%%01%s/%d/%s",  G.hostname, type, LOG_PRI(pri), brief_key);
+				snprintf(level, 10, "%s", c_pri->c_name);
+			}
+			else
+			{
+				snprintf(source, 64, "%.64s %%7x%%01%s/%d/%s",  G.hostname, type, pri, brief_key);
+				snprintf(level, 10, "%d", pri);
+			}	
 		}
-		log_to_db(level, brief_key, time, source, description, is_alarm);
+		else
+		{//标准告警从告警的第一个字段获取告警等级
+			snprintf(source, 64, "%.64s %%7x%%01%s/%s/%s",  G.hostname, type, level, brief_key);
+		}
+		log_to_db(level, brief_key, time, source, description, is_alarm, is_business);
 		return;
 	}
 #endif
@@ -1080,6 +1156,180 @@ static void timestamp_and_log_internal(const char *msg)
 	if (ENABLE_FEATURE_REMOTE_LOG && !(option_mask32 & OPT_locallog))
 		return;
 	timestamp_and_log(LOG_SYSLOG | LOG_INFO, (char*)msg, 0);
+}
+
+static void split_recvbuf_as_syslog(char *tmpbuf, int len, struct log_content_ds* lds)
+{
+	char *p = tmpbuf;
+	tmpbuf += len;
+	char oval = tmpbuf;
+	*tmpbuf = '\0';
+//bb_perror_msg("enter %s\n",p);
+	while (p < tmpbuf) {
+		char c;
+		char *q = lds->parsebuf;
+		int pri = (LOG_USER | LOG_NOTICE);
+
+		if (*p == '<') {
+			/* Parse the magic priority number */
+			pri = bb_strtou(p + 1, &p, 10);
+			if (*p == '>')
+				p++;
+			if (pri & ~(LOG_FACMASK | LOG_PRIMASK))
+				pri = (LOG_USER | LOG_NOTICE);
+		}
+
+		while ((c = *p++)) {
+			if (c == '\n')
+				c = ' ';
+			if (!(c & ~0x1f) && c != '\t') {
+				*q++ = '^';
+				c += '@'; 
+			}
+			*q++ = c;
+		}
+		*q = '\0';
+//bb_perror_msg("enter2 %s\n",lds->parsebuf);
+	char* msg = lds->parsebuf;
+	int msglen = q - lds->parsebuf;
+	char *timestamp = 0;
+	time_t now;
+	struct tm *p;
+	/* Jan 18 00:11:22 msg... */
+	/* 01234567890123456 */
+	if (msglen < 16 || msg[3] != ' ' || msg[6] != ' '
+	 || msg[9] != ':' || msg[12] != ':' || msg[15] != ' '
+	) {
+		time(&now);
+		p = localtime(&now);
+		strftime(lds->str_time, sizeof(lds->str_time), "%Y/%m/%d %H:%M:%S", p);
+	} else {
+		timestamp = msg;
+		timestamp[15] = '\0';
+		msg += 16;
+		time(&now);
+		p = localtime(&now);
+		strftime(lds->str_time, sizeof(lds->str_time), "%Y/%m/%d %H:%M:%S", p);
+	}
+//bb_perror_msg("time: %s\n", timestamp);
+
+		char msg_cpy[1024] = {0};
+		snprintf(msg_cpy, 1024, "%s", msg);
+		CODE *c_pri = 0, *c_fac;
+		c_fac = find_by_val(LOG_FAC(pri) << 3, facilitynames);
+		if (c_fac) {
+			snprintf(lds->type, sizeof(lds->type),"%s",c_fac->c_name);
+			c_pri = find_by_val(LOG_PRI(pri), prioritynames);
+			if (c_pri) 
+				snprintf(lds->level, sizeof(lds->level), "%s", c_pri->c_name);
+			else
+				snprintf(lds->level, sizeof(lds->level), "%d", pri);
+		}
+		else
+			snprintf(lds->level, sizeof(lds->level), "%d", pri);
+		char *msg_cursor;
+		size_t  brief_len = 0;
+		msg_cursor = msg_cpy;
+		brief_len = strcspn(msg_cursor, ":");
+		msg_cursor += brief_len;
+		if(*msg_cursor == ':' && *(msg_cursor+1)==' ')
+		{
+			char* old_val = msg_cursor;
+			*msg_cursor++ = '\0';
+			snprintf(lds->brief_key, sizeof(lds->brief_key), "%s", msg_cpy);
+			snprintf(lds->description, sizeof(lds->description), "%s", msg_cursor+1);
+			*old_val = ':';
+			if(*(msg_cursor+1) == '#')
+			{
+				//bb_perror_msg("parse #");
+				//#等级|模块名|摘要|详细
+				char *level_itr = msg_cursor+2;
+				size_t level_len = 0;
+				level_len = strcspn(level_itr, "|");
+				if(*(level_itr+level_len) == '|')
+				{
+					//bb_perror_msg("parse | 0");
+					level_itr += level_len;
+					old_val = level_itr;
+					*level_itr++='\0';
+					//type_itr++;
+					snprintf(lds->level,10,"%s",msg_cursor+2);
+					//bb_perror_msg("type %s", type);
+					*old_val = '|';
+
+					char *type_itr = level_itr;
+					size_t type_len = 0;
+					type_len = strcspn(type_itr, "|");
+					if(*(type_itr+type_len) == '|')
+					{
+						//bb_perror_msg("parse | 1");
+						type_itr+=type_len;
+						old_val = type_itr;
+						*type_itr++='\0';
+						//type_itr++;
+						snprintf(lds->type,20,"%s",level_itr);
+						//bb_perror_msg("type %s", type);
+						*old_val = '|';
+
+						char* brief_itr = type_itr;
+						brief_len = 0;
+						brief_len = strcspn(brief_itr, "|");
+						if(*(brief_itr+brief_len) == '|')
+						{
+							//bb_perror_msg("parse | 2");
+							lds->is_alarm = 1;
+							brief_itr += brief_len;
+							old_val = brief_itr;
+							*brief_itr++='\0';
+							//brief_itr++;
+							snprintf(lds->brief_key,30,"%s",type_itr);
+							*old_val = '|';
+							memset(lds->description, 0, sizeof(lds->description));
+							snprintf(lds->description, 1024, "%s", brief_itr);
+						}
+					}
+				}
+			}
+		}
+		else
+		{
+			snprintf(lds->brief_key, 16, "%s", msg);
+			snprintf(lds->description, 1024, "%s", msg);
+		}
+//bb_perror_msg("msg: %s\n", msg);
+		//非标准告警打入log日志 
+		//具体:等级8的告警是acl的业务日志,拿到业务日志的key序号存入redis的nlog里
+		if(lds->is_alarm && lds->level[0] == '8') lds->is_business = 1;
+		if(!lds->is_alarm || lds->is_business)
+		{
+			memset(lds->level, 0 , sizeof(lds->level));
+			lds->is_alarm = 0;
+			//is_alarm = c_pri ? (LOG_PRI(pri) <= LOG_WARNING ? 1 : 0) : (pri <= LOG_WARNING ? 1 : 0);
+			if(c_pri)
+			{
+				snprintf(lds->source, 64, "%.64s %%7x%%01%s/%d/%s",  G.hostname, lds->type, LOG_PRI(pri), lds->brief_key);
+				snprintf(lds->level, 10, "%s", c_pri->c_name);
+			}
+			else
+			{
+				snprintf(lds->source, 64, "%.64s %%7x%%01%s/%d/%s",  G.hostname, lds->type, pri, lds->brief_key);
+				snprintf(lds->level, 10, "%d", pri);
+			}
+		}
+		else
+		{//标准告警从告警的第一个字段获取告警等级
+			snprintf(lds->source, 64, "%.64s %%7x%%01%s/%s/%s",  G.hostname, lds->type, lds->level, lds->brief_key);
+		}
+//bb_perror_msg("source: %s\n", lds->source);
+		char res[20];
+		parse_fac_prio_20(pri, res);
+		char rtime[80] = {0};
+		strftime(rtime, sizeof(rtime), "%b %d %Y %H:%M:%S", p);
+		if(timestamp)sprintf(lds->out_str, "<%d>%s %s:%s,at %s\n", pri, rtime, lds->source, lds->description, timestamp);
+		else sprintf(lds->out_str, "<%d>%s %s:%s", pri, rtime, lds->source, lds->description);
+//bb_perror_msg("%s", lds->out_str);
+	}
+	tmpbuf = oval;
 }
 
 /* tmpbuf[len] is a NUL byte (set by caller), but there can be other,
@@ -1169,7 +1419,7 @@ static int try_to_resolve_remote(remoteHost_t *rh)
 		rh->last_dns_resolve = now;
 		
 		rh->remoteAddr = host2sockaddr(rh->remoteHostname, rh->remoteHostport);
-		bb_perror_msg("try_to_resolve_remote %s", rh->remoteHostname);
+//		bb_perror_msg("try_to_resolve_remote %s, %d\n", rh->remoteHostname, rh->remoteHostport);
 		if (!rh->remoteAddr)
 			return -1;
 	}
@@ -1255,14 +1505,31 @@ static void do_syslogd(void)
 				continue;
 		last_sz = sz;
 #endif
+	
 #if ENABLE_FEATURE_REMOTE_LOG
+		if(option_mask32 & OPT_remotelog)
+		{
+			struct log_content_ds lds = {0};
+			split_recvbuf_as_syslog(recvbuf, sz, &lds);
+			//告警或业务日志不发送到远端
+			if(lds.is_alarm || lds.is_business)
+			{
+				if(G.redis_config.rds_context);
+				else
+				{
+					db_ctx_init();
+				}
+				log_to_db(lds.level, lds.brief_key, lds.str_time, lds.source, lds.description, lds.is_alarm, lds.is_business );
+				continue;
+			}
+		
 		/* Stock syslogd sends it '\n'-terminated
 		 * over network, mimic that */
 		recvbuf[sz] = '\n';
-
 		/* We are not modifying log messages in any way before send */
 		/* Remote site cannot trust _us_ anyway and need to do validation again */
 		for (item = G.remoteHosts; item != NULL; item = item->link) {
+			
 			remoteHost_t *rh = (remoteHost_t *)item->data;
 
 			if (rh->remoteFD == -1) {
@@ -1273,12 +1540,13 @@ static void do_syslogd(void)
 				strncpy(nif.ifr_name, rh->local_intfc, IFNAMSIZ);
 				setsockopt(rh->remoteFD, SOL_SOCKET, SO_BINDTODEVICE,(char*)&nif, sizeof(nif));
 			}
-
+			/* format recvbuf to new standy syslog format */
+			
 			/* Send message to remote logger.
 			 * On some errors, close and set remoteFD to -1
 			 * so that DNS resolution is retried.
 			 */
-			if (sendto(rh->remoteFD, recvbuf, sz+1,
+			if ( sendto(rh->remoteFD, lds.out_str, strlen(lds.out_str),
 					MSG_DONTWAIT | MSG_NOSIGNAL,
 					&(rh->remoteAddr->u.sa), rh->remoteAddr->len) == -1
 			) {
@@ -1292,7 +1560,7 @@ static void do_syslogd(void)
 					rh->remoteAddr = NULL;
 				}
 			}
-		}
+		}}
 #endif
 		if (!ENABLE_FEATURE_REMOTE_LOG || (option_mask32 & OPT_locallog)) {
 			recvbuf[sz] = '\0'; /* ensure it *is* NUL terminated */
